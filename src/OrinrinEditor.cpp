@@ -1958,7 +1958,7 @@ VOID Cls_OnContextMenu( HWND hWnd, HWND hWndContext, UINT xPos, UINT yPos )
 
 	TCITEM	stTcItem;
 	TCHAR	atText[MAX_PATH];
-	UINT	cchSize;
+	size_t	cchSize;
 
 	stPost.x = (SHORT)xPos;	//	画面座標はマイナスもありうる
 	stPost.y = (SHORT)yPos;

@@ -2303,7 +2303,7 @@ HRESULT TabLineMultiSingleToggle( HWND hWnd )
 		dWndwStyle |= TCS_MULTILINE;	//	スタイルをくっつける
 	}
 
-	SetWindowLong( ghTabWnd, GWL_STYLE, dWndwStyle );	//	スタイル書き戻す
+	SetWindowLongPtr( ghTabWnd, GWL_STYLE, dWndwStyle );	//	スタイル書き戻す
 	//	再描画とか？なくてよさそう
 	InitParamValue( INIT_SAVE, VL_MAATAB_SNGL, doSingle );	//	記録
 

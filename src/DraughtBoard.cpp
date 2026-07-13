@@ -1098,7 +1098,7 @@ LPTSTR CALLBACK DraughtHoverTipInfo( LPVOID pVoid )
 UINT DraughtItemAddFromSelect( HWND hWnd, UINT bSqSel )
 {
 	LPTSTR	ptString = NULL;
-	UINT	cchSize, cbSize;
+	size_t	cchSize, cbSize;
 	LPPOINT	pstPos = NULL;
 
 	UINT_PTR	i, j, iTexts;

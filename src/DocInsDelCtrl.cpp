@@ -850,7 +850,7 @@ INT DocSquareAddPreMod( INT xDot, INT yLine, INT dNeedLine, BOOLEAN bFirst )
 //	行増やすのと、所定の位置までスペースで埋める
 	INT_PTR	iLines;
 	INT		iBaseDot, iBaseLine, iMinus, i;
-	UINT	cchBuf;
+	size_t	cchBuf;
 	LPTSTR	ptBuffer = NULL;
 
 
@@ -984,7 +984,8 @@ INT DocInsertString( PINT pNowDot, PINT pdLine, PINT pdMozi, LPCTSTR ptText, UIN
 INT DocInputFromClipboard( PINT pNowDot, PINT pdLine, PINT pdMozi, UINT bSqMode )
 {
 	LPTSTR	ptString = NULL;
-	UINT	cchSize, dStyle = 0, i, j;
+	size_t	cchSize, i, j;
+	UINT	dStyle = 0;
 	INT		dCrLf, dTop, dBtm;
 	BOOLEAN	bSelect;
 	UINT	dSqSel, iLines;

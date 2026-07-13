@@ -1514,7 +1514,7 @@ HRESULT FrameInfoDisp( HWND hDlg )
 HRESULT DocFrameInsert( INT dMode, INT dStyle )
 {
 	UINT_PTR	iLines;
-	INT_PTR		iLns, iLast;
+	INT			iLns, iLast;
 	INT			iTop, iBtm, iInX, iEndot, iPadding, i, baseDot;
 	INT			xMidLen;
 	LPTSTR		ptPadding;

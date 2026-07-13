@@ -645,7 +645,7 @@ INT DocUnicode2UTF8( LPVOID *pText )
 */
 INT DocAstSeparatorGetAlloc( FILES_ITR itFile, INT dPage, UINT bStyle, LPVOID *pText )
 {
-	UINT	cchSize, cbSize;
+	size_t	cchSize, cbSize;
 	TCHAR	atBuffer[MAX_STRING];
 
 	StringCchPrintf( atBuffer, MAX_STRING, TEXT("[AA][%s]\r\n"), itFile->vcCont.at( dPage ).atPageName );

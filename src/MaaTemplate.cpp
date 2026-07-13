@@ -1123,7 +1123,7 @@ INT_PTR CALLBACK TreeProfileDlgProc( HWND hDlg, UINT message, WPARAM wParam, LPA
 						}
 					}
 
-					SetWindowLong( hDlg, DWL_MSGRESULT, 0 );
+					SetWindowLongPtr( hDlg, DWLP_MSGRESULT, 0 );
 					return (INT_PTR)TRUE;
 				}
 

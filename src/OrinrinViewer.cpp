@@ -712,17 +712,17 @@ INT ViewLetterWidthGet( TCHAR ch )
 INT ViewStringWidthGet( LPCTSTR ptStr )
 {
 	SIZE	stSize;
-	UINT	cchSize;
+	size_t	cchSize;
 	HDC		hdc= GetDC( ghMaaWnd );
 	HFONT	hFtOld;
 
 	StringCchLength( ptStr, STRSAFE_MAX_CCH, &cchSize );
 
-	if( 0 >= cchSize )	return 0;	//	異常事態
+	if( 0 >= cchSize || INT_MAX < cchSize )	return 0;	//	異常事態
 
 	hFtOld = SelectFont( hdc, ghAaFont );
 
-	GetTextExtentPoint32( hdc, ptStr, cchSize, &stSize );
+	GetTextExtentPoint32( hdc, ptStr, (INT)cchSize, &stSize );
 
 	SelectFont( hdc, hFtOld );
 

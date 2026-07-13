@@ -101,7 +101,7 @@ HRESULT InversePartsLoad( UINT dMode )
 
 	LPTSTR	ptString;
 	LPSTR	pcText;
-	UINT	cchSize, cchLen;
+	size_t	cchSize, cchLen;
 	TCHAR	atFileName[MAX_PATH];
 
 	TCHAR	atBuff[INV_ITEMS][MIN_STRING];

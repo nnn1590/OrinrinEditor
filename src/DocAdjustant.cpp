@@ -874,7 +874,7 @@ LPTSTR DocPaddingSpaceWithPeriod( INT dTgtDot, PINT pdZen, PINT pdHan, PINT pdPr
 {
 	INT	dZenSp, dHanSp, dPrdSp, m, dPre;
 	LPTSTR	ptSpace = NULL, ptPlus = NULL;
-	UINT	cchSize, cchPlus;
+	size_t	cchSize, cchPlus;
 
 
 	dPre = dTgtDot;

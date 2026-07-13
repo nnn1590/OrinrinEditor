@@ -1334,7 +1334,7 @@ INT ViewLetterWidthGet( TCHAR ch )
 INT ViewStringWidthGet( LPCTSTR ptStr )
 {
 	SIZE	stSize;
-	UINT	cchSize;
+	size_t	cchSize;
 	HDC		hdc= GetDC( ghViewWnd );
 	HFONT	hFtOld;
 
@@ -2755,7 +2755,7 @@ HRESULT ViewColourEditDlg( HWND hWnd )
 		InitColourValue( INIT_SAVE, CLRV_CRLFMARK, gaColourTable[CLRT_CRLF_MARK] );
 		InitColourValue( INIT_SAVE, CLRV_CANTSJIS, gaColourTable[CLRT_CANTSJIS] );
 
-		SetClassLongPtr( ghViewWnd, GCL_HBRBACKGROUND, (LONG_PTR)(gahBrush[BRHT_BASICBK]) );
+		SetClassLongPtr( ghViewWnd, GCLP_HBRBACKGROUND, (LONG_PTR)(gahBrush[BRHT_BASICBK]) );
 
 		InvalidateRect( ghViewWnd, NULL, TRUE );
 	}

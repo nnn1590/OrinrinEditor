@@ -1244,7 +1244,7 @@ HRESULT LayerMoveFromView( HWND hWnd, UINT state )
 */
 LPTSTR LayerLineTextGetAlloc( LAYER_ITR itLyr, INT il )
 {
-	UINT_PTR	cchSize, i = 0;
+	size_t	cchSize, i = 0;
 	LPTSTR	ptText;
 
 	cchSize = itLyr->vcLyrImg.at( il ).vcLine.size( );
@@ -1292,7 +1292,7 @@ HRESULT LayerEditOnOff( HWND hWnd, UINT dStyle )
 {
 	UINT_PTR	i, iLines;
 	INT			ndx;
-	UINT		cchSize;
+	size_t		cchSize;
 	LPTSTR		ptStr;
 	ONELINE		stLine;
 	LAYER_ITR	itLyr;
@@ -1374,7 +1374,7 @@ HRESULT LayerEditOnOff( HWND hWnd, UINT dStyle )
 */
 HRESULT LayerStringReplace( HWND hLyrWnd, LPTSTR ptStr )
 {
-	UINT		cchSize;
+	size_t		cchSize;
 	ONELINE		stLine;
 	LAYER_ITR	itLyr;
 
@@ -1407,7 +1407,7 @@ HRESULT LayerStringReplace( HWND hLyrWnd, LPTSTR ptStr )
 */
 HRESULT LayerFromString( LAYER_ITR itLyr, LPCTSTR ptStr )
 {
-	UINT	cchSize;
+	size_t	cchSize;
 	ONELINE	stLine;
 
 	ZeroONELINE( &stLine );
@@ -1431,7 +1431,7 @@ HRESULT LayerFromString( LAYER_ITR itLyr, LPCTSTR ptStr )
 HRESULT LayerFromSelectArea( LAYER_ITR itLyr, UINT bSqSel )
 {
 	LPTSTR	ptString = NULL;
-	UINT	cchSize, cbSize;
+	size_t	cchSize, cbSize;
 	LPPOINT	pstPos;
 	ONELINE	stLine;
 
@@ -1470,7 +1470,8 @@ HRESULT LayerFromSelectArea( LAYER_ITR itLyr, UINT bSqSel )
 HRESULT LayerFromClipboard( LAYER_ITR itLyr )
 {
 	LPTSTR	ptString = NULL;
-	UINT	cchSize, dStyle;//, i;
+	size_t	cchSize;
+	UINT	dStyle;//, i;
 //	INT		insDot, yLine;
 	ONELINE	stLine;
 

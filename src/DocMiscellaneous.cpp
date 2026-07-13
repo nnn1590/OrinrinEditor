@@ -276,7 +276,7 @@ UINT DocRawDataParamGet( LPCTSTR ptRaw, PINT piMozi, PINT piByte )
 */
 UINT DocPageParamGet( PINT piMozi, PINT piByte )
 {
-	INT_PTR	iLines, i, dMozis = 0;
+	INT		iLines, i, dMozis = 0;
 	INT		dBytes = 0;
 
 	LINE_ITR	itLine;

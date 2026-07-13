@@ -527,7 +527,7 @@ INT_PTR Uni_OnNotify( HWND hDlg, INT idFrom, LPNMHDR pstNmhdr )
 		if( CDDS_PREPAINT == pstCustomDraw->nmcd.dwDrawStage ||
 			CDDS_ITEMPREPAINT == pstCustomDraw->nmcd.dwDrawStage )
 		{
-			SetWindowLong( hDlg, DWL_MSGRESULT, (long)CDRF_NOTIFYSUBITEMDRAW );
+			SetWindowLongPtr( hDlg, DWLP_MSGRESULT, (long)CDRF_NOTIFYSUBITEMDRAW );
 			return TRUE;
 		}
 
@@ -542,13 +542,13 @@ INT_PTR Uni_OnNotify( HWND hDlg, INT idFrom, LPNMHDR pstNmhdr )
 			{
 				pstCustomDraw->clrTextBk = GetSysColor( COLOR_HIGHLIGHT );
 				pstCustomDraw->clrText   = GetSysColor( COLOR_HIGHLIGHTTEXT );
-				SetWindowLong( hDlg, DWL_MSGRESULT, (long)CDRF_NEWFONT);
+				SetWindowLongPtr( hDlg, DWLP_MSGRESULT, (long)CDRF_NEWFONT);
 			}
 			else
 			{
 				pstCustomDraw->clrTextBk = GetSysColor( COLOR_WINDOW );
 				pstCustomDraw->clrText   = GetSysColor( COLOR_WINDOWTEXT );
-				SetWindowLong( hDlg, DWL_MSGRESULT, (long)CDRF_NEWFONT);
+				SetWindowLongPtr( hDlg, DWLP_MSGRESULT, (long)CDRF_NEWFONT);
 			}
 			return TRUE;
 		}
@@ -566,7 +566,7 @@ WM_NOTIFYメッセージ内でNM_CUSTOMDRAWを判別します。
 これは、コントロールに描画を任すをことを意味します。
 このステージを処理した後は、処理したことを通知する必要あるのですが、
 ここの例で使用しているのはダイアログである為、通知を返せません。
-ですので、SetWindowLong関数を使用して返します。
+ですので、SetWindowLongPtr関数を使用して返します。
 
 以下に、NMLVCUSTOMDRAW構造体の説明を書きます。
 
@@ -591,12 +591,12 @@ case WM_NOTIFY:
 				lplvcd = (LPNMLVCUSTOMDRAW)lp;
 
 				if( lplvcd->nmcd.dwDrawStage == CDDS_PREPAINT ){
-					SetWindowLong( hWnd, DWL_MSGRESULT, (long)CDRF_NOTIFYITEMDRAW );
+					SetWindowLongPtr( hWnd, DWLP_MSGRESULT, (long)CDRF_NOTIFYITEMDRAW );
 				return( TRUE );
 		}
 		if( lplvcd->nmcd.dwDrawStage == CDDS_ITEMPREPAINT ){
 			lplvcd->clrTextBk = RGB(0xCC, 0xCC, 0xCC);
-			SetWindowLong( hWnd, DWL_MSGRESULT, (long)CDRF_NEWFONT);
+			SetWindowLongPtr( hWnd, DWLP_MSGRESULT, (long)CDRF_NEWFONT);
 		return( TRUE );
 	}
 return( CDRF_DODEFAULT );
