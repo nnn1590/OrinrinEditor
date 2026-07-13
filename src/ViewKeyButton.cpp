@@ -343,7 +343,7 @@ VOID Evw_OnChar( HWND hWnd, TCHAR ch, INT cRepeat )
 	{
 		if( bSqSel )	//	矩形選択中なら塗りつぶして終了
 		{
-			atCh[0] = ch;	atCh[1] = NULL;
+			atCh[0] = ch;	atCh[1] = 0;
 			DocSelectedBrushFilling( atCh, &gdDocXdot ,&gdDocLine );
 			ViewDrawCaret( gdDocXdot, gdDocLine, 1 );	//	キャレット位置を決める
 			DocPageInfoRenew( -1, 1 );

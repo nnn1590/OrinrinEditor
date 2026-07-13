@@ -1412,7 +1412,7 @@ HRESULT AccelKeySettingReset( HWND hDlg, list<ACCEL> *pltAccel )
 	if( 0 >= iItems )	return E_POINTER;
 
 	pstAccel = (LPACCEL)malloc( iItems * sizeof(ACCEL) );
-	if( !(pstAccel) )	return NULL;
+	if( !(pstAccel) )	return E_OUTOFMEMORY;
 
 	//	本体確保
 	iItems = CopyAcceleratorTable( hAccel, pstAccel, iItems );

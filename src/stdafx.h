@@ -19,20 +19,21 @@ If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#ifndef STRICT
 #define STRICT
+#endif
 
 //!	無効にする警告
+#ifdef _MSC_VER
 #pragma warning( disable : 4100 )	//!<	引数は函数の本体部で 1 度も参照されません。
 //#pragma warning( disable : 4101 )	//!<	ローカル変数は 1 度も使われていません。
 #pragma warning( disable : 4201 )	//!<	非標準の拡張機能が使用されています
 #pragma warning( disable : 4244 )	//!<	型変換における、データが失われる可能性について。
 #pragma warning( disable : 4312 )	//!<	より大きいサイズへの型変換について
 //#pragma warning( disable : 4995 )	//!<	名前が避けられた #pragma として記述されています。
+#endif
 
 #include "targetver.h"
-
-#pragma comment(linker, "/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='x86' publicKeyToken='6595b64144ccf1df' language='*'\"")
-
 
 //#define WIN32_LEAN_AND_MEAN		//	Windows ヘッダーから使用されていない部分を除外します。
 // Windows ヘッダー ファイル:
@@ -48,25 +49,31 @@ If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 //	シェルとか
-#pragma comment(lib, "shell32.lib")
-
+#ifdef _MSC_VER
+#	pragma comment(lib, "shell32.lib")
+#endif
 //	コモンダイヤログ
 #include <commdlg.h>
-#pragma comment(lib, "Comdlg32.lib")
-
+#ifdef _MSC_VER
+#	pragma comment(lib, "Comdlg32.lib")
+#endif
 #include <commctrl.h>
-#pragma comment(lib, "ComCtl32.lib")
+#ifdef _MSC_VER
+#	pragma comment(lib, "ComCtl32.lib")
+#endif
 
 #ifndef _ORCOLL
 
 //	IMEの操作に使う
 #include <imm.h>
-#pragma comment(lib, "imm32.lib")
-
+#ifdef _MSC_VER
+#	pragma comment(lib, "imm32.lib")
+#endif
 //	SQLite3
 #include "sqlite3.h"
-#pragma comment(lib, "sqlite3.lib")
-
+#ifdef _MSC_VER
+#	pragma comment(lib, "sqlite3.lib")
+#endif
 
 #endif
 
@@ -95,19 +102,26 @@ If not, see <http://www.gnu.org/licenses/>.
 #define STRSAFE_MAX_LENGTH  (STRSAFE_MAX_CCH - 1)   // max buffer length, in characters, that we support
 #endif
 
-#pragma warning( disable : 4995 )
+#ifdef _MSC_VER
+#	pragma warning( disable : 4995 )
+#endif
 #include <shlwapi.h>
-#pragma warning( default : 4995 )
-#pragma comment(lib, "shlwapi.lib")
-
+#ifdef _MSC_VER
+#	pragma warning( default : 4995 )
+#	pragma comment(lib, "shlwapi.lib")
+#endif
 //-------------------------------------------------------------------------------------------------
 
-#pragma warning( disable : 4995 )	//	名前が避けられた #pragma として記述されています。
+#ifdef _MSC_VER
+#	pragma warning( disable : 4995 )	//	名前が避けられた #pragma として記述されています。
+#endif
 #include <vector>
 #include <list>
 #include <string>
 #include <algorithm>
-#pragma warning( default : 4995 )
+#ifdef _MSC_VER
+#	pragma warning( default : 4995 )
+#endif
 
 using namespace	std;	//	このスコープ内ではstd::が省略できる
 //-------------------------------------------------------------------------------------------------

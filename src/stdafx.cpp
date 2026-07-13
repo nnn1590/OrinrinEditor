@@ -216,7 +216,7 @@ TCHAR UniRefCheck( LPSTR pcStr )
 	BOOLEAN	bXcode = FALSE;
 
 	ZeroMemory( acValue, sizeof(acValue) );
-	if( NULL == pcStr[2] )	return 0x0000;	//	末端だった場合
+	if( 0 == pcStr[2] )	return 0x0000;	//	末端だった場合
 
 	pcStr += 2;	//	&#部分を進める
 
@@ -232,7 +232,7 @@ TCHAR UniRefCheck( LPSTR pcStr )
 	{
 		if( ';' == pcStr[i] )	break;	//	末端確認
 
-		if( NULL == pcStr[i] )	return 0x0000;	//	末端だった場合
+		if( 0 == pcStr[i] )	return 0x0000;	//	末端だった場合
 
 		if( 0 > (INT)(pcStr[i]) )	return 0x0000;	//	とにかく関係なかった場合
 

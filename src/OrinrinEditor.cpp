@@ -837,7 +837,7 @@ INT APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 				stCopyData.cbData = sizeof(atArgv);
 				stCopyData.lpData = atArgv;
 
-				SendMessage( hWndActed, WM_COPYDATA, NULL, (LPARAM)(&stCopyData) );
+				SendMessage( hWndActed, WM_COPYDATA, 0, (LPARAM)(&stCopyData) );
 			}
 	#else
 			MessageBox( NULL, TEXT("已にアプリは起動してるよ！"), TEXT("お燐からのお知らせ"), MB_OK|MB_ICONINFORMATION );
@@ -1303,7 +1303,7 @@ HRESULT AppTitleChange( LPTSTR ptText )
 
 	if( ptText )
 	{
-		if( NULL != ptText[0] ){	ptName = PathFindFileName( ptText );	}
+		if( 0 != ptText[0] ){	ptName = PathFindFileName( ptText );	}
 		else{						ptName = NAMELESS_DUMMY;	}
 		StringCchPrintf( atBuff, MAX_PATH, TEXT("%s - %s"), gszTitle, ptName );
 	}
@@ -2748,7 +2748,7 @@ HRESULT InitProfHistory( UINT dMode, UINT dNumber, LPTSTR ptFile )
 		StringCchPrintf( atKeyName, MIN_STRING, TEXT("Hist%X"), dNumber );
 		GetPrivateProfileString( TEXT("ProfHistory"), atKeyName, TEXT(""), atDefault, MAX_PATH, gatIniPath );
 
-		if( NULL == atDefault[0] )	return E_NOTIMPL;	//	記録無し
+		if( 0 == atDefault[0] )	return E_NOTIMPL;	//	記録無し
 
 		StringCchCopy( ptFile, MAX_PATH, atDefault );
 	}
@@ -2835,7 +2835,7 @@ HRESULT OpenHistoryInitialise( HWND hWnd )
 			ZeroMemory( &stOpenHist, sizeof(OPENHIST) );
 			StringCchPrintf( atKeyName, MIN_STRING, TEXT("Hist%X"), d );
 			GetPrivateProfileString( TEXT("OpenHistory"), atKeyName, TEXT(""), stOpenHist.atFile, MAX_PATH, gatIniPath );
-			if( NULL == stOpenHist.atFile[0] )	break;	//	記録無くなったらそこで終了だよ
+			if( 0 == stOpenHist.atFile[0] )	break;	//	記録無くなったらそこで終了だよ
 
 			gltOpenHist.push_back( stOpenHist );
 		}
@@ -3009,7 +3009,7 @@ HRESULT OptionDialogueOpen( VOID )
 
 	SqnSetting(   );	//	グループアンドゥのアレ
 
-	if( NULL != atFontName[ 0] )	//	フォント名、なんか入ってたら変更されたと見なす
+	if( 0 != atFontName[ 0] )	//	フォント名、なんか入ってたら変更されたと見なす
 	{
 		InitParamString( INIT_SAVE, VS_FONT_NAME, atFontName );
 		//	記録する・書換はあとで

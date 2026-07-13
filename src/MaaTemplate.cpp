@@ -216,7 +216,7 @@ HWND MaaTmpltInitialise( HINSTANCE hInstance, HWND hParentWnd, LPRECT pstFrame )
 	if( INVALID_HANDLE_VALUE != hFind ){	FindClose( hFind  );	}
 	else{		ZeroMemory( gatProfilePath, sizeof(gatProfilePath) );	};
 
-	if( NULL != gatProfilePath[0] )	//	起動時無ければ何もしない
+	if( 0 != gatProfilePath[0] )	//	起動時無ければ何もしない
 	{
 		bMode = TreeProfileMake( ghMaaWnd, gatProfilePath );
 		if( 0 > bMode ){	bMode = 0;	}
@@ -554,7 +554,7 @@ VOID Maa_OnCommand( HWND hWnd, INT id, HWND hwndCtl, UINT codeNotify )
 		case IDM_EXIT:	DestroyWindow( hWnd );	break;
 
 		case IDM_GENERAL_OPTION:	//	設定
-			DialogBoxParam( ghInst, MAKEINTRESOURCE(IDD_ORRVWR_OPTION_DLG), hWnd, OptionDlgProc, NULL );
+			DialogBoxParam( ghInst, MAKEINTRESOURCE(IDD_ORRVWR_OPTION_DLG), hWnd, OptionDlgProc, 0 );
 			break;
 
 		case IDM_MAA_PROFILE_MAKE:	TreeProfileOpen( hWnd );	break;
@@ -873,7 +873,7 @@ INT TreeProfileMake( HWND hWnd, LPTSTR ptProf )
 	//	ディレクトリがなかったらフォルダオーポンダイヤログで指定して再構築
 	//	含むディレクトリと含まないディレクトリを指定出来るようにする
 	//	ディレクトリが有ったら、Cacheを見て再構築すればいい
-	if( NULL == gatTemplatePath[0] )
+	if( 0 == gatTemplatePath[0] )
 	{
 		//ダイヤログ呼び出す
 		//ダイヤログでは、ディレクトリ直下のディレクトリをリストアップ
@@ -930,7 +930,7 @@ INT TreeProfileRebuild( HWND hWnd )
 	iRslt = DialogBoxParam( ghInst, MAKEINTRESOURCE(IDD_PROFILE_TREESEL_DLG), hWnd, TreeProfileDlgProc, (LPARAM)atFolder );
 	if( IDCANCEL == iRslt ){	return (-1);	}	//	内容変更なので、キャンセルならナニもしない。
 	//	ルートディレクトリ変更してから再構築開始
-	if( NULL != atFolder[0] )	//	この時点で空はないか？
+	if( 0 != atFolder[0] )	//	この時点で空はないか？
 	{
 		StringCchCopy( gatTemplatePath, MAX_PATH, atFolder );
 		//	こっちから開いた場合は、副タブ再構築不要
@@ -1015,7 +1015,7 @@ INT_PTR CALLBACK TreeProfileDlgProc( HWND hDlg, UINT message, WPARAM wParam, LPA
 			SqlTreeCacheOpenClose( M_CREATE );
 
 			//	開いたとき、ルートフォルダ指定が有効なら、自動リストアップして、ディレクトリを確認してチェック付ける
-			//if( NULL != ptFolder[0] )
+			//if( 0 != ptFolder[0] )
 			//{
 			//	TreeProfListUp( hDlg, chTvWnd, ptFolder, chTreeRoot, 0, 1 );
 			//	TreeView_Expand( chTvWnd, chTreeRoot, TVE_EXPAND );
@@ -1037,7 +1037,7 @@ INT_PTR CALLBACK TreeProfileDlgProc( HWND hDlg, UINT message, WPARAM wParam, LPA
 
 				case  IDB_PRTREE_LISTUP:	//	リストアッポ開始
 					Edit_GetText( GetDlgItem(hDlg,IDE_PRTREE_DIR), atTgtDir, MAX_PATH );
-					if( NULL != atTgtDir[0] )
+					if( 0 != atTgtDir[0] )
 					{
 						TreeView_DeleteAllItems( chTvWnd  );	//	一旦全破壊してルート作り直し
 						SqlTreeNodeAllDelete( 0 );	//	キャッシュも破壊
@@ -1487,12 +1487,12 @@ LPTSTR PathSplitFirstPath( LPTSTR ptSource, LPTSTR ptSplits )
 	UINT	d;
 
 	if( !(ptSource) )	return NULL;
-	if( NULL ==  ptSource[0] )	return NULL;
+	if( 0 ==  ptSource[0] )	return NULL;
 
 	for( d = 0; MAX_PATH > d; d++ )
 	{
-		if( TEXT('\\') == ptSource[d] ){	ptSplits[d] =  NULL;	d++;	break;	}
-		else if( NULL ==  ptSource[d] ){	ptSplits[d] =  NULL;	break;	}
+		if( TEXT('\\') == ptSource[d] ){	ptSplits[d] =  0;	d++;	break;	}
+		else if( 0 ==  ptSource[d] ){	ptSplits[d] =  0;	break;	}
 		else{	ptSplits[d] = ptSource[d];	}
 	}
 
@@ -1563,7 +1563,7 @@ HRESULT MaaFindExecute( HWND hDlg )
 	ZeroMemory( atPattern, sizeof(atPattern) );
 	GetDlgItemText( hDlg, IDE_MAA_FIND_NAME, atPattern, MAX_PATH );
 	//	空文字列なら検索しない
-	if( NULL == atPattern[0] )	return  E_ABORT;
+	if( 0 == atPattern[0] )	return  E_ABORT;
 
 
 	dCnt = SqlTreeCount( 1, &dMax );
@@ -1864,7 +1864,7 @@ HRESULT OpenProfileLoad( HWND hWnd, INT id )
 	if( INVALID_HANDLE_VALUE != hFind ){	FindClose( hFind  );	}
 	else{	ZeroMemory( atFilePath, sizeof(atFilePath) );	};
 
-	if( NULL != atFilePath[0]  )	//	無ければ何もしない
+	if( 0 != atFilePath[0]  )	//	無ければ何もしない
 	{
 		StringCchCopy( gatProfilePath, MAX_PATH, atFilePath );
 		TreeProfileMake( ghMaaWnd, gatProfilePath );

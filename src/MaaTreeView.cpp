@@ -1737,7 +1737,7 @@ UINT TabMultipleIsFavTab( INT tabSel, LPTSTR ptBase, UINT_PTR cchSize )
 			//	とりあえずコピー
 			if( ptBase ){	StringCchCopy( ptBase, cchSize, itNulti->atBaseName );	}
 
-			if( NULL == itNulti->atFilePath[0] )	return 1;	//	お気にである
+			if( 0 == itNulti->atFilePath[0] )	return 1;	//	お気にである
 			else	return 0;	//	戻っておｋ
 		}
 	}
@@ -1774,7 +1774,7 @@ INT TabMultipleSelect( HWND hWnd, INT tabSel, UINT dMode )
 				StringCchCopy( gatBaseName, MAX_PATH, itNulti->atBaseName );
 
 				//	ここで、ファイルかお気にかを判断する・atFilePathが空であれば
-				if( NULL == itNulti->atFilePath[0] )	//	お気にである
+				if( 0 == itNulti->atFilePath[0] )	//	お気にである
 				{
 					StringCchCopy( atName, MAX_PATH, gatBaseName );
 					StringCchCat(  atName, MAX_PATH, TEXT("[F]") );
@@ -1935,7 +1935,7 @@ INT TabMultipleAppend( HWND hWnd )
 	itNulti = gltMultiFiles.end( );
 	itNulti--;	//	新しく開くのは末端にあるはず
 	StringCchCopy( atName, MAX_PATH, itNulti->atFilePath );
-	if( NULL !=  atName[0] )	//	ツリーもしくはドラッグンドロッペ
+	if( 0 !=  atName[0] )	//	ツリーもしくはドラッグンドロッペ
 	{
 		PathStripPath( atName );	//	ファイル名だけにして
 		PathRemoveExtension( atName );	//	拡張子を外す
@@ -1946,7 +1946,7 @@ INT TabMultipleAppend( HWND hWnd )
 		StringCchCat(  atName, MAX_PATH, TEXT("[F]") );
 	}
 
-	if( NULL == itNulti->atDispName[0] )
+	if( 0 == itNulti->atDispName[0] )
 	{	StringCchCopy( itNulti->atDispName , MAX_PATH, atName );	}	//	表示名デフォルト
 
 	ZeroMemory( &stTcItem, sizeof(TCITEM) );

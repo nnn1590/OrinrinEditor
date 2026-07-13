@@ -19,7 +19,9 @@ If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#ifndef STRICT
 #define STRICT
+#endif
 //-------------------------------------------------------------------------------------------------
 
 #define SPLITBAR_CLASS		TEXT("CSplitBar")	//	スプリットバークラス名

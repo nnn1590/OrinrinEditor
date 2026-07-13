@@ -374,7 +374,7 @@ HRESULT InitProfHistory( UINT dMode, UINT dNumber, LPTSTR ptFile )
 		StringCchPrintf( atKeyName, MIN_STRING, TEXT("Hist%X"), dNumber );
 		GetPrivateProfileString( TEXT("ProfHistory"), atKeyName, TEXT(""), atDefault, MAX_PATH, gatIniPath );
 
-		if( NULL == atDefault[0] )	return E_NOTIMPL;	//	記録無し
+		if( 0 == atDefault[0] )	return E_NOTIMPL;	//	記録無し
 
 		StringCchCopy( ptFile, MAX_PATH, atDefault );
 	}

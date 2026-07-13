@@ -204,7 +204,7 @@ HRESULT UniDialogueEntry( HINSTANCE hInst, HWND hWnd )
 
 	if( ghUniPltWnd ){	PostMessage( ghUniPltWnd, WM_CLOSE, 0 , 0 );	return S_OK;	}
 
-	gtSelMozi = NULL;
+	gtSelMozi = 0;
 
 	//	ダイヤログーはモーダレスでありんす
 	ghUniPltWnd = CreateDialogParam( hInst, MAKEINTRESOURCE(IDD_UNICODE_PALETTE_DLG_2), hWnd, UniPaletteDlgProc, 0 );

@@ -1776,7 +1776,7 @@ LPTSTR MoziSqlItemSelect( TCHAR ch, LPINT piLine, LPINT piDot )
 	rslt = sqlite3_prepare( gpMoziTable, acSelect, -1, &statement, NULL );
 	if( SQLITE_OK != rslt ){	SQL_DEBUG( gpMoziTable );	return 0;	}
 
-	atMozi[ 0] = ch;	atMozi[1] = NULL;	
+	atMozi[ 0] = ch;	atMozi[1] = 0;	
 	sqlite3_reset( statement );
 	rslt = sqlite3_bind_text16( statement, 1, atMozi, -1, SQLITE_STATIC );	//	letter
 

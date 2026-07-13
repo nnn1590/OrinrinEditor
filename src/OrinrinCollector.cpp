@@ -312,7 +312,7 @@ INT FileListViewAdd( HWND hWnd, LPTSTR ptPath )
 	iCount = ListView_GetItemCount( hLvWnd );
 
 	if( !(ptPath) ){	return iCount;	}
-	if( NULL == ptPath[0] ){	return iCount;	}
+	if( 0 == ptPath[0] ){	return iCount;	}
 
 	StringCchCopy( atName, MAX_PATH, ptPath );
 	PathStripPath( atName );
@@ -1112,7 +1112,7 @@ HRESULT ClipStealDoing( HWND hWnd )
 
 
 	//	保存するファイル指定が無いならナニもしない
-	if( NULL == gatClipFile[0] ){	return E_NOTIMPL;	}
+	if( 0 == gatClipFile[0] ){	return E_NOTIMPL;	}
 
 	//	クリップスティール機能有効？
 	if( !(gbClipSteal) ){	return  S_FALSE;	}

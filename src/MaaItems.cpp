@@ -1279,7 +1279,7 @@ HRESULT AacFindTextEntry( HWND hWnd, UINT bMode )
 	{
 		GetDlgItemText( hWnd, IDE_MAA_TXTFIND_TEXT, atString, MAX_STRING );
 		//	エディットボッキスが空ならなんもせん
-		if( NULL == atString[0] )	return E_NOTIMPL;
+		if( 0 == atString[0] )	return E_NOTIMPL;
 
 		//	０ファイル先頭から　１今の天辺頁から
 		isNowPage = IsDlgButtonChecked( hWnd, IDB_MAA_TXTFIND_TOP_GO ) ? FALSE : TRUE;
@@ -1287,7 +1287,7 @@ HRESULT AacFindTextEntry( HWND hWnd, UINT bMode )
 	else	//	Ｆ３で
 	{
 		//	検索条件が無いときはなにもしない
-		if( NULL == gatFindText[0] )	return E_NOTIMPL;
+		if( 0 == gatFindText[0] )	return E_NOTIMPL;
 
 		//	バッファからコピーしておく・これにより前回と同じ条件扱いになる
 		StringCchCopy( atString, MAX_STRING, gatFindText );
@@ -1423,7 +1423,7 @@ HRESULT AacItemAdding( HWND hWnd, LPTSTR ptFile )
 				SetFilePointer( hFile,  0, NULL, FILE_END );	//	念のため末尾
 				if( acCheck[0] != '\r' || acCheck[1] != '\n' )	//	末尾が改行じゃなかったら
 				{
-					acCheck[0] = '\r';	acCheck[1] = '\n';	acCheck[2] = NULL;
+					acCheck[0] = '\r';	acCheck[1] = '\n';	acCheck[2] = 0;
 					WriteFile( hFile, acCheck, 2, &wrote, NULL );	//	改行書いておく
 				}
 

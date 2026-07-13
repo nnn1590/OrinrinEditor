@@ -337,7 +337,7 @@ LPTSTR UserDefTextLineAlloc( UINT idNum, INT uLine )
 		itLetter != gstUserItem[idNum].vcUnits.at( uLine ).vcLine.end(); i++, itLetter++ )
 	{	ptText[i] = itLetter->cchMozi;	}
 
-	ptText[i] = NULL;
+	ptText[i] = 0;
 
 	return ptText;
 }

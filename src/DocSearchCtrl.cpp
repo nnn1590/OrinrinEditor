@@ -979,7 +979,7 @@ HRESULT FindDelayPageReSearch( INT iTgtPage )
 {
 
 	//	全体検索でないか、検索文字列が空なら無視してよろし
-	if(  1 != giSetRange || NULL == gatLastPtn[0] ){	return  E_ABORT;	}
+	if(  1 != giSetRange || 0 == gatLastPtn[0] ){	return  E_ABORT;	}
 
 
 	//	とりあえず頁Search

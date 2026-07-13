@@ -1288,7 +1288,7 @@ HRESULT PageListNameRewrite( LPTSTR ptName )
 	StringCchLength( ptName, STRSAFE_MAX_CCH, &cchSize );
 
 	//	はみ出さないように、サイズ末端を強制NULL
-	if( SUB_STRING <= cchSize ){	ptName[(SUB_STRING-1)] = NULL;	}
+	if( SUB_STRING <= cchSize ){	ptName[(SUB_STRING-1)] = 0;	}
 
 	//	本体書き換えて
 	StringCchCopy( (*gitFileIt).vcCont.at( gixFocusPage ).atPageName, SUB_STRING, ptName );
@@ -1523,8 +1523,8 @@ LRESULT Plv_OnNotify( HWND hWnd, INT idFrom, LPNMHDR pstNmhdr )
 					//if( 2 <= rdLength )
 					//{
 					//	//	末端に余計な改行があるので消しておく
-					//	gptPgTipBuf[rdLength-1] = NULL;
-					//	gptPgTipBuf[rdLength-2] = NULL;
+					//	gptPgTipBuf[rdLength-1] = 0;
+					//	gptPgTipBuf[rdLength-2] = 0;
 					//	rdLength -= 2;
 					//}
 					//	余計な改行は無くなった

@@ -23,7 +23,7 @@ If not, see <http://www.gnu.org/licenses/>.
 typedef struct tagUNICODENAME
 {
 	UINT	dCode;
-	LPTSTR	ptNameStr;
+	LPCTSTR	ptNameStr;
 	UINT	dWidth;
 
 } UNICODENAME, *LPUNICODENAME;

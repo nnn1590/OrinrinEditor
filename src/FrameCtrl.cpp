@@ -928,7 +928,7 @@ UINT StringWidthAdjust( CONST UINT iFwOffs, LPTSTR ptStr, CONST UINT_PTR cchSz, 
 				iBuf = ViewLetterWidthGet( atWork[dm] );
 				if( iMaxDot < (iDotCnt+iBuf) )
 				{
-					atWork[dm] = NULL;	//	一旦文字列閉じる
+					atWork[dm] = 0;	//	一旦文字列閉じる
 					iBuf = iMaxDot - iDotCnt;
 					if( 0 < iBuf )
 					{
@@ -1174,8 +1174,8 @@ LPTSTR FrameMakeOutsideBoundary( CONST INT iWidth, CONST INT iHeight, LPFRAMEINF
 
 #ifdef DO_TRY_CATCH
 	}
-	catch( exception &err ){	return (LPTSTR)ETC_MSG( err.what( ), NULL );	}
-	catch( ... ){	return (LPTSTR)ETC_MSG( ("etc error"), NULL );	}
+	catch( exception &err ){	return (LPTSTR)ETC_MSG( err.what( ), 0 );	}
+	catch( ... ){	return (LPTSTR)ETC_MSG( ("etc error"), 0 );	}
 #endif
 
 	return ptBufStr;
@@ -1375,8 +1375,8 @@ LPTSTR FrameMakeInsideBoundary( UINT dType, PINT piValue, LPFRAMEINFO pstInfo )
 
 #ifdef DO_TRY_CATCH
 	}
-	catch( exception &err ){	return (LPTSTR)ETC_MSG( err.what( ), NULL );	}
-	catch( ... ){	return (LPTSTR)ETC_MSG( ("etc error"), NULL );	}
+	catch( exception &err ){	return (LPTSTR)ETC_MSG( err.what( ), 0 );	}
+	catch( ... ){	return (LPTSTR)ETC_MSG( ("etc error"), 0 );	}
 #endif
 
 	return ptBufStr;
@@ -1763,7 +1763,7 @@ UINT FrameMultiSubstring( LPCTSTR ptSrc, CONST UINT dLine, LPTSTR ptDest, CONST 
 			}
 		}
 	}
-	ptDest[(cchSz-1)] = NULL;	//	ヌルターミネータ
+	ptDest[(cchSz-1)] = 0;	//	ヌルターミネータ
 
 //	StringCchLength( ptDest, cchSz, &cchSrc );	//	ブッコ抜いた文字列の長さ
 	iStrDot = ViewStringWidthGet( ptDest );	//	ブッコ抜いた文字列のドット長

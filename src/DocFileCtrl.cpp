@@ -210,7 +210,7 @@ HRESULT DocFileBackup( HWND hWnd )
 
 		StringCchCopy( atBuffer, MAX_PATH, itFile->atFileName );
 
-		if( atBuffer[0] == NULL )	//	名称未設定状態
+		if( atBuffer[0] == 0 )	//	名称未設定状態
 		{
 			StringCchCopy( atFileName, MAX_STRING, itFile->atDummyName );
 		}
@@ -382,7 +382,7 @@ HRESULT DocFileSave( HWND hWnd, UINT bStyle )
 
 	StringCchCopy( atFilePath, MAX_PATH, (*gitFileIt).atFileName );
 
-	if( NULL == (*gitFileIt).atFileName[0] )	bNoName = TRUE;
+	if( 0 == (*gitFileIt).atFileName[0] )	bNoName = TRUE;
 
 	//	リネームか、ファイル名が無かったら保存ダイヤログ開く
 	if( (bStyle & D_RENAME) || bNoName )
@@ -417,7 +417,7 @@ HRESULT DocFileSave( HWND hWnd, UINT bStyle )
 
 		if( bUnic || bUtf8 )
 		{	//	名無しのままエクスポートしようとしてたら無効
-			if( NULL == (*gitFileIt).atFileName[0] )
+			if( 0 == (*gitFileIt).atFileName[0] )
 			{
 				MessageBox( hWnd, TEXT("先に通常の保存をしてからエクスポートしてね。"), TEXT("お燐からのお知らせ"), MB_OK | MB_ICONINFORMATION );
 				return E_FAIL;
@@ -841,7 +841,7 @@ HRESULT DocHtmlExport( HWND hWnd )
 	StringCchCopy( atFilePath, MAX_PATH, (*gitFileIt).atFileName );
 
 	//	今開いているファイルが未保存なら、チューシ
-	if( gitFileIt->dModify || ( NULL == atFilePath[0] ) )
+	if( gitFileIt->dModify || ( 0 == atFilePath[0] ) )
 	{
 		MessageBox( hWnd, TEXT("先にファイルを保存してからにしてね。"), TEXT("ファイルが保存されてないよ"), MB_OK | MB_ICONERROR );
 		return E_ABORT;
@@ -850,7 +850,7 @@ HRESULT DocHtmlExport( HWND hWnd )
 
 	ZeroMemory( atExePath, sizeof(atExePath) );
 	InitParamString( INIT_LOAD, VS_EXT_M2H_PATH, atExePath );
-	if( NULL == atExePath[0] )
+	if( 0 == atExePath[0] )
 	{
 		MessageBox( hWnd, TEXT("MLT2HTML.exe を設定しておいてね。"), TEXT("外部ツールが無いよ"), MB_OK | MB_ICONERROR );
 		return E_ABORT;

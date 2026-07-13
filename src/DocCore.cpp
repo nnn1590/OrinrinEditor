@@ -400,7 +400,7 @@ INT DocMultiFileFetch( INT iTgt, LPTSTR ptFile, LPTSTR ptIniPath )
 
 	assert( ptFile );
 
-	if( iCount <= iTgt ){	ptFile[0] = NULL;	return iCount;	}
+	if( iCount <= iTgt ){	ptFile[0] = 0;	return iCount;	}
 	//	オーバーしてたら無効にして終了
 
 	StringCchPrintf( atKeyName, MIN_STRING, TEXT("Item%u"), iTgt );
@@ -432,7 +432,7 @@ HRESULT DocMultiFileStore( LPTSTR ptIniPath )
 	i = 0;
 	for( itNow = gltMultiFiles.begin( ); itNow != gltMultiFiles.end(); itNow++ )
 	{
-		if( NULL != itNow->atFileName[0] )
+		if( 0 != itNow->atFileName[0] )
 		{
 			StringCchPrintf( atKeyName, MIN_STRING, TEXT("Item%u"), i );
 			WritePrivateProfileString( TEXT("MultiOpen"), atKeyName, itNow->atFileName, ptIniPath );
@@ -466,7 +466,7 @@ LPTSTR DocMultiFileNameGet( INT tabNum )
 	if( itNow == gltMultiFiles.end() )	return NULL;	//	ヒット無し・アリエナーイ
 
 	//	名無しならダミー名
-	if( NULL == itNow->atFileName[ 0] ){	return itNow->atDummyName;	}
+	if( 0 == itNow->atFileName[ 0] ){	return itNow->atDummyName;	}
 
 	return itNow->atFileName;	//	ファイル名戻す
 }
@@ -630,18 +630,18 @@ LPTSTR DocFileHugeSeparate( LPTSTR ptSource, UINT_PTR cchSource )
 	dEmptyCnt = 0;
 	for( ds = 0; cchSource > ds; ds++ )
 	{
-		if( NULL == ptSource[ds] )	break;
+		if( 0 == ptSource[ds] )	break;
 
 		ptDest[dd] = ptSource[ds];	//	とりあえず文字を写していく
 		dd++;	//	こっちは進めておｋ
-		ptDest[dd] = NULL;	//	ターミネート
+		ptDest[dd] = 0;	//	ターミネート
 
 		if( 0xD == ptSource[ds] && 0xA == ptSource[ds+1] )	//	改行があった場合
 		{
 			ds++;	//	その改行をうつす
 			ptDest[dd] = ptSource[ds];
 			dd++;	//	こっちは進めておｋ
-			ptDest[dd] = NULL;	//	ターミネート
+			ptDest[dd] = 0;	//	ターミネート
 
 			if( cchDest <= (dd+12) )	//	残り少なくなってきたら
 			{
@@ -734,7 +734,7 @@ LPARAM DocFileInflate( LPTSTR ptFileName )
 	assert( ptFileName );	//	ファイル開けないのはバグ
 
 	//	ファイル名が空っぽだったら自動的にアウツ！
-	if( NULL == ptFileName[0] ){	return 0;	}
+	if( 0 == ptFileName[0] ){	return 0;	}
 
 	//	レッツオーポン
 	hFile = CreateFile( ptFileName, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL );
@@ -2048,7 +2048,7 @@ HRESULT DocSelText2PageName( VOID )
 	{
 		if( 0x0D == ptText[d] )
 		{
-			ptText[d] = NULL;
+			ptText[d] = 0;
 			break;
 		}
 	}

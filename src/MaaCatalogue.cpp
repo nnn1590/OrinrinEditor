@@ -339,7 +339,7 @@ UINT AacTitleCheck( LPAAMATRIX pstItem )
 		{
 			if( !(strncmp( pcCaret, "】", 2 ) ) )
 			{
-				*pcCaret = NULL;
+				*pcCaret = 0;
 				break;
 			}
 			pcCaret++;
