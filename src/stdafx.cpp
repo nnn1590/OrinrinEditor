@@ -280,7 +280,7 @@ LPSTR SjisEntityExchange( LPCSTR pcMoto )
 	szStr = szMoto + 2;
 	pcOutput = (LPSTR)malloc( szStr );	//	ヌルターミネータ用
 	if( !(pcOutput) )	return NULL;
-	ZeroMemory( pcOutput, szStr );	
+	ZeroMemory( pcOutput, szStr );
 
 
 	for( sc = 0, dt = 0; szMoto > sc; sc++ )

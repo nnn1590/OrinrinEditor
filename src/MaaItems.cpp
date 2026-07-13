@@ -70,10 +70,10 @@ EXTERNED HFONT	ghTipFont;			//!<	ツールチップ用
 
 static  HWND	ghComboxWnd;		//!<	見出し用コンボックス
 
-static WNDPROC	gpfOrgAaItemsProc;	//!<	
-static WNDPROC	gpfOrgAaTitleCbxProc;	//!<	
+static WNDPROC	gpfOrgAaItemsProc;	//!<
+static WNDPROC	gpfOrgAaTitleCbxProc;	//!<
 
-static LPTSTR	gptTipBuffer;		//!<	
+static LPTSTR	gptTipBuffer;		//!<
 
 static INT		gixTopItem;			//!<	一覧の最上位
 static INT		gixMaxItem;			//!<	アイテム個数
@@ -109,33 +109,33 @@ extern  UINT	gbAAtipView;		//!<	非０で、ＡＡツールチップ表示
 extern  HWND	ghSplitaWnd;		//!<	スプリットバーハンドル
 
 static vector<VIEWORDER>	gvcViewOrder;	//!<	今見えてるやつの内容
-static vector<AATITLE>		gvcAaTitle;		//!<	
+static vector<AATITLE>		gvcAaTitle;		//!<
 //-------------------------------------------------------------------------------------------------
 
 #ifdef MAA_TOOLTIP
-LRESULT	Aai_OnNotify( HWND , INT, LPNMHDR );			//!<	
+LRESULT	Aai_OnNotify( HWND , INT, LPNMHDR );			//!<
 #endif
-VOID	Aai_OnMouseMove( HWND, INT, INT, UINT );		//!<	
-VOID	Aai_OnLButtonUp( HWND, INT, INT, UINT );		//!<	
-VOID	Aai_OnMButtonUp( HWND, INT, INT, UINT );		//!<	
-VOID	Aai_OnContextMenu( HWND, HWND, UINT, UINT );	//!<	
-VOID	Aai_OnDropFiles( HWND , HDROP );				//!<	
+VOID	Aai_OnMouseMove( HWND, INT, INT, UINT );		//!<
+VOID	Aai_OnLButtonUp( HWND, INT, INT, UINT );		//!<
+VOID	Aai_OnMButtonUp( HWND, INT, INT, UINT );		//!<
+VOID	Aai_OnContextMenu( HWND, HWND, UINT, UINT );	//!<
+VOID	Aai_OnDropFiles( HWND , HDROP );				//!<
 
-HRESULT	AaItemsFavDelete( LPSTR, UINT );	//!<	
+HRESULT	AaItemsFavDelete( LPSTR, UINT );	//!<
 
 #ifdef MAA_TEXT_FIND
-UINT	AacItemFindOnePage( HWND, LPTSTR, INT );	//!<	
+UINT	AacItemFindOnePage( HWND, LPTSTR, INT );	//!<
 #endif
 
-LRESULT	CALLBACK gpfAaItemsProc( HWND, UINT, WPARAM, LPARAM );		//!<	
-LRESULT	CALLBACK gpfAaTitleCbxProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+LRESULT	CALLBACK gpfAaItemsProc( HWND, UINT, WPARAM, LPARAM );		//!<
+LRESULT	CALLBACK gpfAaTitleCbxProc( HWND, UINT, WPARAM, LPARAM );	//!<
 
 #ifndef _ORRVW
-INT_PTR	CALLBACK AaItemAddDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+INT_PTR	CALLBACK AaItemAddDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<
 #endif
 
 #ifdef USE_HOVERTIP
-LPTSTR	CALLBACK AaItemsHoverTipInfo( LPVOID  );	//!<	
+LPTSTR	CALLBACK AaItemsHoverTipInfo( LPVOID  );	//!<
 #endif
 //-------------------------------------------------------------------------------------------------
 
@@ -240,7 +240,7 @@ HRESULT AaItemsInitialise( HWND hWnd, HINSTANCE hInst, LPRECT ptRect )
 	ZeroMemory( &stToolInfo, sizeof(TTTOOLINFO) );
 	stToolInfo.cbSize   = sizeof(TTTOOLINFO);
 	stToolInfo.uFlags   = TTF_SUBCLASS;
-	stToolInfo.hinst    = NULL;	//	
+	stToolInfo.hinst    = NULL;	//
 	stToolInfo.hwnd     = ghItemsWnd;
 	stToolInfo.uId      = IDSO_AAITEMS;
 	GetClientRect( ghItemsWnd, &stToolInfo.rect );
@@ -403,7 +403,7 @@ LRESULT CALLBACK gpfAaItemsProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPar
 	{
 		HANDLE_MSG( hWnd, WM_CHAR,        Maa_OnChar );
 		HANDLE_MSG( hWnd, WM_KEYDOWN,     Aai_OnKey );			//	20120221
-		HANDLE_MSG( hWnd, WM_KEYUP,       Aai_OnKey );			//	
+		HANDLE_MSG( hWnd, WM_KEYUP,       Aai_OnKey );			//
 
 		HANDLE_MSG( hWnd, WM_MOUSEMOVE,   Aai_OnMouseMove );	//	マウスいごいた
 		HANDLE_MSG( hWnd, WM_LBUTTONUP,   Aai_OnLButtonUp );	//	マウス左ボタンあげ
@@ -890,7 +890,7 @@ VOID Aai_OnContextMenu( HWND hWnd, HWND hWndContext, UINT xPos, UINT yPos )
 	//	gixNowSelは、何も無いところだと−１になる
 
 	//	フラグにTPM_RETURNCMDを指定すると、WM_COMMANDが飛ばない
-	dRslt = TrackPopupMenu( hSubMenu, TPM_RETURNCMD, sx, sy, 0, hWnd, NULL );	//	TPM_CENTERALIGN | TPM_VCENTERALIGN | 
+	dRslt = TrackPopupMenu( hSubMenu, TPM_RETURNCMD, sx, sy, 0, hWnd, NULL );	//	TPM_CENTERALIGN | TPM_VCENTERALIGN |
 	DestroyMenu( hMenu );
 	switch( dRslt )
 	{
@@ -1400,7 +1400,7 @@ HRESULT AacItemAdding( HWND hWnd, LPTSTR ptFile )
 	CHAR		acCheck[6];
 	DWORD		readed, wrote;
 	UINT_PTR	cchSize, cchSep, cbSize;
-	ITEMADDINFO	stIaInfo;	
+	ITEMADDINFO	stIaInfo;
 
 	ZeroMemory( &stIaInfo, sizeof(ITEMADDINFO) );
 
@@ -1477,7 +1477,7 @@ INT_PTR CALLBACK AaItemAddDlgProc( HWND hDlg, UINT message, WPARAM wParam, LPARA
 			pstIaInfo = (LPITEMADDINFO)(lParam);
 			GetClientRect( hDlg, &rect );
 			CreateWindowEx( 0, WC_BUTTON, TEXT("今の頁"),         WS_CHILD | WS_VISIBLE, 0, 0, 75, 23, hDlg, (HMENU)IDB_MAID_NOWPAGE, GetModuleHandle(NULL), NULL );
-			CreateWindowEx( 0, WC_BUTTON, TEXT("クリップボード"), WS_CHILD | WS_VISIBLE, 75, 0, 120, 23, hDlg, (HMENU)IDB_MAID_CLIPBOARD, GetModuleHandle(NULL), NULL ); 
+			CreateWindowEx( 0, WC_BUTTON, TEXT("クリップボード"), WS_CHILD | WS_VISIBLE, 75, 0, 120, 23, hDlg, (HMENU)IDB_MAID_CLIPBOARD, GetModuleHandle(NULL), NULL );
 			CreateWindowEx( 0, WC_EDIT,   TEXT(""),               WS_CHILD | WS_VISIBLE | WS_BORDER | ES_AUTOHSCROLL, 195, 0, rect.right-195-50, 23, hDlg, (HMENU)IDE_MAID_ITEMNAME, GetModuleHandle(NULL), NULL );
 			CreateWindowEx( 0, WC_BUTTON, TEXT("追加"),           WS_CHILD | WS_VISIBLE, rect.right-50, 0, 50, 23, hDlg, (HMENU)IDB_MAID_ADDGO, GetModuleHandle(NULL), NULL );
 			CreateWindowEx( 0, WC_EDIT,   TEXT(""),               WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | WS_HSCROLL | ES_MULTILINE | ES_READONLY, 0, 23, rect.right, rect.bottom-23, hDlg, (HMENU)IDE_MAID_CONTENTS, GetModuleHandle(NULL), NULL );
@@ -1551,8 +1551,8 @@ INT_PTR CALLBACK AaItemAddDlgProc( HWND hDlg, UINT message, WPARAM wParam, LPARA
 	return (INT_PTR)FALSE;
 }
 //-------------------------------------------------------------------------------------------------
-	
-	
+
+
 #endif
 
 #endif	//	MAA_IADD_PLUS

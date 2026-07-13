@@ -29,7 +29,7 @@ If not, see <http://www.gnu.org/licenses/>.
 
 #define EXTRA_NODE	TEXT("[*追加項目*]")
 
-#define WMP_PROF_ACT	(WM_APP+100)	
+#define WMP_PROF_ACT	(WM_APP+100)
 
 #define TREE_WIDTH	170	//!<	MAAのツリービューの標準幅
 #define LSSCL_WIDTH	15	//!<	MAAのAA一覧のスクロールバーの幅
@@ -49,72 +49,72 @@ typedef LRESULT (CALLBACK *BUFFERBACK)(UINT, UINT, UINT, LPCVOID);
 
 
 // このコード モジュールに含まれる関数の宣言
-UINT		Maa_OnMouseWheel( HWND, INT, INT, INT, UINT );	//!<	
-VOID		Maa_OnContextMenu( HWND, HWND, UINT, UINT );	//!<	
-VOID		Maa_OnChar( HWND , TCHAR, INT );				//!<	
-VOID		Maa_OnSize( HWND , UINT, INT, INT );			//!<	
+UINT		Maa_OnMouseWheel( HWND, INT, INT, INT, UINT );	//!<
+VOID		Maa_OnContextMenu( HWND, HWND, UINT, UINT );	//!<
+VOID		Maa_OnChar( HWND , TCHAR, INT );				//!<
+VOID		Maa_OnSize( HWND , UINT, INT, INT );			//!<
 VOID		Maa_OnCommand( HWND , INT, HWND, UINT );		//!<	WM_COMMAND の処理
 
 #ifdef _ORRVW
-INT_PTR	CALLBACK OptionDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+INT_PTR	CALLBACK OptionDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<
 #endif
 
-VOID		StatusBarMsgSet( UINT, LPTSTR );	//!<	
+VOID		StatusBarMsgSet( UINT, LPTSTR );	//!<
 
-LRESULT		TabBarNotify( HWND, LPNMHDR );		//!<	
-VOID		TabBarResize( HWND, LPRECT );		//!<	
+LRESULT		TabBarNotify( HWND, LPNMHDR );		//!<
+VOID		TabBarResize( HWND, LPRECT );		//!<
 
-HRESULT		TreeInitialise( HWND, HINSTANCE, LPRECT );	//!<	
-HRESULT		TreeResize( HWND , LPRECT );				//!<	
-HRESULT		TreeConstruct( HWND, LPCTSTR, BOOLEAN );	//!<	
-LRESULT		TreeNotify( HWND, LPNMTREEVIEW );			//!<	
-LPTSTR		TreeBaseNameGet( VOID );					//!<	
-UINT		TreeFavIsUnderCursor( HWND, HWND, INT, INT, INT, UINT );	//!<	
-LPARAM		TreeItemInfoGet( HTREEITEM, LPTSTR, size_t );	//!<	
-INT			TreeSelItemProc( HWND, HTREEITEM, UINT );	//!<	
-UINT		TreeNodePathGet( HTREEITEM, LPTSTR );	//!<	
+HRESULT		TreeInitialise( HWND, HINSTANCE, LPRECT );	//!<
+HRESULT		TreeResize( HWND , LPRECT );				//!<
+HRESULT		TreeConstruct( HWND, LPCTSTR, BOOLEAN );	//!<
+LRESULT		TreeNotify( HWND, LPNMTREEVIEW );			//!<
+LPTSTR		TreeBaseNameGet( VOID );					//!<
+UINT		TreeFavIsUnderCursor( HWND, HWND, INT, INT, INT, UINT );	//!<
+LPARAM		TreeItemInfoGet( HTREEITEM, LPTSTR, size_t );	//!<
+INT			TreeSelItemProc( HWND, HTREEITEM, UINT );	//!<
+UINT		TreeNodePathGet( HTREEITEM, LPTSTR );	//!<
 
-HRESULT		TreeMaaFileFind( HWND );	//!<	
+HRESULT		TreeMaaFileFind( HWND );	//!<
 
-LRESULT		CALLBACK FavListFolderNameBack( UINT, UINT, UINT, LPCVOID );	//!<	
-HRESULT		FavListSelected( HWND, UINT );		//!<	
-HRESULT		FavContsRedrawRequest( HWND );		//!<	
+LRESULT		CALLBACK FavListFolderNameBack( UINT, UINT, UINT, LPCVOID );	//!<
+HRESULT		FavListSelected( HWND, UINT );		//!<
+HRESULT		FavContsRedrawRequest( HWND );		//!<
 
-HRESULT		TabMultipleSelDelete( HWND );		//!<	
-HRESULT		TabMultipleDeleteAll( HWND );		//!<	
-HRESULT		TabMultipleStore( HWND );			//!<	
-INT			TabMultipleTopMemory( INT );		//!<	
-INT			TabMultipleNowSel( VOID );			//!<	
-HRESULT		TabMultipleDropAdd( HWND, LPCTSTR );	//!<	
+HRESULT		TabMultipleSelDelete( HWND );		//!<
+HRESULT		TabMultipleDeleteAll( HWND );		//!<
+HRESULT		TabMultipleStore( HWND );			//!<
+INT			TabMultipleTopMemory( INT );		//!<
+INT			TabMultipleNowSel( VOID );			//!<
+HRESULT		TabMultipleDropAdd( HWND, LPCTSTR );	//!<
 
-HRESULT		TabMultipleCtrlFromFind( HWND );	//!<	
+HRESULT		TabMultipleCtrlFromFind( HWND );	//!<
 
 
-HRESULT		AaItemsInitialise( HWND, HINSTANCE, LPRECT );		//!<	
-VOID		AaItemsResize( HWND, LPRECT );						//!<	
-VOID		AaItemsDrawItem( HWND, CONST DRAWITEMSTRUCT * );	//!<	
-//VOID		AaItemsMeasureItem( HWND, LPMEASUREITEMSTRUCT );	//!<	
-HRESULT		AaItemsDoShow( HWND, LPTSTR, UINT );		//!<	
-HRESULT		AaItemsFavUpload( LPSTR, UINT );			//!<	
-UINT		AaItemsIsUnderCursor( HWND, HWND, INT );	//!<	
+HRESULT		AaItemsInitialise( HWND, HINSTANCE, LPRECT );		//!<
+VOID		AaItemsResize( HWND, LPRECT );						//!<
+VOID		AaItemsDrawItem( HWND, CONST DRAWITEMSTRUCT * );	//!<
+//VOID		AaItemsMeasureItem( HWND, LPMEASUREITEMSTRUCT );	//!<
+HRESULT		AaItemsDoShow( HWND, LPTSTR, UINT );		//!<
+HRESULT		AaItemsFavUpload( LPSTR, UINT );			//!<
+UINT		AaItemsIsUnderCursor( HWND, HWND, INT );	//!<
 VOID		AaTitleClear( VOID );
-INT			AaTitleAddString( UINT, LPSTR );			//!<	
+INT			AaTitleAddString( UINT, LPSTR );			//!<
 VOID		AaTitleSelect( HWND, UINT );
-UINT		AaItemsDoSelect( HWND, UINT, UINT );		//!<	
+UINT		AaItemsDoSelect( HWND, UINT, UINT );		//!<
 
-VOID		Aai_OnKey( HWND, UINT, BOOL, INT, UINT );	//!<	
-VOID		Aai_OnVScroll( HWND , HWND, UINT, INT );	//!<	
+VOID		Aai_OnKey( HWND, UINT, BOOL, INT, UINT );	//!<
+VOID		Aai_OnVScroll( HWND , HWND, UINT, INT );	//!<
 
-DWORD		AacAssembleFile( HWND, LPTSTR );		//!<	
-HRESULT		AacMatrixClear( VOID  );				//!<	
-DWORD		AacAssembleSql( HWND, LPCTSTR );		//!<	
+DWORD		AacAssembleFile( HWND, LPTSTR );		//!<
+HRESULT		AacMatrixClear( VOID  );				//!<
+DWORD		AacAssembleSql( HWND, LPCTSTR );		//!<
 
 #ifdef MAA_TEXT_FIND
-HRESULT		AacFindTextEntry( HWND , UINT );	//!<	
+HRESULT		AacFindTextEntry( HWND , UINT );	//!<
 #endif
 
-HRESULT		OpenProfileLoad( HWND, INT );			//!<	
-HRESULT		OpenProfileLogging( HWND, LPCTSTR );	//!<	
+HRESULT		OpenProfileLoad( HWND, INT );			//!<
+HRESULT		OpenProfileLogging( HWND, LPCTSTR );	//!<
 
 #ifndef _ORRVW
   #ifdef MAA_IADD_PLUS
@@ -125,14 +125,14 @@ HRESULT		AacItemAdding( HWND, LPTSTR );
 HRESULT		AacItemDelete( HWND, LONG );
 #endif
 
-HRESULT		SqlDatabaseOpenClose( BYTE, LPCTSTR );	//!<	
+HRESULT		SqlDatabaseOpenClose( BYTE, LPCTSTR );	//!<
 
-HRESULT		SqlFavFolderEnum( BUFFERBACK );	//!<	
-UINT		SqlFavCount( LPCTSTR, PUINT );	//!<	
-HRESULT		SqlFavArtEnum( LPCTSTR, BUFFERBACK );	//!<	
-HRESULT		SqlFavUpload( LPTSTR, DWORD, LPSTR, UINT );	//!<	
-HRESULT		SqlFavDelete( LPTSTR, DWORD );	//!<	
-HRESULT		SqlFavFolderDelete( LPTSTR );	//!<	
+HRESULT		SqlFavFolderEnum( BUFFERBACK );	//!<
+UINT		SqlFavCount( LPCTSTR, PUINT );	//!<
+HRESULT		SqlFavArtEnum( LPCTSTR, BUFFERBACK );	//!<
+HRESULT		SqlFavUpload( LPTSTR, DWORD, LPSTR, UINT );	//!<
+HRESULT		SqlFavDelete( LPTSTR, DWORD );	//!<
+HRESULT		SqlFavFolderDelete( LPTSTR );	//!<
 
 INT			TreeProfileMake( HWND, LPTSTR );
 INT			TreeProfileOpen( HWND );

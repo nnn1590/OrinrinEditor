@@ -136,14 +136,14 @@ LRESULT	CALLBACK gpfFavListProc(  HWND , UINT, WPARAM, LPARAM );	//!<	使用リ�
 LRESULT	CALLBACK gpfTreeViewProc( HWND , UINT, WPARAM, LPARAM );	//!<	ツリービューのサブクラスプロシージャ
 LRESULT	CALLBACK gpfTabMultiProc( HWND , UINT, WPARAM, LPARAM );	//!<	タブのサブクラスプロシージャ
 
-VOID	Mtb_OnMButtonUp( HWND, INT, INT, UINT );	//!<	
+VOID	Mtb_OnMButtonUp( HWND, INT, INT, UINT );	//!<
 
-VOID	Mtb_OnLButtonDblclk( HWND, BOOL, INT, INT, UINT );	//!<	
+VOID	Mtb_OnLButtonDblclk( HWND, BOOL, INT, INT, UINT );	//!<
 
 #ifdef HUKUTAB_DRAGMOVE
-VOID	TabMultipleOnLButtonDown( HWND, INT, INT, UINT );	//!<	
-VOID	TabMultipleOnMouseMove(   HWND, INT, INT, UINT );	//!<	
-VOID	TabMultipleOnLButtonUp(   HWND, INT, INT, UINT );	//!<	
+VOID	TabMultipleOnLButtonDown( HWND, INT, INT, UINT );	//!<
+VOID	TabMultipleOnMouseMove(   HWND, INT, INT, UINT );	//!<
+VOID	TabMultipleOnLButtonUp(   HWND, INT, INT, UINT );	//!<
 #endif
 //-------------------------------------------------------------------------------------------------
 
@@ -163,7 +163,7 @@ HRESULT TreeInitialise( HWND hWnd, HINSTANCE hInst, LPRECT ptRect )
 
 	DWORD		dwStyles;
 
-	HIMAGELIST	hTreeImgList;				//!<	
+	HIMAGELIST	hTreeImgList;				//!<
 	HICON	hIcon;
 
 
@@ -273,11 +273,11 @@ LRESULT CALLBACK gpfFavListProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPar
 
 	switch( msg )
 	{
-		HANDLE_MSG( hWnd, WM_CHAR,    Maa_OnChar  );	//	
+		HANDLE_MSG( hWnd, WM_CHAR,    Maa_OnChar  );	//
 		HANDLE_MSG( hWnd, WM_COMMAND, Maa_OnCommand );	//	アクセロリータ用
 
 		HANDLE_MSG( hWnd, WM_KEYDOWN, Aai_OnKey );			//	20120221
-		HANDLE_MSG( hWnd, WM_KEYUP,   Aai_OnKey );			//	
+		HANDLE_MSG( hWnd, WM_KEYUP,   Aai_OnKey );			//
 
 		case WM_MOUSEWHEEL:
 			ulRslt = Maa_OnMouseWheel( hWnd, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (int)(short)HIWORD(wParam), (UINT)(short)LOWORD(wParam) );
@@ -306,13 +306,13 @@ LRESULT CALLBACK gpfTreeViewProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 
 	switch( msg )
 	{
-		HANDLE_MSG( hWnd, WM_CHAR,      Maa_OnChar  );		//	
+		HANDLE_MSG( hWnd, WM_CHAR,      Maa_OnChar  );		//
 		HANDLE_MSG( hWnd, WM_COMMAND,   Maa_OnCommand );	//	アクセロリータ用
 
 		HANDLE_MSG( hWnd, WM_KEYDOWN,   Aai_OnKey );		//	20120221
-		HANDLE_MSG( hWnd, WM_KEYUP,     Aai_OnKey );		//	
+		HANDLE_MSG( hWnd, WM_KEYUP,     Aai_OnKey );		//
 
-		HANDLE_MSG( hWnd, WM_MBUTTONUP, Mtv_OnMButtonUp );	//	
+		HANDLE_MSG( hWnd, WM_MBUTTONUP, Mtv_OnMButtonUp );	//
 		HANDLE_MSG( hWnd, WM_DROPFILES, Mtv_OnDropFiles );	//	ドラグンドロップの受付
 
 		case WM_MOUSEWHEEL:
@@ -333,7 +333,7 @@ LRESULT CALLBACK gpfTreeViewProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 	@param[in]	hWnd	ツリービューのハンドル
 	@param[in]	x		クルックされたクライヤントＸ位置
 	@param[in]	y		クルックされたクライヤントＹ位置
-	@param[in]	flags	
+	@param[in]	flags
 */
 VOID Mtv_OnMButtonUp( HWND hWnd, INT x, INT y, UINT flags )
 {
@@ -404,20 +404,20 @@ LRESULT	CALLBACK gpfTabMultiProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 {
 	switch( msg )
 	{
-		HANDLE_MSG( hWnd, WM_CHAR,    Maa_OnChar  );	
+		HANDLE_MSG( hWnd, WM_CHAR,    Maa_OnChar  );
 		HANDLE_MSG( hWnd, WM_COMMAND, Maa_OnCommand );	//	アクセロリータ用
 
 		HANDLE_MSG( hWnd, WM_KEYDOWN, Aai_OnKey );			//	20120221
-		HANDLE_MSG( hWnd, WM_KEYUP,   Aai_OnKey );			//	
+		HANDLE_MSG( hWnd, WM_KEYUP,   Aai_OnKey );			//
 
 		HANDLE_MSG( hWnd, WM_MBUTTONUP, Mtb_OnMButtonUp );
 
 		HANDLE_MSG( hWnd, WM_LBUTTONDBLCLK, Mtb_OnLButtonDblclk );
 
 #ifdef HUKUTAB_DRAGMOVE
-		case WM_LBUTTONDOWN:	TabMultipleOnLButtonDown( hWnd, (INT)(SHORT)LOWORD(lParam), (INT)(SHORT)HIWORD(lParam), (UINT)(wParam) );	break;	//	
-		case WM_MOUSEMOVE:		TabMultipleOnMouseMove(   hWnd, (INT)(SHORT)LOWORD(lParam), (INT)(SHORT)HIWORD(lParam), (UINT)(wParam) );	break;	//	
-		case WM_LBUTTONUP:		TabMultipleOnLButtonUp(   hWnd, (INT)(SHORT)LOWORD(lParam), (INT)(SHORT)HIWORD(lParam), (UINT)(wParam) );	break;	//	
+		case WM_LBUTTONDOWN:	TabMultipleOnLButtonDown( hWnd, (INT)(SHORT)LOWORD(lParam), (INT)(SHORT)HIWORD(lParam), (UINT)(wParam) );	break;	//
+		case WM_MOUSEMOVE:		TabMultipleOnMouseMove(   hWnd, (INT)(SHORT)LOWORD(lParam), (INT)(SHORT)HIWORD(lParam), (UINT)(wParam) );	break;	//
+		case WM_LBUTTONUP:		TabMultipleOnLButtonUp(   hWnd, (INT)(SHORT)LOWORD(lParam), (INT)(SHORT)HIWORD(lParam), (UINT)(wParam) );	break;	//
 #endif
 
 		default:	break;
@@ -769,10 +769,10 @@ VOID Maa_OnContextMenu( HWND hWnd, HWND hWndContext, UINT xPos, UINT yPos )
 
 
 		//	右クリではノード選択されないようだ
-		dRslt = TrackPopupMenu( hSubMenu, TPM_RETURNCMD, stPost.x, stPost.y, 0, hWnd, NULL );	//	TPM_CENTERALIGN | TPM_VCENTERALIGN | 
+		dRslt = TrackPopupMenu( hSubMenu, TPM_RETURNCMD, stPost.x, stPost.y, 0, hWnd, NULL );	//	TPM_CENTERALIGN | TPM_VCENTERALIGN |
 		RemoveMenu( hSubMenu, 2, MF_BYPOSITION );
 		DestroyMenu( hMenu );	//このデストロイでポップアップまで破棄されるので、removeしておく
-	
+
 		switch( dRslt )
 		{
 			//	プロフファイル開く
@@ -863,7 +863,7 @@ VOID Maa_OnContextMenu( HWND hWnd, HWND hWndContext, UINT xPos, UINT yPos )
 			case  IDM_AATABS_DELETE:	TabMultipleDelete( hWnd, curSel );	break;
 			case  IDM_AATREE_GOEDIT:	TabMultipleSelect( hWnd, curSel, 1 );	break;
 			//	ツリー側とはアプローチが違うから注意
-			case  IDM_AATABS_ALLDELETE:	
+			case  IDM_AATABS_ALLDELETE:
 				iRslt = MessageBox( hWnd, TEXT("全ての副タブを閉じようとしてるよ。\r\n本当に閉じちゃっていいかい？"), TEXT("お燐からの確認"), MB_YESNO | MB_ICONQUESTION | MB_DEFBUTTON2 );
 				if( IDYES == iRslt ){	TabMultipleDeleteAll( hWnd );	}
 
@@ -1177,7 +1177,7 @@ HRESULT TreeItemFromSqlII( HTREEITEM hTreeParent )
 	if( 0 == dPrntID )
 	{
 		StringCchCopy( atNodeName, MAX_PATH, EXTRA_NODE );
-		//	とりやえずカレントディレクトリのアイコンで良いはず	
+		//	とりやえずカレントディレクトリのアイコンで良いはず
 		//SHGetFileInfo( atCurrent, 0, &stShFileInfo, sizeof(SHFILEINFO), (SHGFI_SYSICONINDEX|SHGFI_SMALLICON) );
 		stTreeIns.item.iImage = TICO_DIR_EXTRA;//stShFileInfo.iIcon;
 		//SHGetFileInfo( atCurrent, 0, &stShFileInfo, sizeof(SHFILEINFO), (SHGFI_SYSICONINDEX|SHGFI_SMALLICON|SHGFI_OPENICON) );
@@ -1643,7 +1643,7 @@ VOID MaaTabBarSizeGet( LPRECT pstRect )
 /*!
 	タブのサイズ変更
 	@param[in]	hWnd	親ウインドウのハンドル
-	@param[in]	pstRect	
+	@param[in]	pstRect
 */
 VOID TabBarResize( HWND hWnd, LPRECT pstRect )
 {

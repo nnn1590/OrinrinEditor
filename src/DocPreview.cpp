@@ -44,15 +44,15 @@ ttp://www.microsoft.com/download/en/details.aspx?displaylang=en&id=11800
 
 */
 
-LRESULT	CALLBACK PreviewWndProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+LRESULT	CALLBACK PreviewWndProc( HWND, UINT, WPARAM, LPARAM );	//!<
 VOID	Pvw_OnCommand( HWND , INT, HWND, UINT );	//!<	WM_COMMAND の処理
-VOID	Pvw_OnSize( HWND , UINT, INT, INT );		//!<	
+VOID	Pvw_OnSize( HWND , UINT, INT, INT );		//!<
 VOID	Pvw_OnPaint( HWND );						//!<	WM_PAINT の処理・枠線描画とか
 VOID	Pvw_OnDestroy( HWND );						//!<	WM_DESTROY の処理・BRUSHとかのオブジェクトの破壊を忘れないように
 
-HRESULT	PreviewHeaderGet( VOID );	//!<	
+HRESULT	PreviewHeaderGet( VOID );	//!<
 
-HRESULT	PreviewPageWrite( INT );	//!<	
+HRESULT	PreviewPageWrite( INT );	//!<
 //-------------------------------------------------------------------------------------------------
 
 /*!

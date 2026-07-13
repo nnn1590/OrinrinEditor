@@ -235,7 +235,7 @@ BOOLEAN ViewDrawCaret( INT rdXdot, INT rdLine, BOOLEAN bOnScr )
 
 	//	スクロールバーからの操作なら、キャレットが画面からはみ出してもよい
 	if( bOnScr )	ViewCaretFrameOutCheck( dX, dY, 1 );
-	
+
 	ViewPositionTransform( &dX, &dY, 1 );
 
 //キャレット位置がマイナスになるようなら、非表示にする

@@ -48,33 +48,33 @@ INIファイルは、文字列先頭の半角は無視するらしい？
 
 #define TB_ITEMS	26
 static  TBBUTTON	gstFIBTBInfo[] = {
-	{ 20,	IDM_FRAME_INS_DECIDE,	TBSTATE_ENABLED,	TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,		{0, 0}, 0, 0  },	//	
+	{ 20,	IDM_FRAME_INS_DECIDE,	TBSTATE_ENABLED,	TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,		{0, 0}, 0, 0  },	//
 	{  0,	0,						TBSTATE_ENABLED,	TBSTYLE_SEP,							{0, 0}, 0, 0  },
-	{  0,	IDM_INSFRAME_ALPHA   ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  1,	IDM_INSFRAME_BRAVO   ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  2,	IDM_INSFRAME_CHARLIE ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  3,	IDM_INSFRAME_DELTA   ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  4,	IDM_INSFRAME_ECHO    ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  5,	IDM_INSFRAME_FOXTROT ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  6,	IDM_INSFRAME_GOLF    ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  7,	IDM_INSFRAME_HOTEL   ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  8,	IDM_INSFRAME_INDIA   ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  9,	IDM_INSFRAME_JULIETTE,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 10,	IDM_INSFRAME_KILO,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 11,	IDM_INSFRAME_LIMA,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 12,	IDM_INSFRAME_MIKE,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 13,	IDM_INSFRAME_NOVEMBER,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 14,	IDM_INSFRAME_OSCAR,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 15,	IDM_INSFRAME_PAPA,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 16,	IDM_INSFRAME_QUEBEC,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 17,	IDM_INSFRAME_ROMEO,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 18,	IDM_INSFRAME_SIERRA,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 19,	IDM_INSFRAME_TANGO,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
+	{  0,	IDM_INSFRAME_ALPHA   ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  1,	IDM_INSFRAME_BRAVO   ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  2,	IDM_INSFRAME_CHARLIE ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  3,	IDM_INSFRAME_DELTA   ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  4,	IDM_INSFRAME_ECHO    ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  5,	IDM_INSFRAME_FOXTROT ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  6,	IDM_INSFRAME_GOLF    ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  7,	IDM_INSFRAME_HOTEL   ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  8,	IDM_INSFRAME_INDIA   ,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  9,	IDM_INSFRAME_JULIETTE,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 10,	IDM_INSFRAME_KILO,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 11,	IDM_INSFRAME_LIMA,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 12,	IDM_INSFRAME_MIKE,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 13,	IDM_INSFRAME_NOVEMBER,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 14,	IDM_INSFRAME_OSCAR,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 15,	IDM_INSFRAME_PAPA,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 16,	IDM_INSFRAME_QUEBEC,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 17,	IDM_INSFRAME_ROMEO,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 18,	IDM_INSFRAME_SIERRA,	TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 19,	IDM_INSFRAME_TANGO,		TBSTATE_ENABLED,	TBSTYLE_CHECKGROUP | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
 	{  0,	0,						TBSTATE_ENABLED,	TBSTYLE_SEP,							{0, 0}, 0, 0  },
-	{ 21,	IDM_FRMINSBOX_QCLOSE,	TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,		{0, 0}, 0, 0  },	//	
+	{ 21,	IDM_FRMINSBOX_QCLOSE,	TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,		{0, 0}, 0, 0  },	//
 	{  0,	0,						TBSTATE_ENABLED,	TBSTYLE_SEP,							{0, 0}, 0, 0  },
-	{ 22,	IDM_FRMINSBOX_PADDING,	TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,		{0, 0}, 0, 0  } 	//	
-};	//	
+	{ 22,	IDM_FRMINSBOX_PADDING,	TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,		{0, 0}, 0, 0  } 	//
+};	//
 
 CONST  TCHAR	*gatDefaultName[20] = {
 	{ TEXT("ALPHA") },		{ TEXT("BRAVO") },	{ TEXT("CHARLIE") },	{ TEXT("DELTA") },		{ TEXT("ECHO") },
@@ -102,7 +102,7 @@ static INT		gNowSel;		//!<	選択中の枠０インデックス
 static TCHAR	gatFrameIni[MAX_PATH];	//!<	20110707	枠用のINIいれる・増やした
 
 
-static  ATOM		gFrmInsAtom;	//!<	
+static  ATOM		gFrmInsAtom;	//!<
 static  HWND		ghFrInbxWnd;
 static  HWND		ghFIBtlbrWnd;
 static HBRUSH		ghBgBrush;
@@ -132,28 +132,28 @@ static  UINT		gbMultiPaddTemp;	//!<	外周に沿うようにパディングす�
 static FRAMEINFO	gstFrameInfo[FRAME_MAX];	//!<	配列で必要数確保でいいか
 //-------------------------------------------------------------------------------------------------
 
-INT_PTR	CALLBACK FrameEditDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+INT_PTR	CALLBACK FrameEditDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<
 
-INT_PTR	Frm_OnInitDialog( HWND , HWND, LPARAM );	//!<	
-INT_PTR	Frm_OnCommand( HWND , INT, HWND, UINT );	//!<	
-INT_PTR	Frm_OnDrawItem( HWND , CONST LPDRAWITEMSTRUCT );	//!<	
-INT_PTR	Frm_OnNotify( HWND , INT, LPNMHDR );	//!<	
+INT_PTR	Frm_OnInitDialog( HWND , HWND, LPARAM );	//!<
+INT_PTR	Frm_OnCommand( HWND , INT, HWND, UINT );	//!<
+INT_PTR	Frm_OnDrawItem( HWND , CONST LPDRAWITEMSTRUCT );	//!<
+INT_PTR	Frm_OnNotify( HWND , INT, LPNMHDR );	//!<
 
-HRESULT	InitFrameItem( UINT, UINT, LPFRAMEINFO );	//!<	
+HRESULT	InitFrameItem( UINT, UINT, LPFRAMEINFO );	//!<
 
-HRESULT	FramePartsUpdate( HWND, HWND, LPFRAMEITEM );	//!<	
+HRESULT	FramePartsUpdate( HWND, HWND, LPFRAMEITEM );	//!<
 
-HRESULT	FrameDataGet( UINT, LPFRAMEINFO );	//!<	
-HRESULT	FrameInfoDisp( HWND );	//!<	
+HRESULT	FrameDataGet( UINT, LPFRAMEINFO );	//!<
+HRESULT	FrameInfoDisp( HWND );	//!<
 
-VOID	FrameDataTranslate( LPTSTR, UINT );	//!<	
+VOID	FrameDataTranslate( LPTSTR, UINT );	//!<
 //INT		FramePartsSizeCalc( LPTSTR, PINT );
 
-UINT	FrameMultiSubstring( LPCTSTR, CONST UINT, LPTSTR, CONST UINT_PTR, CONST INT );	//!<	
+UINT	FrameMultiSubstring( LPCTSTR, CONST UINT, LPTSTR, CONST UINT_PTR, CONST INT );	//!<
 
-INT		FrameMultiSizeGet( LPFRAMEINFO, PINT, PINT );	//!<	
-LPTSTR	FrameMakeOutsideBoundary( CONST INT, CONST INT, LPFRAMEINFO );	//!<	
-LPTSTR	FrameMakeInsideBoundary( UINT , PINT, LPFRAMEINFO );	//!<	
+INT		FrameMultiSizeGet( LPFRAMEINFO, PINT, PINT );	//!<
+LPTSTR	FrameMakeOutsideBoundary( CONST INT, CONST INT, LPFRAMEINFO );	//!<
+LPTSTR	FrameMakeInsideBoundary( UINT , PINT, LPFRAMEINFO );	//!<
 
 
 INT		FrameInsBoxSizeGet( LPRECT );
@@ -168,10 +168,10 @@ LRESULT	CALLBACK FrameInsProc( HWND, UINT, WPARAM, LPARAM );
 VOID	Fib_OnPaint( HWND );
 VOID	Fib_OnCommand( HWND, INT, HWND, UINT );
 VOID	Fib_OnDestroy( HWND );
-VOID	Fib_OnMoving( HWND, LPRECT );			//!<	
-VOID	Fib_OnKey( HWND, UINT, BOOL, INT, UINT );	//!<	
-BOOL	Fib_OnWindowPosChanging( HWND, LPWINDOWPOS );		//!<	
-VOID	Fib_OnWindowPosChanged( HWND, const LPWINDOWPOS );	//!<	
+VOID	Fib_OnMoving( HWND, LPRECT );			//!<
+VOID	Fib_OnKey( HWND, UINT, BOOL, INT, UINT );	//!<
+BOOL	Fib_OnWindowPosChanging( HWND, LPWINDOWPOS );		//!<
+VOID	Fib_OnWindowPosChanged( HWND, const LPWINDOWPOS );	//!<
 //-------------------------------------------------------------------------------------------------
 
 /*!
@@ -829,7 +829,7 @@ INT_PTR Frm_OnDrawItem( HWND hDlg, CONST LPDRAWITEMSTRUCT pstDrawItem )
 	@param[in]	pstItem	パーツ情報入ったやつ
 	@param[out]	ptDest	作った文字列を入れるバッファへのポインター
 	@param[in]	cchSz	バッファの文字数・バイトに非ず
-	@return	
+	@return
 */
 UINT FrameMakeMultiSubLine( CONST BOOLEAN bEnable, LPFRAMEITEM pstItem, LPTSTR ptDest, CONST UINT_PTR cchSz )
 {
@@ -882,7 +882,7 @@ INT FrameMultiSizeGet( LPFRAMEINFO pstInfo, PINT piUpLine, PINT piDnLine )
 	@param[in,out]	ptStr	文字列・加工して戻す
 	@param[in]		cchSz	文字列の文字数
 	@param[in]		iMaxDot	全体のドット数・０で無視
-	@return	
+	@return
 */
 UINT StringWidthAdjust( CONST UINT iFwOffs, LPTSTR ptStr, CONST UINT_PTR cchSz, CONST INT iMaxDot )
 {
@@ -1866,7 +1866,7 @@ HWND FrameInsBoxCreate( HINSTANCE hInst, HWND hPrWnd )
 
 	//	埋めるかどうか
 	SendMessage( ghFIBtlbrWnd, TB_CHECKBUTTON, IDM_FRMINSBOX_PADDING, gstNowFrameInfo.dRestPadd );
-	gbMultiPaddTemp = gstNowFrameInfo.dRestPadd;	//	
+	gbMultiPaddTemp = gstNowFrameInfo.dRestPadd;	//
 
 	topOst = FrameInsBoxSizeGet( &stFrmRct );	//	FRAME当てはめ枠のサイズ
 	gptFrmBox = FrameMakeOutsideBoundary( stFrmRct.right, stFrmRct.bottom, &gstNowFrameInfo );
@@ -1932,7 +1932,7 @@ HRESULT FrameInsBoxDoInsert( HWND hWnd )
 	LayerTransparentToggle( hLyrWnd, 1 );
 	//	上書きする
 	LayerContentsImportable( hLyrWnd, IDM_LYB_OVERRIDE, &iX, &iY, D_INVISI );
-	ViewPosResetCaret( iX, iY );	
+	ViewPosResetCaret( iX, iY );
 	//	終わったら閉じる
 	DestroyWindow( hLyrWnd );
 
@@ -1957,7 +1957,7 @@ LRESULT CALLBACK FrameInsProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lP
 	{
 		HANDLE_MSG( hWnd, WM_PAINT,		Fib_OnPaint );		//	画面の更新とか
 		HANDLE_MSG( hWnd, WM_KEYDOWN,	Fib_OnKey );
-		HANDLE_MSG( hWnd, WM_COMMAND,	Fib_OnCommand );	
+		HANDLE_MSG( hWnd, WM_COMMAND,	Fib_OnCommand );
 		HANDLE_MSG( hWnd, WM_DESTROY,	Fib_OnDestroy );	//	終了時の処理
 		HANDLE_MSG( hWnd, WM_WINDOWPOSCHANGING, Fib_OnWindowPosChanging );
 		HANDLE_MSG( hWnd, WM_WINDOWPOSCHANGED,  Fib_OnWindowPosChanged );
@@ -2113,7 +2113,7 @@ VOID FrameInsBoxFrmDraw( HDC hDC )
 	TCHAR	atBuffer[MAX_PATH];
 
 //	SetBkMode( hDC, OPAQUE );
-	SetBkColor( hDC, ViewBackColourGet( NULL ) );	//	
+	SetBkColor( hDC, ViewBackColourGet( NULL ) );	//
 
 	hOldFnt = SelectFont( hDC, ghAaFont );	//	フォントくっつける
 

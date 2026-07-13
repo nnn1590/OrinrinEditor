@@ -519,7 +519,7 @@ HRESULT DocLineCombine( INT dBsLine )
 
 	itLineNx = (*gitFileIt).vcCont.at( gixFocusPage ).ltPage.begin();
 	std::advance( itLineNx, dBsLine+1 );
-	
+
 	if( itLineNx == (*gitFileIt).vcCont.at( gixFocusPage ).ltPage.end() )	return E_ACCESSDENIED;
 
 	//	選択範囲ある時にアンドゥして、選択範囲が死んでる状態で切り取りするとここで落ちる
@@ -769,7 +769,7 @@ INT DocSquareAdd( PINT pNowDot, PINT pdLine, LPCTSTR ptStr, INT cchSize, LPPOINT
 		if( !(ptSprt) ){	ptSprt = ptStr + cchSize;	}
 		//	末端まで改行がなかったら、末端文字の位置を入れる
 		cchMozi = ptSprt - ptCaret;	//	そこまでの文字数求めて
-		
+
 		//	各行の追加場所を覚えておく
 		pstBuf = (LPPOINT)realloc( *ppstPt, ( sizeof(POINT) * (dCrLf+1) ) );
 

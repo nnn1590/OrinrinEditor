@@ -48,7 +48,7 @@ static  HWND	ghPageListWnd;	//!<	ページリストビューハンドル
 #ifdef PGL_TOOLTIP
 static  HWND	ghPageTipWnd;	//!<	ツールチップハンドル
 static HFONT	ghPgTipFont;	//!<	ツールチップ用
-static LPTSTR	gptPgTipBuf;	//!<	
+static LPTSTR	gptPgTipBuf;	//!<
 #endif
 static BOOLEAN	gbPgTipView;	//!<	頁ツールティップ表示ON/OFF
 
@@ -64,7 +64,7 @@ static BOOLEAN	gbPgRetFocus;	//!<	頁を選択したら編集窓にフォーカ�
 static WNDPROC	gpfOrigPageViewProc;	//!<	頁一覧ビューの元プロシージャ
 static WNDPROC	gpfOrigPageToolProc;	//!<	ツールバーの元プロシージャ
 
-static HIMAGELIST	ghPgLstImgLst;	//!<	
+static HIMAGELIST	ghPgLstImgLst;	//!<
 
 extern INT	gbTmpltDock;		//	頁・壱行テンプレのドッキング
 extern BOOLEAN	gbDockTmplView;	//	くっついてるテンプレは見えているか
@@ -78,15 +78,15 @@ extern  LONG	grdSplitPos;	//	スプリットバーの、左側の、画面右か
 //	ツールバー・新規作成とか
 #define PGTB_ITEMS	9
 static TBBUTTON gstPgTlBarInfo[] = {
-/*新規*/{  0,	IDM_PAGEL_ADD,		TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-/*挿入*/{  1,	IDM_PAGEL_INSERT,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-/*複製*/{  2,	IDM_PAGEL_DUPLICATE,TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-/*削除*/{  3,	IDM_PAGEL_DELETE,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-/*統合*/{  4,	IDM_PAGEL_COMBINE,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-/*上移*/{  5,	IDM_PAGEL_UPFLOW,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-/*下移*/{  6,	IDM_PAGEL_DOWNSINK,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-/*名称*/{  7,	IDM_PAGEL_RENAME,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-/*更新*/{  8,	IDM_PAGEL_DETAIL,	TBSTATE_WRAP,					BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  } 	//	
+/*新規*/{  0,	IDM_PAGEL_ADD,		TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//
+/*挿入*/{  1,	IDM_PAGEL_INSERT,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//
+/*複製*/{  2,	IDM_PAGEL_DUPLICATE,TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//
+/*削除*/{  3,	IDM_PAGEL_DELETE,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//
+/*統合*/{  4,	IDM_PAGEL_COMBINE,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//
+/*上移*/{  5,	IDM_PAGEL_UPFLOW,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//
+/*下移*/{  6,	IDM_PAGEL_DOWNSINK,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//
+/*名称*/{  7,	IDM_PAGEL_RENAME,	TBSTATE_ENABLED | TBSTATE_WRAP,	BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  },	//
+/*更新*/{  8,	IDM_PAGEL_DETAIL,	TBSTATE_WRAP,					BTNS_BUTTON | BTNS_AUTOSIZE,	{0, 0}, 0, 0  } 	//
 };	//	内容変更したら、ツールバー文字列の設定とかも変更セヨ
 
 //-------------------------------------------------------------------------------------------------
@@ -107,9 +107,9 @@ HRESULT PageListCombine( HWND, INT );
 HRESULT	PageListJump( INT );
 
 LRESULT	CALLBACK gpfPageViewProc( HWND, UINT, WPARAM, LPARAM );
-VOID	Plv_OnMouseMove( HWND, INT, INT, UINT );	//!<	
+VOID	Plv_OnMouseMove( HWND, INT, INT, UINT );	//!<
 #ifdef PGL_TOOLTIP
-LRESULT	Plv_OnNotify( HWND , INT, LPNMHDR );	//!<	
+LRESULT	Plv_OnNotify( HWND , INT, LPNMHDR );	//!<
 #endif
 
 LRESULT	CALLBACK gpfPageToolProc( HWND, UINT, WPARAM, LPARAM );
@@ -264,7 +264,7 @@ HWND PageListInitialise( HINSTANCE hInstance, HWND hParentWnd, LPRECT pstFrame )
 
 //リストビュー	LVS_SHOWSELALWAYS
 	ghPageListWnd = CreateWindowEx( 0, WC_LISTVIEW, TEXT("pagelist"),
-		WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | 
+		WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL |
 #ifdef PAGE_MULTISELECT
 		LVS_REPORT | LVS_NOSORTHEADER,
 #else
@@ -299,7 +299,7 @@ HWND PageListInitialise( HINSTANCE hInstance, HWND hParentWnd, LPRECT pstFrame )
 	ZeroMemory( &stToolInfo, sizeof(TTTOOLINFO) );
 	stToolInfo.cbSize   = sizeof(TTTOOLINFO);
 	stToolInfo.uFlags   = TTF_SUBCLASS;
-	stToolInfo.hinst    = NULL;	//	
+	stToolInfo.hinst    = NULL;	//
 	stToolInfo.hwnd     = ghPageListWnd;
 	stToolInfo.uId      = IDLV_PAGELISTVIEW;
 	GetClientRect( ghPageListWnd, &stToolInfo.rect );
@@ -358,8 +358,8 @@ LRESULT CALLBACK PageListProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lP
 {
 	switch( message )
 	{
-		HANDLE_MSG( hWnd, WM_COMMAND,     Plt_OnCommand );	
-		HANDLE_MSG( hWnd, WM_SIZE,        Plt_OnSize );	
+		HANDLE_MSG( hWnd, WM_COMMAND,     Plt_OnCommand );
+		HANDLE_MSG( hWnd, WM_SIZE,        Plt_OnSize );
 		HANDLE_MSG( hWnd, WM_NOTIFY,      Plt_OnNotify );	//	コモンコントロールの個別イベント
 		HANDLE_MSG( hWnd, WM_CONTEXTMENU, Plt_OnContextMenu );
 
@@ -758,7 +758,7 @@ LRESULT PageListNotify( HWND hWnd, LPNMLISTVIEW pstLv )
 
 	hLvWnd = pstLv->hdr.hwndFrom;
 	nmCode = pstLv->hdr.code;
-	//	なんらかのアクションの起こったROW位置をゲットする 
+	//	なんらかのアクションの起こったROW位置をゲットする
 	iCount = ListView_GetItemCount( hLvWnd );
 	iItem  = pstLv->iItem;
 
@@ -1420,8 +1420,8 @@ LRESULT CALLBACK gpfPageViewProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 
 	switch( msg )
 	{
-		HANDLE_MSG( hWnd, WM_MOUSEMOVE, Plv_OnMouseMove );	
-		HANDLE_MSG( hWnd, WM_COMMAND,   Plt_OnCommand );	
+		HANDLE_MSG( hWnd, WM_MOUSEMOVE, Plv_OnMouseMove );
+		HANDLE_MSG( hWnd, WM_COMMAND,   Plt_OnCommand );
 #ifdef PGL_TOOLTIP
 		HANDLE_MSG( hWnd, WM_NOTIFY,    Plv_OnNotify  );	//	コモンコントロールの個別イベント
 #endif

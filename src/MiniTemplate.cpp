@@ -38,7 +38,7 @@ extern  HWND	ghMainSplitWnd;	//	メインのスプリットバーハンドル
 extern  LONG	grdSplitPos;	//	スプリットバーの、左側の、画面右からのオフセット
 
 
-static  ATOM	gMnTmplAtom;	//!<	
+static  ATOM	gMnTmplAtom;	//!<
 static  HWND	ghMnTmplWnd;	//!<	小型MAAテンプレ本体ウインドウ
 static  HWND	ghTitleBxWnd;	//!<	項目コンボックス
 static  HWND	ghItemStcWnd;	//!<	内容スタティック・オーナードローでヤる
@@ -46,8 +46,8 @@ static  HWND	ghItemStcWnd;	//!<	内容スタティック・オーナードロー
 
 static  HWND	ghMainWnd;		//!<	編集ビューのある本体ウインドウ
 
-static WNDPROC	gpfOrigMmaaTitleProc;	//!<	
-static WNDPROC	gpfOrigMmaaItemProc;	//!<	
+static WNDPROC	gpfOrigMmaaTitleProc;	//!<
+static WNDPROC	gpfOrigMmaaItemProc;	//!<
 
 static  vector<AAMATRIX>	gvcMmaaTmpls;	//!<	テンプレの保持
 //-------------------------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ LRESULT	Mlv_OnNotify( HWND, INT, LPNMHDR );
 	小型ＭＡＡテンプレウインドウの作成
 	@param[in]	hInstance	アプリのインスタンス
 	@param[in]	hParentWnd	メインウインドウのハンドル
-	@param[in]	pstFrame	
+	@param[in]	pstFrame
 	@param[in]	hMaaWnd		複数行テンプレのウインドウハンドル
 	@return		作ったビューのウインドウハンドル
 */
@@ -250,8 +250,8 @@ LRESULT CALLBACK MmaaTmpleProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM l
 {
 	switch( message )
 	{
-		HANDLE_MSG( hWnd, WM_SIZE,        Mma_OnSize );	
-		HANDLE_MSG( hWnd, WM_COMMAND,     Mma_OnCommand );	
+		HANDLE_MSG( hWnd, WM_SIZE,        Mma_OnSize );
+		HANDLE_MSG( hWnd, WM_COMMAND,     Mma_OnCommand );
 		HANDLE_MSG( hWnd, WM_NOTIFY,      Mma_OnNotify );	//	コモンコントロールの個別イベント
 		HANDLE_MSG( hWnd, WM_CONTEXTMENU, Mma_OnContextMenu );
 
@@ -484,8 +484,8 @@ LRESULT CALLBACK gpfMmaaItemProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 	switch( msg )
 	{
 //		HANDLE_MSG( hWnd, WM_CHAR,        Mai_OnChar );
-//		HANDLE_MSG( hWnd, WM_KEYDOWN,     Mai_OnKey );			//	
-//		HANDLE_MSG( hWnd, WM_KEYUP,       Mai_OnKey );			//	
+//		HANDLE_MSG( hWnd, WM_KEYDOWN,     Mai_OnKey );			//
+//		HANDLE_MSG( hWnd, WM_KEYUP,       Mai_OnKey );			//
 
 		HANDLE_MSG( hWnd, WM_MOUSEMOVE,   Mai_OnMouseMove );	//	マウスいごいた
 		HANDLE_MSG( hWnd, WM_LBUTTONUP,   Mai_OnLButtonUp );	//	マウス左ボタンあげ

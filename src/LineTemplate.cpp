@@ -40,7 +40,7 @@ extern BOOLEAN	gbDockTmplView;	//	くっついてるテンプレは見えてい�
 extern  LONG	grdSplitPos;	//	スプリットバーの、左側の、画面右からのオフセット
 
 
-static  ATOM	gTmpleAtom;		//!<	
+static  ATOM	gTmpleAtom;		//!<
 static  HWND	ghTmpleWnd;		//!<	このウインドウハンドル
 
 static  HWND	ghCtgryBxWnd;	//!<	カテゴリコンボックス
@@ -54,36 +54,36 @@ static  UINT	gNowGroup;		//!<	今みてるグループ番号
 
 static  UINT	gLnClmCnt;	//!<	表示カラム数
 
-static WNDPROC	gpfOrigLineCtgryProc;	//!<	
-static WNDPROC	gpfOrigLineItemProc;	//!<	
+static WNDPROC	gpfOrigLineCtgryProc;	//!<
+static WNDPROC	gpfOrigLineItemProc;	//!<
 
 static vector<AATEMPLATE>	gvcTmples;	//!<	テンプレの保持
 //-------------------------------------------------------------------------------------------------
 
-LRESULT	CALLBACK LineTmpleProc( HWND, UINT, WPARAM, LPARAM );	//!<	
-VOID	Ltp_OnCommand( HWND , INT, HWND, UINT );	//!<	
-VOID	Ltp_OnSize( HWND , UINT, INT, INT );	//!<	
-VOID	Ltp_OnContextMenu( HWND, HWND, UINT, UINT );	//!<	
+LRESULT	CALLBACK LineTmpleProc( HWND, UINT, WPARAM, LPARAM );	//!<
+VOID	Ltp_OnCommand( HWND , INT, HWND, UINT );	//!<
+VOID	Ltp_OnSize( HWND , UINT, INT, INT );	//!<
+VOID	Ltp_OnContextMenu( HWND, HWND, UINT, UINT );	//!<
 #ifndef LTP_CLICK_NEW
-LRESULT	Ltp_OnNotify( HWND , INT, LPNMHDR );	//!<	
+LRESULT	Ltp_OnNotify( HWND , INT, LPNMHDR );	//!<
 #endif
 
-UINT	CALLBACK LineTmpleItemData( LPTSTR, LPCTSTR, INT );	//!<	
+UINT	CALLBACK LineTmpleItemData( LPTSTR, LPCTSTR, INT );	//!<
 
-HRESULT	LineTmpleItemListOn( UINT );	//!<	
-HRESULT	LineTmpleItemReload( HWND );	//!<	
+HRESULT	LineTmpleItemListOn( UINT );	//!<
+HRESULT	LineTmpleItemReload( HWND );	//!<
 
-HRESULT	TemplateItemSplit( LPTSTR, UINT, PAGELOAD );	//!<	
-HRESULT	TemplateItemScatter( LPCTSTR, INT, PAGELOAD );	//!<	
+HRESULT	TemplateItemSplit( LPTSTR, UINT, PAGELOAD );	//!<
+HRESULT	TemplateItemScatter( LPCTSTR, INT, PAGELOAD );	//!<
 
-LRESULT	CALLBACK gpfLineCtgryProc( HWND, UINT, WPARAM, LPARAM );	//!<	
-LRESULT	CALLBACK gpfLineItemProc(  HWND, UINT, WPARAM, LPARAM );	//!<	
-LRESULT	Ltl_OnNotify( HWND , INT, LPNMHDR );						//!<	
+LRESULT	CALLBACK gpfLineCtgryProc( HWND, UINT, WPARAM, LPARAM );	//!<
+LRESULT	CALLBACK gpfLineItemProc(  HWND, UINT, WPARAM, LPARAM );	//!<
+LRESULT	Ltl_OnNotify( HWND , INT, LPNMHDR );						//!<
 #ifdef LTP_CLICK_NEW
-VOID	Ltl_OnMouseButtonUp( HWND, UINT, INT, INT, UINT );			//!<	
+VOID	Ltl_OnMouseButtonUp( HWND, UINT, INT, INT, UINT );			//!<
 #endif
 
-HWND	DockingTabCreate( HINSTANCE, HWND, LPRECT );	//!<	
+HWND	DockingTabCreate( HINSTANCE, HWND, LPRECT );	//!<
 //-------------------------------------------------------------------------------------------------
 
 
@@ -228,7 +228,7 @@ HWND LineTmpleInitialise( HINSTANCE hInstance, HWND hParentWnd, LPRECT pstFrame 
 	ZeroMemory( &stToolInfo, sizeof(TTTOOLINFO) );
 	stToolInfo.cbSize   = sizeof(TTTOOLINFO);
 	stToolInfo.uFlags   = TTF_SUBCLASS;
-	stToolInfo.hinst    = NULL;	//	
+	stToolInfo.hinst    = NULL;	//
 	stToolInfo.hwnd     = ghLvItemWnd;
 	stToolInfo.uId      = IDLV_LT_ITEMVIEW;
 	GetClientRect( ghLvItemWnd, &stToolInfo.rect );
@@ -418,8 +418,8 @@ LRESULT CALLBACK LineTmpleProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM l
 {
 	switch( message )
 	{
-		HANDLE_MSG( hWnd, WM_SIZE,        Ltp_OnSize );	
-		HANDLE_MSG( hWnd, WM_COMMAND,     Ltp_OnCommand );	
+		HANDLE_MSG( hWnd, WM_SIZE,        Ltp_OnSize );
+		HANDLE_MSG( hWnd, WM_COMMAND,     Ltp_OnCommand );
 		HANDLE_MSG( hWnd, WM_CONTEXTMENU, Ltp_OnContextMenu );
 #ifndef LTP_CLICK_NEW
 		HANDLE_MSG( hWnd, WM_NOTIFY,      Ltp_OnNotify );	//	コモンコントロールの個別イベント
@@ -736,13 +736,13 @@ HRESULT LineTmpleItemListOn( UINT listNum )
 HRESULT LineTmpleItemReload( HWND hWnd )
 {
 	TEMPL_ITR	itTmpl;
-	
+
 
 	gNowGroup = 0;	//	とりあえず０に戻す
 
 	for( itTmpl = gvcTmples.begin( ); gvcTmples.end( ) != itTmpl; itTmpl++ ){	itTmpl->vcItems.clear();	}
 	gvcTmples.clear(  );	//	一旦内容破壊
-	
+
 	//	カテゴリコンボックスの中身を全破壊
 	while( ComboBox_GetCount( ghCtgryBxWnd )  ){	ComboBox_DeleteString( ghCtgryBxWnd, 0 );	}
 
@@ -858,7 +858,7 @@ HRESULT TemplateItemSplit( LPTSTR ptStr, UINT cchSize, PAGELOAD pfCalling )
 
 	ptCaret = ptEnd;
 
-	do	//	
+	do	//
 	{
 		ptStart = NextLineW( ptCaret );	//	次の行からが本番
 		if( !ptStart )	return  S_FALSE;	//	見つからなかったら

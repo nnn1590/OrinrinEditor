@@ -64,7 +64,7 @@ EXTERNED INT		gixFocusPage;	//!<	注目中のページ・とりあえず０・�
 EXTERNED INT		gixDropPage;	//!<	投下ホット番号
 
 extern  UINT		gbUniRadixHex;	//	ユニコード数値参照が１６進数であるか
-extern  UINT		gbCrLfCode;		//	改行コード：０したらば・非０ＹＹ 
+extern  UINT		gbCrLfCode;		//	改行コード：０したらば・非０ＹＹ
 //-------------------------------------------------------------------------------------------------
 
 UINT	CALLBACK DocPageLoad( LPTSTR, LPCTSTR, INT );
@@ -847,7 +847,7 @@ UINT CALLBACK DocPageLoad( LPTSTR ptName, LPCTSTR ptCont, INT cchSize )
 	(*gitFileIt).vcCont.at( gixFocusPage ).ptRawData = (LPTSTR)malloc( (cchSize+2) * sizeof(TCHAR) );
 	ZeroMemory( (*gitFileIt).vcCont.at( gixFocusPage ).ptRawData, (cchSize+2) * sizeof(TCHAR) );
 
-	//HRESULT hRslt = 
+	//HRESULT hRslt =
 	StringCchCopy( (*gitFileIt).vcCont.at( gixFocusPage ).ptRawData, (cchSize+2), ptCont );
 
 	//	バッファに文字列を保存だけしておく
@@ -919,7 +919,7 @@ UINT DocStringSplitMLT( LPTSTR ptStr, INT cchSize, PAGELOAD pfPageLoad )
 	LPTSTR	ptEnd;		//	ページの末端位置・セパレータの直前
 	UINT	iNumber;	//	通し番号カウント
 #ifdef FILE_PRELOAD
-	UINT	dPage;		
+	UINT	dPage;
 #endif
 	UINT	cchItem;
 //	INT		dmyX = 0, dmyY = 0;
@@ -1165,7 +1165,7 @@ INT DocPageCreate( INT iAdding )
 	stPage.ltPage.clear(  );
 	stPage.ltPage.push_back( stLine );	//	１頁の枠を作って
 	stPage.dSelLineTop    =  -1;		//	無効は−１を注意
-	stPage.dSelLineBottom =  -1;		//	
+	stPage.dSelLineBottom =  -1;		//
 	stPage.ptRawData = NULL;
 	SqnInitialise( &(stPage.stUndoLog) );
 
@@ -1363,7 +1363,7 @@ HRESULT DocPageInfoRenew( INT dPage, UINT bMode )
 
 
 	dBytes = gitFileIt->vcCont.at( dPage ).dByteSz;
-	
+
 	if( bMode )	//	ステータスバーにバイト数を表示する
 	{
 		MainSttBarSetByteCount( dBytes );

@@ -99,7 +99,7 @@ static LOGFONT	gstBaseFont = {
 //-------------------------------------------------------------------------------------------------
 
 static  UINT	gdUseMode;		//!<	挿入レイヤクリップ指示・設定に注意
-static  UINT	gdUseSubMode;	//!<	
+static  UINT	gdUseSubMode;	//!<
 
 static  HWND	ghMaaWnd;		//!<	作られたウインドウハンドル
 static TCHAR	gatIniPath[MAX_PATH];	//!<	ＩＮＩファイルの位置
@@ -141,7 +141,7 @@ INT APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	//_CRTDBG_ALLOC_MEM_DF;		// 指定が必要なフラグ
 	//_CRTDBG_CHECK_ALWAYS_DF;	//	メモリをチェック		_CRTDBG_CHECK_EVERY_128_DF
 	//_CRTDBG_LEAK_CHECK_DF;		//	終了時にメモリリークをチェック
-	//_CRTDBG_DELAY_FREE_MEM_DF;	//	
+	//_CRTDBG_DELAY_FREE_MEM_DF;	//
 	//	ここで使用するフラグを指定
 	_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_CHECK_ALWAYS_DF | _CRTDBG_LEAK_CHECK_DF );
 #endif
@@ -351,7 +351,7 @@ HRESULT InitWindowPos( UINT dMode, UINT dStyle, LPRECT pstRect )
 		StringCchPrintf( atBuff, MIN_STRING, TEXT("%d"), pstRect->bottom );
 		WritePrivateProfileString( atAppName, TEXT("BOTTOM"), atBuff, gatIniPath );
 	}
-	
+
 	return S_OK;
 }
 //-------------------------------------------------------------------------------------------------

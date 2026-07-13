@@ -67,7 +67,7 @@ INT APIENTRY _tWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpC
 	//_CRTDBG_ALLOC_MEM_DF;		// 指定が必要なフラグ
 	//_CRTDBG_CHECK_ALWAYS_DF;	//	メモリをチェック		_CRTDBG_CHECK_EVERY_128_DF
 	//_CRTDBG_LEAK_CHECK_DF;		//	終了時にメモリリークをチェック
-	//_CRTDBG_DELAY_FREE_MEM_DF;	//	
+	//_CRTDBG_DELAY_FREE_MEM_DF;	//
 	//	ここで使用するフラグを指定
 	_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_CHECK_ALWAYS_DF | _CRTDBG_LEAK_CHECK_DF );
 #endif
@@ -259,7 +259,7 @@ HRESULT ToolTipSetting( HWND hWnd, UINT itemID, LPTSTR ptText )
 
 	stToolInfo.cbSize   = sizeof(TTTOOLINFO);
 	stToolInfo.uFlags   = TTF_SUBCLASS;
-	stToolInfo.hinst    = NULL;	//	
+	stToolInfo.hinst    = NULL;	//
 	stToolInfo.hwnd     = GetDlgItem( hWnd, itemID );
 	stToolInfo.uId      = itemID;
 	GetClientRect( stToolInfo.hwnd, &stToolInfo.rect );
@@ -534,7 +534,7 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
 		HANDLE_MSG( hWnd, WM_PAINT,          Cls_OnPaint  );	//	画面の更新とか
 		HANDLE_MSG( hWnd, WM_COMMAND,        Cls_OnCommand );	//	ボタン押されたとかのコマンド処理
 		HANDLE_MSG( hWnd, WM_DESTROY,        Cls_OnDestroy );	//	ソフト終了時の処理
-		HANDLE_MSG( hWnd, WM_HOTKEY,         Cls_OnHotKey );	//	
+		HANDLE_MSG( hWnd, WM_HOTKEY,         Cls_OnHotKey );	//
 		HANDLE_MSG( hWnd, WM_CTLCOLORSTATIC, Cls_OnCtlColor );
 		HANDLE_MSG( hWnd, WM_DRAWCLIPBOARD,  Cls_OnDrawClipboard );	//	クリップボードに変更があったら
 		HANDLE_MSG( hWnd, WM_CHANGECBCHAIN,  Cls_OnChangeCBChain );	//	クリップボードビューワチェインに変更があったら
@@ -851,7 +851,7 @@ BOOLEAN SelectFileDlg( HWND hWnd, LPTSTR ptSelFile, UINT_PTR cchLen )
 	stOpenFile.nMaxFile        = MAX_PATH;
 	stOpenFile.lpstrFileTitle  = atFileName;
 	stOpenFile.nMaxFileTitle   = MAX_STRING;
-//	stOpenFile.lpstrInitialDir = 
+//	stOpenFile.lpstrInitialDir =
 	stOpenFile.lpstrTitle      = TEXT("ため込むファイルを指定するのです");
 	stOpenFile.Flags           = OFN_EXPLORER | OFN_HIDEREADONLY;
 	stOpenFile.lpstrDefExt     = TEXT("mlt");

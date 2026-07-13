@@ -225,7 +225,7 @@ UINT SqnAppendSquare( LPUNDOBUFF pstBuff, UINT dCmd, LPCTSTR ptStr, LPPOINT pstP
 		ZeroMemory( &stOpe, sizeof(OPERATELOG) );
 		stOpe.dCommando  = dCmd;
 		stOpe.ixSequence = pstBuff->dTopSqn;
-		stOpe.ixGroup    = pstBuff->dGrpSqn;	//	
+		stOpe.ixGroup    = pstBuff->dGrpSqn;	//
 
 		stOpe.rdXdot  = pstPt[i].x;
 		stOpe.rdYline = pstPt[i].y;
@@ -337,7 +337,7 @@ INT SqnUndoExec( LPUNDOBUFF pstBuff, PINT pxDot, PINT pyLine )
 		dGrp  = pstBuff->vcOpeSqn.at( dNow ).ixGroup;
 		xDot  = pstBuff->vcOpeSqn.at( dNow ).rdXdot;
 		yLine = pstBuff->vcOpeSqn.at( dNow ).rdYline;
-		
+
 		if( 0 == dPreGroup )	//	１回目は初期化すればおｋ
 		{
 			dPreGroup = dGrp;

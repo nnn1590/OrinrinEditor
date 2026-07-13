@@ -31,7 +31,7 @@ If not, see <http://www.gnu.org/licenses/>.
 #define TB_ITEMS	1
 static  TBBUTTON	gstBrTBInfo[] = {
 	{ 0,	IDM_BRUSH_ON_OFF,	TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0 }	//	On/Off
-};	//	
+};	//
 //-------------------------------------------------------------------------------------------------
 
 extern HFONT	ghAaFont;		//	AA用フォント
@@ -46,7 +46,7 @@ static HIMAGELIST	ghBrushImgLst;
 
 static  UINT	gbBrushMode;	//!<	非零ブラシモード
 
-static  ATOM	gBrTmplAtom;	//!<	
+static  ATOM	gBrTmplAtom;	//!<
 static  HWND	ghBrTmplWnd;	//!<	ブラシパレット本体ウインドウ
 static  HWND	ghBrTlBarWnd;	//!<	ツールバー
 static  HWND	ghCtgryBxWnd;	//!<	カテゴリコンボックス
@@ -57,12 +57,12 @@ static  HWND	ghMainWnd;		//!<	編集ビューのある本体ウインドウ
 
 static  UINT	gNowGroup;		//!<	カテゴリ
 
-static WNDPROC	gpfOrigBrushCtgryProc;	//!<	
-static WNDPROC	gpfOrigBrushItemProc;	//!<	
+static WNDPROC	gpfOrigBrushCtgryProc;	//!<
+static WNDPROC	gpfOrigBrushItemProc;	//!<
 
 static  UINT	gBrhClmCnt;	//!<	表示カラム数
 
-static WNDPROC	gpfOrigTBProc;	//!<	
+static WNDPROC	gpfOrigTBProc;	//!<
 
 static vector<AATEMPLATE>	gvcBrTmpls;	//!<	テンプレの保持
 //-------------------------------------------------------------------------------------------------
@@ -91,7 +91,7 @@ static LRESULT	CALLBACK gpfToolbarProc( HWND, UINT, WPARAM, LPARAM );
 	ブラシテンプレウインドウの作成
 	@param[in]	hInstance	アプリのインスタンス
 	@param[in]	hParentWnd	メインウインドウのハンドル
-	@param[in]	pstFrame	
+	@param[in]	pstFrame
 	@param[in]	hMaaWnd		複数行テンプレのウインドウハンドル
 	@return		作ったビューのウインドウハンドル
 */
@@ -275,7 +275,7 @@ HWND BrushTmpleInitialise( HINSTANCE hInstance, HWND hParentWnd, LPRECT pstFrame
 	ZeroMemory( &stToolInfo, sizeof(TTTOOLINFO) );
 	stToolInfo.cbSize   = sizeof(TTTOOLINFO);
 	stToolInfo.uFlags   = TTF_SUBCLASS;
-	stToolInfo.hinst    = NULL;	//	
+	stToolInfo.hinst    = NULL;	//
 	stToolInfo.hwnd     = ghLvItemWnd;
 	stToolInfo.uId      = IDLV_BT_ITEMVIEW;
 	GetClientRect( ghLvItemWnd, &stToolInfo.rect );
@@ -385,8 +385,8 @@ LRESULT CALLBACK BrushTmpleProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 {
 	switch( message )
 	{
-		HANDLE_MSG( hWnd, WM_SIZE,        Btp_OnSize );	
-		HANDLE_MSG( hWnd, WM_COMMAND,     Btp_OnCommand );	
+		HANDLE_MSG( hWnd, WM_SIZE,        Btp_OnSize );
+		HANDLE_MSG( hWnd, WM_COMMAND,     Btp_OnCommand );
 		HANDLE_MSG( hWnd, WM_NOTIFY,      Btp_OnNotify );	//	コモンコントロールの個別イベント
 		HANDLE_MSG( hWnd, WM_CONTEXTMENU, Btp_OnContextMenu );
 
@@ -746,7 +746,7 @@ HRESULT BrushTmpleItemReload( HWND hWnd )
 
 	for( itTmpl = gvcBrTmpls.begin( );  gvcBrTmpls.end( ) != itTmpl; itTmpl++ ){	itTmpl->vcItems.clear();	}
 	gvcBrTmpls.clear(  );	//	一旦内容破壊
-	
+
 	//	カテゴリコンボックスの中身を全破壊
 	while( ComboBox_GetCount( ghCtgryBxWnd )  ){	ComboBox_DeleteString( ghCtgryBxWnd, 0 );	}
 

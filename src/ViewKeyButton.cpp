@@ -45,7 +45,7 @@ extern INT		gdViewTopLine;	//!<	表示中の最上部行番号
 extern SIZE		gstViewArea;	//!<	表示領域のサイズ・ルーラー等の領域は無し
 extern INT		gdDispingLine;	//!<	見えてる行数・中途半端に見えてる末端は含まない
 
-extern BOOLEAN	gbExtract;	
+extern BOOLEAN	gbExtract;
 
 extern  UINT	gbUniPad;		//!<	パディングにユニコードをつかって、ドットを見せないようにする
 
@@ -191,7 +191,7 @@ VOID Evw_OnKey( HWND hWnd, UINT vk, BOOL fDown, INT cRepeat, UINT flags )
 		if( bMemoryX )	gdXmemory = gdDocXdot;
 		else			gdDocXdot = gdXmemory;
 
-	
+
 		DocLetterPosGetAdjust( &gdDocXdot, gdDocLine, 0 );	//	キャレット位置調整
 		//	ここで文字位置のインクリ・デクリの面倒みて、ドットと行位置を変更
 		dXwidth = DocLetterShiftPos( gdDocXdot, gdDocLine, bXdirect, NULL, &bJump );
@@ -383,8 +383,8 @@ VOID Evw_OnChar( HWND hWnd, TCHAR ch, INT cRepeat )
 */
 VOID Evw_OnLButtonDown( HWND hWnd, BOOL fDoubleClick, INT x, INT y, UINT keyFlags )
 {
-	INT		dX, dY;	//	
-	INT		dDot, dMaxDot, dLine, iMaxLine;	//	
+	INT		dX, dY;	//
+	INT		dDot, dMaxDot, dLine, iMaxLine;	//
 	UINT	dRslt;
 
 	SetFocus( hWnd );	//	マウスインでフォーカス
@@ -399,7 +399,7 @@ VOID Evw_OnLButtonDown( HWND hWnd, BOOL fDoubleClick, INT x, INT y, UINT keyFlag
 	//	マイナスのときはルーラーか行番号エリア
 	if( 0 > dX )	dX = 0;
 	if( 0 > dY )	dY = 0;
-	
+
 	dDot  = dX;
 	dLine = dY / LINE_HEIGHT;
 
@@ -467,7 +467,7 @@ VOID Evw_OnMouseMove( HWND hWnd, INT x, INT y, UINT keyFlags )
 {
 	TCHAR	atString[SUB_STRING];
 	INT		dX, dY;
-	INT		dDot, dMaxDot, dLine, iMaxLine;	//	
+	INT		dDot, dMaxDot, dLine, iMaxLine;	//
 
 	//	ダブルクルック操作後は何もしない
 	if( gbLDoubleClick ){	 return;	}
@@ -593,7 +593,7 @@ VOID Evw_OnLButtonUp( HWND hWnd, INT x, INT y, UINT keyFlags )
 			gbDragMoved = FALSE;
 		}
 	}
-	
+
 
 	return;
 }
@@ -612,8 +612,8 @@ VOID Evw_OnRButtonDown( HWND hWnd, BOOL fDoubleClick, INT x, INT y, UINT keyFlag
 	//	キャレット移動のみ面倒見る
 	//	20110704	選択中はキャレット移動しないようにする
 
-	INT		dX, dY;	//	
-	INT		dDot, dMaxDot, dLine, iMaxLine;	//	
+	INT		dX, dY;	//
+	INT		dDot, dMaxDot, dLine, iMaxLine;	//
 
 	SetFocus( hWnd );	//	マウスインでフォーカス
 

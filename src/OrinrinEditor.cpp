@@ -637,7 +637,7 @@ EXTERNED UINT		gbUniRadixHex;	//!<	ユニコード数値参照が１６進数で
 
 static   UINT		gdBUInterval;	//!<	バックアップ感覚・デフォ３分くらい？
 EXTERNED UINT		gbAutoBUmsg;	//!<	自動バックアップメッセージ出すか？
-EXTERNED UINT		gbCrLfCode;		//!<	改行コード：０したらば・非０ＹＹ 
+EXTERNED UINT		gbCrLfCode;		//!<	改行コード：０したらば・非０ＹＹ
 
 EXTERNED UINT		gbSaveMsgOn;	//!<	保存メッセージ出すか？
 
@@ -695,35 +695,35 @@ plugin::PLUGIN_FILE_LIST	gPluginList;
 CONST INT	gadStsBarSize[] = { 50, 200, 350, 500, 700, 800, 900, -1 };
 //-------------------------------------------------------------------------------------------------
 
-VOID	Cls_OnActivate( HWND, UINT, HWND, BOOL );		//!<	
+VOID	Cls_OnActivate( HWND, UINT, HWND, BOOL );		//!<
 BOOLEAN	Cls_OnCreate( HWND, LPCREATESTRUCT );			//!<	本体の WM_CREATE の処理・固定Editとかつくる
 VOID	Cls_OnCommand( HWND , INT, HWND, UINT );		//!<	本体の WM_COMMAND の処理
 VOID	Cls_OnPaint( HWND );							//!<	本体の WM_PAINT の処理・枠線描画とか
-VOID	Cls_OnSize( HWND , UINT, INT, INT );			//!<	
-VOID	Cls_OnMove( HWND, INT, INT );					//!<	
+VOID	Cls_OnSize( HWND , UINT, INT, INT );			//!<
+VOID	Cls_OnMove( HWND, INT, INT );					//!<
 VOID	Cls_OnDestroy( HWND );							//!<	本体の WM_DESTROY の処理・BRUSHとかのオブジェクトの破壊を忘れないように
-LRESULT	Cls_OnNotify( HWND , INT, LPNMHDR );			//!<	
-VOID	Cls_OnTimer( HWND, UINT );						//!<	
-VOID	Cls_OnDropFiles( HWND , HDROP );				//!<	
-VOID	Cls_OnContextMenu(HWND,HWND,UINT,UINT );		//!<	
-VOID	Cls_OnHotKey(HWND, INT, UINT, UINT );			//!<	
-VOID	Cls_OnDrawItem( HWND, CONST DRAWITEMSTRUCT * );	//!<	
+LRESULT	Cls_OnNotify( HWND , INT, LPNMHDR );			//!<
+VOID	Cls_OnTimer( HWND, UINT );						//!<
+VOID	Cls_OnDropFiles( HWND , HDROP );				//!<
+VOID	Cls_OnContextMenu(HWND,HWND,UINT,UINT );		//!<
+VOID	Cls_OnHotKey(HWND, INT, UINT, UINT );			//!<
+VOID	Cls_OnDrawItem( HWND, CONST DRAWITEMSTRUCT * );	//!<
 
-BOOL	Cls_OnWindowPosChanging( HWND, LPWINDOWPOS );	//!<	
+BOOL	Cls_OnWindowPosChanging( HWND, LPWINDOWPOS );	//!<
 
 #ifdef MULTIACT_RELAY
-void	Cls_OnCopyData( HWND, HWND, PCOPYDATASTRUCT );	//!<	
+void	Cls_OnCopyData( HWND, HWND, PCOPYDATASTRUCT );	//!<
 #endif
 
-INT_PTR	CALLBACK OptionDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+INT_PTR	CALLBACK OptionDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<
 
 LRESULT	CALLBACK gpfFileTabProc( HWND, UINT, WPARAM, LPARAM );	//!<	複数ファイルタブのサブクラスプロシージャ
-VOID	Ftb_OnMButtonUp( HWND, INT, INT, UINT );	//!<	
+VOID	Ftb_OnMButtonUp( HWND, INT, INT, UINT );	//!<
 
-HRESULT	ViewingFontNameLoad( VOID );	//!<	
+HRESULT	ViewingFontNameLoad( VOID );	//!<
 
 #ifdef USE_NOTIFYICON
-VOID	TaskTrayIconEvent( HWND, UINT, UINT );	//!<	
+VOID	TaskTrayIconEvent( HWND, UINT, UINT );	//!<
 #endif
 //-------------------------------------------------------------------------------------------------
 
@@ -765,7 +765,7 @@ INT APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	//_CRTDBG_ALLOC_MEM_DF;		//	指定が必要なフラグ
 	//_CRTDBG_CHECK_ALWAYS_DF;	//	メモリをチェック		_CRTDBG_CHECK_EVERY_128_DF
 	//_CRTDBG_LEAK_CHECK_DF;		//	終了時にメモリリークをチェック
-	//_CRTDBG_DELAY_FREE_MEM_DF;	//	
+	//_CRTDBG_DELAY_FREE_MEM_DF;	//
 	//	ここで使用するフラグを指定
 	_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_CHECK_ALWAYS_DF | _CRTDBG_LEAK_CHECK_DF );
 	//_CrtSetBreakAlloc( 1979 );
@@ -816,7 +816,7 @@ INT APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 		SetSecurityDescriptorDacl( &stSeqDes, TRUE, 0, FALSE );
 		secAttribute.nLength				= sizeof( secAttribute );
 		secAttribute.lpSecurityDescriptor	= &stSeqDes;
-		secAttribute.bInheritHandle			= TRUE; 
+		secAttribute.bInheritHandle			= TRUE;
 
 		//	多重起動防止
 		ghMutex = CreateMutex( &secAttribute, TRUE, TEXT("OrinrinEditor") );	//	すでに起動しているか判定
@@ -1003,8 +1003,8 @@ INT APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 #ifdef WORK_LOG_OUT
 	if( INVALID_HANDLE_VALUE != ghLogFlie )
 	{
-		SetEndOfFile( ghLogFlie );	
-		CloseHandle( ghLogFlie );	
+		SetEndOfFile( ghLogFlie );
+		CloseHandle( ghLogFlie );
 	}
 #endif
 
@@ -1142,9 +1142,9 @@ BOOL InitInstance( HINSTANCE hInstance, INT nCmdShow, LPTSTR ptArgv )
 		DeleteMenu( hSubMenu, IDM_BRUSH_PALETTE, MF_BYCOMMAND );
 	}
 
-	AaFontCreate( 1 );	//	
+	AaFontCreate( 1 );	//
 
-	AppClientAreaCalc( &rect  );	//	
+	AppClientAreaCalc( &rect  );	//
 
 	SqnSetting(  );
 
@@ -1215,7 +1215,7 @@ BOOL InitInstance( HINSTANCE hInstance, INT nCmdShow, LPTSTR ptArgv )
 	if( isMaxim )
 	{
 		ShowWindow( hWnd, SW_MAXIMIZE );
-		AppClientAreaCalc( &rect  );	//	
+		AppClientAreaCalc( &rect  );	//
 		if( ghMainSplitWnd )
 		{
 			grdSplitPos = sptBuf;
@@ -1270,7 +1270,7 @@ LPACCEL AccelKeyTableGetAlloc( LPINT piEntry )
 HACCEL AccelKeyTableCreate( LPACCEL pstAccel, INT iEntry )
 {
 	HACCEL	hAccel;
-	
+
 	if( pstAccel )
 	{
 		DestroyAcceleratorTable( ghAccelTable );	//	前のヤツぶっ壊して
@@ -1408,12 +1408,12 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
 #ifdef MULTIACT_RELAY
 		HANDLE_MSG( hWnd, WM_COPYDATA,		Cls_OnCopyData );
 #endif
-		HANDLE_MSG( hWnd, WM_KEYDOWN,		Evw_OnKey );		//	
-		HANDLE_MSG( hWnd, WM_KEYUP,			Evw_OnKey );		//	
-		HANDLE_MSG( hWnd, WM_CHAR,			Evw_OnChar );		//	
-		HANDLE_MSG( hWnd, WM_MOUSEWHEEL,	Evw_OnMouseWheel );	//	
+		HANDLE_MSG( hWnd, WM_KEYDOWN,		Evw_OnKey );		//
+		HANDLE_MSG( hWnd, WM_KEYUP,			Evw_OnKey );		//
+		HANDLE_MSG( hWnd, WM_CHAR,			Evw_OnChar );		//
+		HANDLE_MSG( hWnd, WM_MOUSEWHEEL,	Evw_OnMouseWheel );	//
 
-		HANDLE_MSG( hWnd, WM_WINDOWPOSCHANGING,	Cls_OnWindowPosChanging );	
+		HANDLE_MSG( hWnd, WM_WINDOWPOSCHANGING,	Cls_OnWindowPosChanging );
 
 		case WM_MBUTTONUP:	TRACE( TEXT("MIDDLE  UP") );	break;
 
@@ -1588,7 +1588,7 @@ BOOLEAN Cls_OnCreate( HWND hWnd, LPCREATESTRUCT lpCreateStruct )
 	GetClientRect( ghFileTabWnd, &stToolInfo.rect );
 	stToolInfo.cbSize   = sizeof(TTTOOLINFO);
 	stToolInfo.uFlags   = TTF_SUBCLASS;
-	stToolInfo.hinst    = NULL;	//	
+	stToolInfo.hinst    = NULL;	//
 	stToolInfo.hwnd     = ghFileTabWnd;
 	stToolInfo.uId      = IDTT_TILETAB_TIP;
 	stToolInfo.lpszText = LPSTR_TEXTCALLBACK;	//	コレを指定するとコールバックになる
@@ -1779,7 +1779,7 @@ VOID Cls_OnSize( HWND hWnd, UINT state, INT cx, INT cy )
 	AppClientAreaCalc( &rect  );	//	右に併せて移動
 
 #ifdef SPLIT_BAR_POS_FIX
-	if( ghMainSplitWnd && (SIZE_SPLITBAR_MOVED != state) )	//	ここでスプリットバー調整？	
+	if( ghMainSplitWnd && (SIZE_SPLITBAR_MOVED != state) )	//	ここでスプリットバー調整？
 	{
 		SetWindowPos( ghMainSplitWnd, HWND_TOP, rect.right - grdSplitPos, rect.top, 0, 0, SWP_NOSIZE );
 	}
@@ -1795,8 +1795,8 @@ VOID Cls_OnSize( HWND hWnd, UINT state, INT cx, INT cy )
 /*!
 	ウインドウが移動したとき
 	@param[in]	hWnd	親ウインドウのハンドル
-	@param[in]	x		
-	@param[in]	y		
+	@param[in]	x
+	@param[in]	y
 	@return		無し
 */
 VOID Cls_OnMove( HWND hWnd, INT x, INT y )
@@ -2008,7 +2008,7 @@ VOID Cls_OnContextMenu( HWND hWnd, HWND hWndContext, UINT xPos, UINT yPos )
 		stMenuItemInfo.fState = MFS_GRAYED;
 //		EnableMenuItem( hSubMenu, IDM_FILE_CLOSE, MF_BYCOMMAND | MF_GRAYED );
 	}
-	
+
 	SetMenuItemInfo( hSubMenu, IDM_FILE_CLOSE, FALSE, &stMenuItemInfo );
 
 	dRslt = TrackPopupMenu( hSubMenu, 0, stPost.x, stPost.y, 0, hWnd, NULL );
@@ -2281,7 +2281,7 @@ UINT AppClientAreaCalc( LPRECT pstRect )
 
 	if( !(ghMainWnd)  ){	SetRect( pstRect , 0, 0, 0, 0 );	return 0;	}
 
-	GetClientRect( ghMainWnd, &rect );	//	
+	GetClientRect( ghMainWnd, &rect );	//
 
 	ToolBarSizeGet( &tbRect );	//	ツールバーのサイズとって
 	rect.top      += tbRect.bottom;

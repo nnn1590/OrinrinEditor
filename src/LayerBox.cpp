@@ -76,7 +76,7 @@ static  TBBUTTON	gstTBInfo[] = {
 	{ 0,	0,					TBSTATE_ENABLED,	TBSTYLE_SEP,						{0, 0}, 0, 0  },
 	{ 4,	IDM_LYB_DELETE,		TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,					{0, 0}, 0, 0  } 	//	20120507	内容クルヤー
 
-};	//	
+};	//
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 
@@ -103,50 +103,50 @@ EXTERNED BYTE	gbAlpha;		//!<	透明度
 
 static BOOLEAN	gbQuickClose;	//!<	貼り付けたら直ぐ閉じる
 
-static WNDPROC	gpfOrigLyrTBProc;	//!<	
-static WNDPROC	gpfOrigLyrEditProc;	//!<	
+static WNDPROC	gpfOrigLyrTBProc;	//!<
+static WNDPROC	gpfOrigLyrEditProc;	//!<
 //	元プロシージャは共通で問題無い？
 
-static HIMAGELIST	ghLayerImgLst;	//!<	
+static HIMAGELIST	ghLayerImgLst;	//!<
 
 static  list<LAYERBOXSTRUCT>	gltLayer;	//!<	複数のレイヤボックスを開いたとき
 //-------------------------------------------------------------------------------------------------
 
-static LRESULT	CALLBACK gpfLayerTBProc( HWND, UINT, WPARAM, LPARAM );	//!<	
-static LRESULT	CALLBACK gpfLyrEditProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+static LRESULT	CALLBACK gpfLayerTBProc( HWND, UINT, WPARAM, LPARAM );	//!<
+static LRESULT	CALLBACK gpfLyrEditProc( HWND, UINT, WPARAM, LPARAM );	//!<
 
-LRESULT	CALLBACK LayerBoxProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+LRESULT	CALLBACK LayerBoxProc( HWND, UINT, WPARAM, LPARAM );	//!<
 
 BOOLEAN	Lyb_OnCreate( HWND, LPCREATESTRUCT );				//!<	WM_CREATE の処理
-VOID	Lyb_OnCommand( HWND , INT, HWND, UINT );			//!<	
-//VOID	Lyb_OnSize( HWND , UINT, INT, INT );				//!<	
-VOID	Lyb_OnKey( HWND, UINT, BOOL, INT, UINT );			//!<	
-VOID	Lyb_OnPaint( HWND );								//!<	
-VOID	Lyb_OnDestroy( HWND );								//!<	
-VOID	Lyb_OnMoving( HWND, LPRECT );						//!<	
-BOOL	Lyb_OnWindowPosChanging( HWND, LPWINDOWPOS );		//!<	
-VOID	Lyb_OnWindowPosChanged( HWND, const LPWINDOWPOS );	//!<	
-VOID	Lyb_OnLButtonDown( HWND, BOOL, INT, INT, UINT );	//!<	
-VOID	Lyb_OnContextMenu( HWND, HWND, UINT, UINT );		//!<	
+VOID	Lyb_OnCommand( HWND , INT, HWND, UINT );			//!<
+//VOID	Lyb_OnSize( HWND , UINT, INT, INT );				//!<
+VOID	Lyb_OnKey( HWND, UINT, BOOL, INT, UINT );			//!<
+VOID	Lyb_OnPaint( HWND );								//!<
+VOID	Lyb_OnDestroy( HWND );								//!<
+VOID	Lyb_OnMoving( HWND, LPRECT );						//!<
+BOOL	Lyb_OnWindowPosChanging( HWND, LPWINDOWPOS );		//!<
+VOID	Lyb_OnWindowPosChanged( HWND, const LPWINDOWPOS );	//!<
+VOID	Lyb_OnLButtonDown( HWND, BOOL, INT, INT, UINT );	//!<
+VOID	Lyb_OnContextMenu( HWND, HWND, UINT, UINT );		//!<
 
-HRESULT	LayerEditOnOff( HWND, UINT );						//!<	
+HRESULT	LayerEditOnOff( HWND, UINT );						//!<
 
 
-HRESULT	LayerStringObliterate( LAYER_ITR  );				//!<	
-HRESULT	LayerFromString( LAYER_ITR, LPCTSTR );				//!<	
-HRESULT	LayerFromSelectArea( LAYER_ITR , UINT );			//!<	
-HRESULT	LayerFromClipboard( LAYER_ITR );					//!<	
-HRESULT	LayerForClipboard( HWND, UINT );					//!<	
-HRESULT	LayerOnDelete( HWND );								//!<	
-INT		LayerInputLetter( LAYER_ITR, INT, INT, TCHAR );		//!<	
-LPTSTR	LayerLineTextGetAlloc( LAYER_ITR, INT );			//!<	
-HRESULT	LayerBoxSetString( LAYER_ITR, LPCTSTR, UINT, LPPOINT, UINT );	//!<	
-HRESULT	LayerBoxSizeAdjust( LAYER_ITR );					//!<	
+HRESULT	LayerStringObliterate( LAYER_ITR  );				//!<
+HRESULT	LayerFromString( LAYER_ITR, LPCTSTR );				//!<
+HRESULT	LayerFromSelectArea( LAYER_ITR , UINT );			//!<
+HRESULT	LayerFromClipboard( LAYER_ITR );					//!<
+HRESULT	LayerForClipboard( HWND, UINT );					//!<
+HRESULT	LayerOnDelete( HWND );								//!<
+INT		LayerInputLetter( LAYER_ITR, INT, INT, TCHAR );		//!<
+LPTSTR	LayerLineTextGetAlloc( LAYER_ITR, INT );			//!<
+HRESULT	LayerBoxSetString( LAYER_ITR, LPCTSTR, UINT, LPPOINT, UINT );	//!<
+HRESULT	LayerBoxSizeAdjust( LAYER_ITR );					//!<
 
-INT		LayerTransparentAdjust( LAYER_ITR, INT, INT );		//!<	
+INT		LayerTransparentAdjust( LAYER_ITR, INT, INT );		//!<
 
 #ifdef EDGE_BLANK_STYLE
-HRESULT	LayerEdgeBlankSizeCheck( HWND, INT );				//!<	
+HRESULT	LayerEdgeBlankSizeCheck( HWND, INT );				//!<
 #endif
 //-------------------------------------------------------------------------------------------------
 
@@ -301,7 +301,7 @@ HWND LayerBoxVisibalise( HINSTANCE hInst, LPCTSTR ptStr, UINT bNormal )
 	GetClientRect( stLayer.hBoxWnd, &rect );
 
 	//	編集用エディット
-	stLayer.hTextWnd = CreateWindowEx( 0, WC_EDIT, TEXT(""), 
+	stLayer.hTextWnd = CreateWindowEx( 0, WC_EDIT, TEXT(""),
 		WS_CHILD | WS_VSCROLL | WS_HSCROLL | ES_MULTILINE | ES_AUTOHSCROLL | ES_AUTOVSCROLL,
 		0, gdToolBarHei, rect.right, rect.bottom - gdToolBarHei,
 		stLayer.hBoxWnd, (HMENU)IDE_LYB_TEXTEDIT, hInst, NULL );
@@ -437,7 +437,7 @@ LRESULT CALLBACK gpfLyrEditProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPar
 			hWndCtl    = (HWND)lParam;		//	コマンドを発生させた子ウインドウのハンドル
 			codeNotify = HIWORD(wParam);	//	追加の通知メッセージ
 			TRACE( TEXT("[%X]LyrEdit COMMAND %d"), hWnd, id );
-			
+
 			switch( id )	//	キーボードショートカットをブッとばす
 			{
 				case IDM_PASTE:	SendMessage( hWnd, WM_PASTE, 0, 0 );	return 0;
@@ -472,17 +472,17 @@ LRESULT CALLBACK LayerBoxProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lP
 {
 	switch( message )
 	{
-		HANDLE_MSG( hWnd, WM_CREATE,			Lyb_OnCreate );		
-		HANDLE_MSG( hWnd, WM_COMMAND,			Lyb_OnCommand );	
-		HANDLE_MSG( hWnd, WM_PAINT,				Lyb_OnPaint );		
-		HANDLE_MSG( hWnd, WM_DESTROY,			Lyb_OnDestroy );	
-		HANDLE_MSG( hWnd, WM_KEYDOWN,			Lyb_OnKey );		
-		HANDLE_MSG( hWnd, WM_LBUTTONDBLCLK,		Lyb_OnLButtonDown );	
-		HANDLE_MSG( hWnd, WM_CONTEXTMENU,		Lyb_OnContextMenu );	
-		HANDLE_MSG( hWnd, WM_WINDOWPOSCHANGING,	Lyb_OnWindowPosChanging );	
-		HANDLE_MSG( hWnd, WM_WINDOWPOSCHANGED,	Lyb_OnWindowPosChanged );	
+		HANDLE_MSG( hWnd, WM_CREATE,			Lyb_OnCreate );
+		HANDLE_MSG( hWnd, WM_COMMAND,			Lyb_OnCommand );
+		HANDLE_MSG( hWnd, WM_PAINT,				Lyb_OnPaint );
+		HANDLE_MSG( hWnd, WM_DESTROY,			Lyb_OnDestroy );
+		HANDLE_MSG( hWnd, WM_KEYDOWN,			Lyb_OnKey );
+		HANDLE_MSG( hWnd, WM_LBUTTONDBLCLK,		Lyb_OnLButtonDown );
+		HANDLE_MSG( hWnd, WM_CONTEXTMENU,		Lyb_OnContextMenu );
+		HANDLE_MSG( hWnd, WM_WINDOWPOSCHANGING,	Lyb_OnWindowPosChanging );
+		HANDLE_MSG( hWnd, WM_WINDOWPOSCHANGED,	Lyb_OnWindowPosChanged );
 	//	WM_WINDOWPOSCHANGED を使った場合、WM_SIZEは発生しないようだ
-	//	HANDLE_MSG( hWnd, WM_SIZE,				Lyb_OnSize );	
+	//	HANDLE_MSG( hWnd, WM_SIZE,				Lyb_OnSize );
 
 		case WM_MOVING:	Lyb_OnMoving( hWnd, (LPRECT)lParam );	return 0;
 
@@ -596,7 +596,7 @@ VOID Lyb_OnCommand( HWND hWnd, INT id, HWND hWndCtl, UINT codeNotify )
 		case IDM_LYB_INSERT:	//	貼り付ける
 		case IDM_LYB_OVERRIDE:
 			LayerContentsImportable( hWnd, id, &iXpos, &iYln, 0 );
-			ViewPosResetCaret( iXpos, iYln );	
+			ViewPosResetCaret( iXpos, iYln );
 			DocPageInfoRenew( -1, 1 );
 			if( gbQuickClose  ){	DestroyWindow( hWnd );	}	//	直ぐ閉じる？
 			break;
@@ -855,7 +855,7 @@ BOOL Lyb_OnWindowPosChanging( HWND hWnd, LPWINDOWPOS pstWpos )
 	RECT	vwRect;
 
 
-	//TRACE( TEXT("WM_WINDOWPOSCHANGING POS[%d %d] SIZE[%d %d] FLAG[%d]"), 
+	//TRACE( TEXT("WM_WINDOWPOSCHANGING POS[%d %d] SIZE[%d %d] FLAG[%d]"),
 	//	pstWpos->x, pstWpos->y, pstWpos->cx, pstWpos->cy, pstWpos->flags );
 
 	//	移動がなかったときは何もしないでおｋ
@@ -899,7 +899,7 @@ VOID Lyb_OnWindowPosChanged( HWND hWnd, const LPWINDOWPOS pstWpos )
 	LAYER_ITR	itLyr;
 	RECT	vwRect, rect;
 
-	//TRACE( TEXT("WM_WINDOWPOSCHANGED POS[%d %d] SIZE[%d %d] FLAG[%d]"), 
+	//TRACE( TEXT("WM_WINDOWPOSCHANGED POS[%d %d] SIZE[%d %d] FLAG[%d]"),
 	//	pstWpos->x, pstWpos->y, pstWpos->cx, pstWpos->cy, pstWpos->flags );
 
 
@@ -1040,7 +1040,7 @@ VOID Lyb_OnContextMenu( HWND hWnd, HWND hWndContext, UINT xPos, UINT yPos )
 	hMenu = LoadMenu( GetModuleHandle(NULL), MAKEINTRESOURCE(IDM_LAYERBOX_POPUP) );
 	hSubMenu = GetSubMenu( hMenu, 0 );
 
-	dRslt = TrackPopupMenu( hSubMenu, 0, posX, posY, 0, hWnd, NULL );	//	TPM_CENTERALIGN | TPM_VCENTERALIGN | 
+	dRslt = TrackPopupMenu( hSubMenu, 0, posX, posY, 0, hWnd, NULL );	//	TPM_CENTERALIGN | TPM_VCENTERALIGN |
 	DestroyMenu( hMenu );
 
 	return;

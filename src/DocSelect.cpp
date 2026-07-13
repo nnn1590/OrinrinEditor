@@ -25,7 +25,7 @@ extern FILES_ITR	gitFileIt;	//	今見てるファイルの本体・イテレー�
 extern INT		gixFocusPage;	//	注目中のページ・とりあえず０・０インデックス
 
 extern  UINT	gbUniPad;		//	パディングにユニコードをつかって、ドットを見せないようにする
-extern  UINT	gbCrLfCode;		//	改行コード：０したらば・非０ＹＹ 
+extern  UINT	gbCrLfCode;		//	改行コード：０したらば・非０ＹＹ
 
 static INT		gdSelByte;		//!<	選択範囲のバイト数
 //-------------------------------------------------------------------------------------------------
@@ -406,7 +406,7 @@ INT DocPageSelStateToggle( INT dForce )
 VOID DocSelectedByteStatus( VOID )
 {
 	TCHAR	atBuffer[MIN_STRING];
-	
+
 	if( gdSelByte )
 	{
 		StringCchPrintf( atBuffer, MIN_STRING, TEXT("SEL %d Bytes"), gdSelByte );
@@ -524,7 +524,7 @@ INT DocSelectedDelete( PINT pdDot, PINT pdLine, UINT bSqSel, BOOLEAN bFirst )
 		if( D_SQUARE & bSqSel ){	DocBadSpaceCheck( j );	}
 
 		//	改行サクるとこれによりatが無効になる？
-	
+
 	//	iLines = DocNowFilePageLineCount( );	//	ページ全体の行数再設定？
 
 		if( (*gitFileIt).vcCont.at( gixFocusPage ).ltPage.begin() == itLine )	break;

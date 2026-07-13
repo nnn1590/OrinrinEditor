@@ -41,7 +41,7 @@ extern BOOLEAN	gbShiftOn;		//	シフトが押されている
 extern BOOLEAN	gbCtrlOn;		//	コントロールが押されている
 extern BOOLEAN	gbAltOn;		//	アルタが押されている
 
-extern BOOLEAN	gbExtract;	
+extern BOOLEAN	gbExtract;
 
 extern POINT	gstCursor;		//	文字を考慮しない、Cursorのドット＆行位置・大域変数でいいのだろうか
 
@@ -303,7 +303,7 @@ HRESULT ViewSelStateChange( UINT dFirst )
 	if( gstPrePos.y != gdDocLine )
 	{
 		dStep = gdDocLine - gstPrePos.y;	//	マイナス方向に注意セヨ
-		
+
 		TRACE( TEXT("選択で行またぎ発生：D[%d] L[%d] St[%d]"), gdDocXdot, gdDocLine, dStep );
 
 		//	元々キャレットのあった行の処理

@@ -25,7 +25,7 @@ If not, see <http://www.gnu.org/licenses/>.
 extern FILES_ITR	gitFileIt;		//	今見てるファイルの本体
 extern INT			gixFocusPage;	//	注目中のページ・とりあえず０・０インデックス
 
-extern  UINT		gbCrLfCode;		//	改行コード：０したらば・非０ＹＹ 
+extern  UINT		gbCrLfCode;		//	改行コード：０したらば・非０ＹＹ
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
@@ -367,7 +367,7 @@ UINT DocPageByteCount( FILES_ITR itFile, INT dPage, PINT pMozi, PINT pByte )
 			iMozis++;
 		}
 		itLine->iByteSz = iLnBy;	//	各行の数値
-		itLine->iDotCnt = iDots;	//	
+		itLine->iDotCnt = iDots;	//
 
 		//	全体のバイト数
 		iBytes += iLnBy;

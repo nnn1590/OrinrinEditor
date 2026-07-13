@@ -76,12 +76,12 @@ IDD_MOZI_SCRIPT_DLG
 
 #define TB_ITEMS	3	//	5
 static  TBBUTTON	gstMztbInfo[] = {
-	{  0,	IDM_MOZI_DECIDE,	TBSTATE_ENABLED,	TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  1,	IDM_MOZI_REFRESH,	TBSTATE_ENABLED,	TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  2,	IDM_MOZI_SETTING,	TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  } 	//	
+	{  0,	IDM_MOZI_DECIDE,	TBSTATE_ENABLED,	TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  1,	IDM_MOZI_REFRESH,	TBSTATE_ENABLED,	TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  2,	IDM_MOZI_SETTING,	TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  } 	//
 //	{  0,	0,					TBSTATE_ENABLED,	TBSTYLE_SEP,						{0, 0}, 0, 0  },
-//	{  3,	IDM_MOZI_ADVANCE,	0,					TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  } 	//	
-};	//	
+//	{  3,	IDM_MOZI_ADVANCE,	0,					TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  } 	//
+};	//
 //-------------------------------------------------------------------------------------------------
 
 typedef struct tagMOZIITEM
@@ -113,12 +113,12 @@ extern INT			gdViewTopLine;	//	表示中の最上部行番号
 
 
 
-static TCHAR		gatMoziIni[MAX_PATH];	//!<	
+static TCHAR		gatMoziIni[MAX_PATH];	//!<
 
-static  ATOM		gMoziAtom;		//!<	
-EXTERNED HWND		ghMoziWnd;		//!<	
-static  HWND		ghMoziToolBar;	//!<	
-static HIMAGELIST	ghMoziImgLst;	//!<	
+static  ATOM		gMoziAtom;		//!<
+EXTERNED HWND		ghMoziWnd;		//!<
+static  HWND		ghMoziToolBar;	//!<
+static HIMAGELIST	ghMoziImgLst;	//!<
 
 static  ATOM		gMoziViewAtom;
 static  HWND		ghMoziViewWnd;	//!<	表示スタティック
@@ -145,7 +145,7 @@ static DWORD		gcchMzBuf;		//!<	確保枠の文字数・バイトじゃないぞ
 
 static BOOLEAN		gbQuickClose;	//!<	貼り付けたらすぐ閉じる
 
-static WNDPROC		gpfOrigMoziEditProc;	//!<	
+static WNDPROC		gpfOrigMoziEditProc;	//!<
 
 static sqlite3		*gpMoziTable;	//!<	文字一覧のオンメモリデタベ
 
@@ -154,45 +154,45 @@ static vector<MOZIITEM>	gvcMoziItem;
 typedef vector<MOZIITEM>::iterator	MZTM_ITR;
 //-------------------------------------------------------------------------------------------------
 
-static LRESULT	CALLBACK gpfMoziEditProc( HWND , UINT, WPARAM, LPARAM );	//!<	
+static LRESULT	CALLBACK gpfMoziEditProc( HWND , UINT, WPARAM, LPARAM );	//!<
 
 
-LRESULT	CALLBACK MoziProc( HWND, UINT, WPARAM, LPARAM );	//!<	
-VOID	Mzs_OnCommand( HWND , INT, HWND, UINT );			//!<	
-VOID	Mzs_OnPaint( HWND );								//!<	
-VOID	Mzs_OnDestroy( HWND );								//!<	
-VOID	Mzs_OnContextMenu( HWND, HWND, UINT, UINT );		//!<	
-VOID	Mzs_OnDropFiles( HWND , HDROP );					//!<	
-LRESULT	Mzs_OnNotify( HWND , INT, LPNMHDR );				//!<	
+LRESULT	CALLBACK MoziProc( HWND, UINT, WPARAM, LPARAM );	//!<
+VOID	Mzs_OnCommand( HWND , INT, HWND, UINT );			//!<
+VOID	Mzs_OnPaint( HWND );								//!<
+VOID	Mzs_OnDestroy( HWND );								//!<
+VOID	Mzs_OnContextMenu( HWND, HWND, UINT, UINT );		//!<
+VOID	Mzs_OnDropFiles( HWND , HDROP );					//!<
+LRESULT	Mzs_OnNotify( HWND , INT, LPNMHDR );				//!<
 
-HRESULT	MoziFileRefresh( HWND );							//!<	
-HRESULT	MoziFileRebuild( HWND, UINT );						//!<	
+HRESULT	MoziFileRefresh( HWND );							//!<
+HRESULT	MoziFileRebuild( HWND, UINT );						//!<
 
-HRESULT	MoziFileListAdd( LPTSTR );							//!<	
-HRESULT MoziFileListDelete( HWND  );						//!<	
+HRESULT	MoziFileListAdd( LPTSTR );							//!<
+HRESULT MoziFileListDelete( HWND  );						//!<
 
-HRESULT	MoziFileStore( LPTSTR );							//!<	
-UINT	CALLBACK MoziItemTablise( LPTSTR, LPCTSTR, INT );	//!<	
-VOID	MoziItemRemovePeriod( LPTSTR  );					//!<	
+HRESULT	MoziFileStore( LPTSTR );							//!<
+UINT	CALLBACK MoziItemTablise( LPTSTR, LPCTSTR, INT );	//!<
+VOID	MoziItemRemovePeriod( LPTSTR  );					//!<
 
-HRESULT	MoziSpaceCreate( VOID );							//!<	
+HRESULT	MoziSpaceCreate( VOID );							//!<
 
-HRESULT	MoziScriptInsert( HWND );							//!<	
+HRESULT	MoziScriptInsert( HWND );							//!<
 
-LRESULT	CALLBACK MoziViewProc( HWND, UINT, WPARAM, LPARAM );//!<	
-VOID	Mzv_OnKey( HWND, UINT, BOOL, INT, UINT );			//!<	
-VOID	Mzv_OnPaint( HWND );								//!<	
-VOID	Mzv_OnMoving( HWND, LPRECT );						//!<	
-BOOL	Mzv_OnWindowPosChanging( HWND, LPWINDOWPOS );		//!<	
-VOID	Mzv_OnWindowPosChanged( HWND, const LPWINDOWPOS );	//!<	
-VOID	MoziViewDraw( HDC );								//!<	
+LRESULT	CALLBACK MoziViewProc( HWND, UINT, WPARAM, LPARAM );//!<
+VOID	Mzv_OnKey( HWND, UINT, BOOL, INT, UINT );			//!<
+VOID	Mzv_OnPaint( HWND );								//!<
+VOID	Mzv_OnMoving( HWND, LPRECT );						//!<
+BOOL	Mzv_OnWindowPosChanging( HWND, LPWINDOWPOS );		//!<
+VOID	Mzv_OnWindowPosChanged( HWND, const LPWINDOWPOS );	//!<
+VOID	MoziViewDraw( HDC );								//!<
 
-HRESULT	MoziSqlTableOpenClose( UINT );						//!<	
-HRESULT	MoziSqlTransOnOff( BYTE );							//!<	
-UINT	MoziSqlItemInsert( LPTSTR, LPTSTR, INT, INT );		//!<	
-LPTSTR	MoziSqlItemSelect( TCHAR, LPINT, LPINT );			//!<	
-UINT	MoziSqlItemCount( LPINT, LPINT );					//!<	
-HRESULT	MoziSqlItemDeleteAll( VOID );						//!<	
+HRESULT	MoziSqlTableOpenClose( UINT );						//!<
+HRESULT	MoziSqlTransOnOff( BYTE );							//!<
+UINT	MoziSqlItemInsert( LPTSTR, LPTSTR, INT, INT );		//!<
+LPTSTR	MoziSqlItemSelect( TCHAR, LPINT, LPINT );			//!<
+UINT	MoziSqlItemCount( LPINT, LPINT );					//!<
+HRESULT	MoziSqlItemDeleteAll( VOID );						//!<
 
 //-------------------------------------------------------------------------------------------------
 
@@ -418,7 +418,7 @@ HWND MoziScripterCreate( HINSTANCE hInst, HWND hPrWnd )
 		0, gdToolBarHei, rect.right, rect.bottom - gdToolBarHei, ghMoziWnd, (HMENU)IDLV_MZSCR_SETTING, hInst, NULL );
 	ListView_SetExtendedListViewStyle( ghSettiLvWnd, LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES );
 
-	//	サブクラス化	
+	//	サブクラス化
 //	gpfOrgSettiLvProc = SubclassWindow( ghSettiLvWnd, gpfSettiLvProc );
 
 	ZeroMemory( &stLvColm, sizeof(LVCOLUMN) );
@@ -609,7 +609,7 @@ LRESULT CALLBACK gpfMoziEditProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 			hWndCtl    = (HWND)lParam;		//	コマンドを発生させた子ウインドウのハンドル
 			codeNotify = HIWORD(wParam);	//	追加の通知メッセージ
 			TRACE( TEXT("[%X]MoziEdit COMMAND %d"), hWnd, id );
-			
+
 			switch( id )	//	キーボードショートカットをブッとばす
 			{
 				case IDM_PASTE:	SendMessage( hWnd, WM_PASTE, 0, 0 );	return 0;
@@ -950,7 +950,7 @@ LRESULT CALLBACK MoziProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam
 	{
 		HANDLE_MSG( hWnd, WM_PAINT,       Mzs_OnPaint );		//	画面の更新とか
 		HANDLE_MSG( hWnd, WM_NOTIFY,      Mzs_OnNotify );		//	コモンコントロールの個別イベント
-		HANDLE_MSG( hWnd, WM_COMMAND,     Mzs_OnCommand );	
+		HANDLE_MSG( hWnd, WM_COMMAND,     Mzs_OnCommand );
 		HANDLE_MSG( hWnd, WM_DESTROY,     Mzs_OnDestroy );		//	終了時の処理
 		HANDLE_MSG( hWnd, WM_DROPFILES,   Mzs_OnDropFiles );	//	D&D
 		HANDLE_MSG( hWnd, WM_CONTEXTMENU, Mzs_OnContextMenu );
@@ -1484,7 +1484,7 @@ HRESULT MoziScriptInsert( HWND hWnd )
 	if( gdHideXdot >    iX )	iX = gdHideXdot + 11;	//	念のため
 	if( gdViewTopLine > iY )	iY = gdViewTopLine;
 
-	ViewPosResetCaret( iX, iY );	
+	ViewPosResetCaret( iX, iY );
 
 #ifdef DO_TRY_CATCH
 	}
@@ -1776,7 +1776,7 @@ LPTSTR MoziSqlItemSelect( TCHAR ch, LPINT piLine, LPINT piDot )
 	rslt = sqlite3_prepare( gpMoziTable, acSelect, -1, &statement, NULL );
 	if( SQLITE_OK != rslt ){	SQL_DEBUG( gpMoziTable );	return 0;	}
 
-	atMozi[ 0] = ch;	atMozi[1] = 0;	
+	atMozi[ 0] = ch;	atMozi[1] = 0;
 	sqlite3_reset( statement );
 	rslt = sqlite3_bind_text16( statement, 1, atMozi, -1, SQLITE_STATIC );	//	letter
 

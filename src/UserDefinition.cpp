@@ -34,7 +34,7 @@ typedef struct tagUSERITEMS
 extern INT		gdDocLine;		//!<	キャレットのＹ行数・ドキュメント位置
 
 
-static TCHAR	gatUsDfPath[MAX_PATH];	//!<	
+static TCHAR	gatUsDfPath[MAX_PATH];	//!<
 
 static  UINT	gdItemCnt;	//!<	登録されているアイテム数
 

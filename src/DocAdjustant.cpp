@@ -151,14 +151,14 @@ CONST TCHAR gaatPaddingSpDotW[11][3] = {
 //-------------------------------------------------------------------------------------------------
 
 
-UINT	SpaceWidthAdjust( INT, PINT, PINT );	//!<	
-LPTSTR	SpaceStrAlloc( INT, INT );	//!<	
+UINT	SpaceWidthAdjust( INT, PINT, PINT );	//!<
+LPTSTR	SpaceStrAlloc( INT, INT );	//!<
 
-UINT	DocSpaceDifference( UINT, PINT, INT, UINT );	//!<	
+UINT	DocSpaceDifference( UINT, PINT, INT, UINT );	//!<
 
-HRESULT	DocRightGuideSet( INT, INT );	//!<	
+HRESULT	DocRightGuideSet( INT, INT );	//!<
 
-LPTSTR	DocPaddingSpace( INT , PINT, PINT );	//!<	
+LPTSTR	DocPaddingSpace( INT , PINT, PINT );	//!<
 //-------------------------------------------------------------------------------------------------
 
 
@@ -677,7 +677,7 @@ HRESULT DocRightGuideSet( INT dTop, INT dBottom )
 	if( 0 > dTop )		dTop = 0;
 	if( 0 > dBottom )	dBottom = iLines - 1;
 
-	//	
+	//
 	ZeroMemory( atBuffer, sizeof(atBuffer) );
 	atBuffer[0] = RIGHT_WALL;
 	InitParamString( INIT_LOAD, VS_RGUIDE_MOZI, atBuffer );
@@ -922,7 +922,7 @@ LPTSTR DocPaddingSpaceWithPeriod( INT dTgtDot, PINT pdZen, PINT pdHan, PINT pdPr
 	if( ptSpace )
 	{
 		StringCchLength( ptSpace, STRSAFE_MAX_CCH, &cchSize );
-		
+
 		//	ピリオド入れてサイズ調整
 		cchPlus = cchSize + dPrdSp + 1;
 		ptPlus = (LPTSTR)malloc( cchPlus * sizeof(TCHAR) );
@@ -959,7 +959,7 @@ HRESULT DocTopLetterInsert( TCHAR ch, PINT pXdot, INT dLine )
 	BOOLEAN		bFirst = TRUE, bSeled = FALSE;
 
 	TRACE( TEXT("行頭空白を追加") );
-	
+
 	//	範囲確認
 	iLines  = DocNowFilePageLineCount( );
 	iTop    = (*gitFileIt).vcCont.at( gixFocusPage ).dSelLineTop;
@@ -1190,7 +1190,7 @@ HRESULT DocLastSpaceErase( PINT pXdot, INT dLine )
 		xMotoDot = itLine->iDotCnt;
 		ptBuffer = DocLastSpDel( &(itLine->vcLine) );
 		xDelDot  = DocLineParamGet( i, NULL, NULL );	//	サクった後の行末端すなわち削除位置
-		
+
 		if( ptBuffer  )
 		{
 			SqnAppendString( &((*gitFileIt).vcCont.at( gixFocusPage ).stUndoLog), DO_DELETE, ptBuffer, xDelDot, i , bFirst );
@@ -1445,7 +1445,7 @@ HRESULT DocPositionShift( UINT vk, PINT pXdot, INT dLine )
 	LPTSTR		ptRepl;
 	TCHAR		ch, chOneSp;
 
-	LPUNDOBUFF	pstUndoBuff;	
+	LPUNDOBUFF	pstUndoBuff;
 
 	LETR_ITR	vcLtrItr;
 	LINE_ITR	itLine;
@@ -1657,7 +1657,7 @@ HRESULT DocCentreWidthShift( UINT vk, PINT pXdot, INT dLine )
 	LPTSTR		ptRepl;
 	TCHAR		ch, chOneSp;
 
-	LPUNDOBUFF	pstUndoBuff;	
+	LPUNDOBUFF	pstUndoBuff;
 
 	LETR_ITR	vcLtrItr;
 	LINE_ITR	itLine;

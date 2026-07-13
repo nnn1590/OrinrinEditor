@@ -49,7 +49,7 @@ If not, see <http://www.gnu.org/licenses/>.
 
 #define VT_PARAMHEI	25
 
-#define LEFT_PADD	15	//	左余裕・中心線にたいして 
+#define LEFT_PADD	15	//	左余裕・中心線にたいして
 
 #define IDEO_COMMA	TEXT('、')	//	11dot
 #define IDEO_FSTOP	TEXT('。')	//	11dot
@@ -59,12 +59,12 @@ If not, see <http://www.gnu.org/licenses/>.
 
 #define TB_ITEMS	5
 static  TBBUTTON	gstVttbInfo[] = {
-	{  0,	IDM_VLINE_DECIDE,		TBSTATE_ENABLED,	TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
+	{  0,	IDM_VLINE_DECIDE,		TBSTATE_ENABLED,	TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
 	{  0,	0,						TBSTATE_ENABLED,	TBSTYLE_SEP,						{0, 0}, 0, 0  },
-	{  1,	IDM_VLINE_REFRESH,		TBSTATE_ENABLED,	TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  2,	IDCB_VLINE_LEFT_GO,		TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  3,	IDM_VLINE_TRANSPARENT,	TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  } 	//	
-};	//	
+	{  1,	IDM_VLINE_REFRESH,		TBSTATE_ENABLED,	TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  2,	IDCB_VLINE_LEFT_GO,		TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  3,	IDM_VLINE_TRANSPARENT,	TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  } 	//
+};	//
 //-------------------------------------------------------------------------------------------------
 
 
@@ -94,11 +94,11 @@ extern  HWND		ghViewWnd;		//	編集ビューウインドウのハンドル
 extern INT			gdHideXdot;		//	左の隠れ部分
 extern INT			gdViewTopLine;	//	表示中の最上部行番号
 
-static  HWND		ghVertToolBar;	//!<	
-static HIMAGELIST	ghVertImgLst;	//!<	
+static  HWND		ghVertToolBar;	//!<
+static HIMAGELIST	ghVertImgLst;	//!<
 
-static  ATOM		gVertAtom;		//!<	
-EXTERNED HWND		ghVertWnd;		//!<	
+static  ATOM		gVertAtom;		//!<
+EXTERNED HWND		ghVertWnd;		//!<
 
 static  HWND		ghTextWnd;		//!<	文字列入力枠
 static INT			gdToolBarHei;	//!<	ツールバー太さ
@@ -120,7 +120,7 @@ static DWORD		gcchVtBuf;		//!<	確保枠の文字数・バイトじゃないぞ
 
 static BOOLEAN		gbQuickClose;	//!<	貼り付けたら直ぐ閉じる
 
-static WNDPROC		gpfOrigVertEditProc;	//!<	
+static WNDPROC		gpfOrigVertEditProc;	//!<
 
 
 static  vector<VERTITEM>	gvcVertItem;
@@ -128,24 +128,24 @@ typedef vector<VERTITEM>::iterator	VTIM_ITR;
 typedef vector<VERTITEM>::reverse_iterator	VTIM_RITR;
 //-------------------------------------------------------------------------------------------------
 
-static LRESULT	CALLBACK gpfVertEditProc( HWND , UINT, WPARAM, LPARAM );	//!<	
+static LRESULT	CALLBACK gpfVertEditProc( HWND , UINT, WPARAM, LPARAM );	//!<
 
-LRESULT	CALLBACK VertProc( HWND, UINT, WPARAM, LPARAM );	//!<	
-VOID	Vrt_OnCommand( HWND , INT, HWND, UINT );	//!<	
-VOID	Vrt_OnPaint( HWND );	//!<	
-VOID	Vrt_OnDestroy( HWND );	//!<	
-LRESULT	Vrt_OnNotify( HWND , INT, LPNMHDR );	//!<	
+LRESULT	CALLBACK VertProc( HWND, UINT, WPARAM, LPARAM );	//!<
+VOID	Vrt_OnCommand( HWND , INT, HWND, UINT );	//!<
+VOID	Vrt_OnPaint( HWND );	//!<
+VOID	Vrt_OnDestroy( HWND );	//!<
+LRESULT	Vrt_OnNotify( HWND , INT, LPNMHDR );	//!<
 
-LRESULT	CALLBACK VertViewProc( HWND, UINT, WPARAM, LPARAM );	//!<	
-VOID	Vvw_OnKey( HWND, UINT, BOOL, INT, UINT );			//!<	
-VOID	Vvw_OnPaint( HWND );								//!<	
-VOID	Vvw_OnMoving( HWND, LPRECT );						//!<	
-BOOL	Vvw_OnWindowPosChanging( HWND, LPWINDOWPOS );		//!<	
-VOID	Vvw_OnWindowPosChanged( HWND, const LPWINDOWPOS );	//!<	
+LRESULT	CALLBACK VertViewProc( HWND, UINT, WPARAM, LPARAM );	//!<
+VOID	Vvw_OnKey( HWND, UINT, BOOL, INT, UINT );			//!<
+VOID	Vvw_OnPaint( HWND );								//!<
+VOID	Vvw_OnMoving( HWND, LPRECT );						//!<
+BOOL	Vvw_OnWindowPosChanging( HWND, LPWINDOWPOS );		//!<
+VOID	Vvw_OnWindowPosChanged( HWND, const LPWINDOWPOS );	//!<
 
-HRESULT	VertTextAssemble( HWND );	//!<	
-VOID	VertViewDraw( HDC );		//!<	
-HRESULT	VertScriptInsert( HWND );	//!<	
+HRESULT	VertTextAssemble( HWND );	//!<
+VOID	VertViewDraw( HDC );		//!<
+HRESULT	VertScriptInsert( HWND );	//!<
 //-------------------------------------------------------------------------------------------------
 
 
@@ -395,7 +395,7 @@ LRESULT CALLBACK gpfVertEditProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 			hWndCtl    = (HWND)lParam;		//	コマンドを発生させた子ウインドウのハンドル
 			codeNotify = HIWORD(wParam);	//	追加の通知メッセージ
 			TRACE( TEXT("[%X]VertEdit COMMAND %d"), hWnd, id );
-			
+
 			switch( id )	//	キーボードショートカットをブッとばす
 			{
 				case IDM_PASTE:	SendMessage( hWnd, WM_PASTE, 0, 0 );	return 0;
@@ -432,7 +432,7 @@ LRESULT CALLBACK VertProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam
 	{
 		HANDLE_MSG( hWnd, WM_PAINT,   Vrt_OnPaint );	//	画面の更新とか
 		HANDLE_MSG( hWnd, WM_NOTIFY,  Vrt_OnNotify );	//	コモンコントロールの個別イベント
-		HANDLE_MSG( hWnd, WM_COMMAND, Vrt_OnCommand );	
+		HANDLE_MSG( hWnd, WM_COMMAND, Vrt_OnCommand );
 		HANDLE_MSG( hWnd, WM_DESTROY, Vrt_OnDestroy );	//	終了時の処理
 
 		default:	break;
@@ -1026,7 +1026,7 @@ HRESULT	VertScriptInsert( HWND hWnd )
 	if( gbSpTrans ){	LayerTransparentToggle( hLyrWnd, 1 );	}
 	//	上書きする
 	LayerContentsImportable( hLyrWnd, IDM_LYB_OVERRIDE, &iX, &iY, D_INVISI );
-	ViewPosResetCaret( iX, iY );	
+	ViewPosResetCaret( iX, iY );
 	//	終わったら閉じる
 	DestroyWindow( hLyrWnd );
 

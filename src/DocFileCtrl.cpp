@@ -89,7 +89,7 @@ HRESULT DocFileOpen( HWND hWnd )
 	stOpenFile.nMaxFile        = MAX_PATH;
 	stOpenFile.lpstrFileTitle  = atFileName;
 	stOpenFile.nMaxFileTitle   = MAX_STRING;
-//	stOpenFile.lpstrInitialDir = 
+//	stOpenFile.lpstrInitialDir =
 	stOpenFile.lpstrTitle      = TEXT("開くファイルを指定しておくれ");
 	stOpenFile.Flags           = OFN_EXPLORER | OFN_HIDEREADONLY;
 	stOpenFile.lpstrDefExt     = TEXT("mlt");
@@ -397,7 +397,7 @@ HRESULT DocFileSave( HWND hWnd, UINT bStyle )
 		stSaveFile.nMaxFile        = MAX_PATH;
 		stSaveFile.lpstrFileTitle  = atFileName;
 		stSaveFile.nMaxFileTitle   = MAX_STRING;
-//		stSaveFile.lpstrInitialDir = 
+//		stSaveFile.lpstrInitialDir =
 		stSaveFile.lpstrTitle      = TEXT("保存するファイル名を指定してね");
 		stSaveFile.Flags           = OFN_EXPLORER | OFN_OVERWRITEPROMPT | OFN_HIDEREADONLY;
 		//デフォルト拡張子の指定・あとで面倒見てるからここではしない方が良い
@@ -727,7 +727,7 @@ HRESULT DocImageSave( HWND hWnd, UINT bStyle, HFONT hFont )
 	stSaveFile.nMaxFile        = MAX_PATH;
 	stSaveFile.lpstrFileTitle  = atFileName;
 	stSaveFile.nMaxFileTitle   = MAX_STRING;
-//		stSaveFile.lpstrInitialDir = 
+//		stSaveFile.lpstrInitialDir =
 	stSaveFile.lpstrTitle      = TEXT("保存するファイル名と形式を指定しておくれ");
 	stSaveFile.Flags           = OFN_EXPLORER | OFN_OVERWRITEPROMPT | OFN_HIDEREADONLY;
 

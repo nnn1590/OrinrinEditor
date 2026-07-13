@@ -35,19 +35,19 @@ If not, see <http://www.gnu.org/licenses/>.
 #endif
 //-------------------------------------------------------------------------------------------------
 
-static  HWND	ghMainWnd;		//!<	
-static  HWND	ghUniPltWnd;	//!<	
-static  HWND	ghGroupSelWnd;	//!<	
-static  HWND	ghUniLvWnd;		//!<	
+static  HWND	ghMainWnd;		//!<
+static  HWND	ghUniPltWnd;	//!<
+static  HWND	ghGroupSelWnd;	//!<
+static  HWND	ghUniLvWnd;		//!<
 
-static WNDPROC	gpfOrgUniListProc;	//!<	
+static WNDPROC	gpfOrgUniListProc;	//!<
 
 static HFONT	ghLvFont, ghPanelFont;	//!<	表示に用いるフォント
 
-static TCHAR	gtSelMozi;	//!<	
+static TCHAR	gtSelMozi;	//!<
 
-static  UINT	gSelRow;	//!<	
-static INT		gSelClm;	//!<	
+static  UINT	gSelRow;	//!<
+static INT		gSelClm;	//!<
 
 //	使用ログ・１６個保持
 #define UNIUSELOG_MAX	16
@@ -57,15 +57,15 @@ typedef list<TCHAR>::iterator	UUSE_LITR;
 
 HRESULT UniUseLogging( HWND, TCHAR );
 
-INT_PTR	CALLBACK UniPaletteDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+INT_PTR	CALLBACK UniPaletteDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<
 
-INT_PTR	Uni_OnInitDialog( HWND , HWND, LPARAM );			//!<	
-INT_PTR	Uni_OnCommand( HWND , INT, HWND, UINT );			//!<	
-INT_PTR	Uni_OnClose( HWND );								//!<	
-INT_PTR	Uni_OnNotify( HWND , INT, LPNMHDR );				//!<	
-INT_PTR	Uni_OnDrawItem( HWND , CONST LPDRAWITEMSTRUCT );	//!<	
+INT_PTR	Uni_OnInitDialog( HWND , HWND, LPARAM );			//!<
+INT_PTR	Uni_OnCommand( HWND , INT, HWND, UINT );			//!<
+INT_PTR	Uni_OnClose( HWND );								//!<
+INT_PTR	Uni_OnNotify( HWND , INT, LPNMHDR );				//!<
+INT_PTR	Uni_OnDrawItem( HWND , CONST LPDRAWITEMSTRUCT );	//!<
 
-LRESULT	CALLBACK gpfUniListProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+LRESULT	CALLBACK gpfUniListProc( HWND, UINT, WPARAM, LPARAM );	//!<
 //-------------------------------------------------------------------------------------------------
 
 /*!
@@ -94,7 +94,7 @@ HRESULT UniDlgInitialise( HWND hWnd, UINT dMode )
 			ptBuff = &(atBuff[0]);	//	開始
 			for( d = 0; UNIUSELOG_MAX > d; d++ )
 			{
-				tMozi = (TCHAR)_tcstoul( ptBuff, &ptEnd , 10 );	//	
+				tMozi = (TCHAR)_tcstoul( ptBuff, &ptEnd , 10 );	//
 
 				gltUseMozi.push_front( tMozi );
 
@@ -283,7 +283,7 @@ INT_PTR Uni_OnInitDialog( HWND hDlg, HWND hWndFocus, LPARAM lParam )
 	ListView_SetExtendedListViewStyle( ghUniLvWnd, LVS_EX_GRIDLINES | LVS_EX_LABELTIP );
 	SetWindowFont( ghUniLvWnd, ghLvFont, TRUE );
 
-	//	サブクラス化	
+	//	サブクラス化
 	gpfOrgUniListProc = SubclassWindow( ghUniLvWnd, gpfUniListProc );
 
 	ZeroMemory( &stLvColm, sizeof(LVCOLUMN) );
@@ -367,7 +367,7 @@ INT_PTR Uni_OnCommand( HWND hDlg, INT id, HWND hWndCtl, UINT codeNotify )
 			}
 			return (INT_PTR)TRUE;
 
-		case IDB_UNI_COPY_CLIP:	
+		case IDB_UNI_COPY_CLIP:
 			if( gtSelMozi )
 			{
 				DocClipLetter( gtSelMozi  );
@@ -524,7 +524,7 @@ INT_PTR Uni_OnNotify( HWND hDlg, INT idFrom, LPNMHDR pstNmhdr )
 		pstCustomDraw = (LPNMLVCUSTOMDRAW)pstListView;
 
 
-		if( CDDS_PREPAINT == pstCustomDraw->nmcd.dwDrawStage || 
+		if( CDDS_PREPAINT == pstCustomDraw->nmcd.dwDrawStage ||
 			CDDS_ITEMPREPAINT == pstCustomDraw->nmcd.dwDrawStage )
 		{
 			SetWindowLong( hDlg, DWL_MSGRESULT, (long)CDRF_NOTIFYSUBITEMDRAW );

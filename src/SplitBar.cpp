@@ -94,9 +94,9 @@ LRESULT CALLBACK SplitProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 	switch( message )
 	{
 		HANDLE_MSG( hWnd, WM_PAINT,       Spt_OnPaint );		//	画面の更新とか
-		HANDLE_MSG( hWnd, WM_LBUTTONDOWN, Spt_OnLButtonDown );	
-		HANDLE_MSG( hWnd, WM_MOUSEMOVE,   Spt_OnMouseMove );	
-		HANDLE_MSG( hWnd, WM_LBUTTONUP,   Spt_OnLButtonUp );	
+		HANDLE_MSG( hWnd, WM_LBUTTONDOWN, Spt_OnLButtonDown );
+		HANDLE_MSG( hWnd, WM_MOUSEMOVE,   Spt_OnMouseMove );
+		HANDLE_MSG( hWnd, WM_LBUTTONUP,   Spt_OnLButtonUp );
 
 		default:	break;
 	}

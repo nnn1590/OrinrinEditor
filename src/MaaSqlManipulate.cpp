@@ -46,8 +46,8 @@ static sqlite3	*gpTreeCache;	//	ツリー編集のオンメモリキャッシュ
 
 //-------------------------------------------------------------------------------------------------
 
-HRESULT	SqlFavUpdate( UINT );	//!<	
-HRESULT	SqlFavInsert( LPTSTR, DWORD, LPSTR, UINT );	//!<	
+HRESULT	SqlFavUpdate( UINT );	//!<
+HRESULT	SqlFavInsert( LPTSTR, DWORD, LPSTR, UINT );	//!<
 //-------------------------------------------------------------------------------------------------
 
 //	WORK_LOG_OUT
@@ -645,7 +645,7 @@ HRESULT SqlTreeTableCreate( LPTSTR ptProfName )
 		if( SQLITE_DONE != rslt ){	SQL_DEBUG( gpDataBase );	return E_ACCESSDENIED;	}
 		rslt = sqlite3_finalize(statement);
 
-	//使用ＡＡテーブルを作成	
+	//使用ＡＡテーブルを作成
 		rslt = sqlite3_prepare( gpDataBase, cacArtListTable, -1, &statement, NULL );
 		if( SQLITE_OK != rslt ){	SQL_DEBUG( gpDataBase );	return E_ACCESSDENIED;	}
 		rslt = sqlite3_step( statement );	//	実行
@@ -861,7 +861,7 @@ UINT SqlTreeNodeInsert( UINT uqID, UINT dType, UINT dPrnt, LPTSTR ptName )
 	INT		rslt;
 	UINT	iRast = 0;
 	sqlite3_stmt	*statement;
-	
+
 
 	if( !(gpDataBase) ){	TRACE( TEXT("NoDatabase") );	return 0;	}
 
@@ -1011,7 +1011,7 @@ UINT SqlTreeNodeExtraSelect( UINT seekID, UINT tgtID, LPTSTR ptName )
 	@param[out]	ptName	ノードのパスいれるバッファ・MAX_PATHであること
 	@return	UINT	ヒットしたやつのＩＤ・無かったら０
 */
-UINT SqlTreeNodeExtraIsFileExist( LPCTSTR ptName ) 
+UINT SqlTreeNodeExtraIsFileExist( LPCTSTR ptName )
 {
 	CONST CHAR	cacNameSearch[] = { ("SELECT id FROM TreeNode WHERE nodename == ?") };
 
@@ -1129,7 +1129,7 @@ UINT SqlTreeNodeRootSearch( LPTSTR ptDirName )
 	@param[in]	bStyle	0x01通常　0x00ツリーキャッシュ　／　0x10ＩＤ一致　0x00ＩＤ超えた
 	@return	UINT	引っ張ったやつのＩＤ・無かったら０
 */
-UINT SqlTreeNodePickUpID( UINT tgtID, PUINT pType, PUINT pPrntID, LPTSTR ptName, UINT bStyle ) 
+UINT SqlTreeNodePickUpID( UINT tgtID, PUINT pType, PUINT pPrntID, LPTSTR ptName, UINT bStyle )
 {
 	CHAR	acQuery[MAX_STRING];
 	INT		rslt;
@@ -1247,7 +1247,7 @@ UINT SqlTreeFileSearch( LPTSTR ptName, UINT dStart )
 	sqlite3_reset( statement );
 
 	StringCchPrintf( atReqest, SUB_STRING, TEXT("%%%s%%"), ptName );
-	rslt = sqlite3_bind_text16( statement, 1, atReqest, -1, SQLITE_STATIC );	//	
+	rslt = sqlite3_bind_text16( statement, 1, atReqest, -1, SQLITE_STATIC );	//
 	sqlite3_bind_int( statement, 2, dStart );
 
 	rslt = sqlite3_step( statement );
@@ -1279,7 +1279,7 @@ UINT SqlTreeFileGetOnParent( LPTSTR ptName, UINT dPrntID )
 
 	sqlite3_reset( statement );
 
-	rslt = sqlite3_bind_text16( statement, 1, ptName, -1, SQLITE_STATIC );	//	
+	rslt = sqlite3_bind_text16( statement, 1, ptName, -1, SQLITE_STATIC );	//
 	sqlite3_bind_int( statement, 2, dPrntID );
 
 	rslt = sqlite3_step( statement );

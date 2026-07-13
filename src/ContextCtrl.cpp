@@ -228,7 +228,7 @@ const static UINT	gadDefItem[] =
 	IDM_INCR_DOT_LINES,		//	全体を１ドット右へ
 	IDM_DECR_DOT_LINES,		//	全体を１ドット左へ
 	0,
-	IDM_SPACE_VIEW_TOGGLE,	//	空白を表示	
+	IDM_SPACE_VIEW_TOGGLE,	//	空白を表示
 	IDM_GRID_VIEW_TOGGLE,	//	グリッド線を表示
 	IDM_RIGHT_RULER_TOGGLE,	//	右ガイド線を表示
 	0,
@@ -244,9 +244,9 @@ const static UINT	gadDefItem[] =
 
 
 static HINSTANCE	ghInst;
-static TCHAR		gatCntxIni[MAX_PATH];	//!<	
+static TCHAR		gatCntxIni[MAX_PATH];	//!<
 
-static HMENU	ghPopupMenu;	
+static HMENU	ghPopupMenu;
 static HMENU	ghUniSpMenu;
 static HMENU	ghColourMenu;
 static HMENU	ghFrameMenu;
@@ -620,9 +620,9 @@ VOID CntxDlgAllListUp( HWND hDlg )
 	{
 		StringCchCopy( atItem, SUB_STRING, gstContextItem[d].atString );
 
-		if( IDM_MN_UNISPACE == gstContextItem[d].dCommandoID || 
-		IDM_MN_COLOUR_SEL   == gstContextItem[d].dCommandoID || 
-		IDM_MN_INSFRAME_SEL == gstContextItem[d].dCommandoID || 
+		if( IDM_MN_UNISPACE == gstContextItem[d].dCommandoID ||
+		IDM_MN_COLOUR_SEL   == gstContextItem[d].dCommandoID ||
+		IDM_MN_INSFRAME_SEL == gstContextItem[d].dCommandoID ||
 		IDM_MN_USER_REFS    == gstContextItem[d].dCommandoID )
 		{
 			StringCchCat( atItem, SUB_STRING, TEXT("（サブメニュー展開）") );
@@ -667,9 +667,9 @@ VOID CntxDlgBuildListUp( HWND hDlg )
 		{
 			StringCchCopy( atItem, SUB_STRING, itMnItm->atString );
 
-			if( IDM_MN_UNISPACE == itMnItm->dCommandoID || 
-			IDM_MN_COLOUR_SEL   == itMnItm->dCommandoID || 
-			IDM_MN_INSFRAME_SEL == itMnItm->dCommandoID || 
+			if( IDM_MN_UNISPACE == itMnItm->dCommandoID ||
+			IDM_MN_COLOUR_SEL   == itMnItm->dCommandoID ||
+			IDM_MN_INSFRAME_SEL == itMnItm->dCommandoID ||
 			IDM_MN_USER_REFS    == itMnItm->dCommandoID )
 			{
 				StringCchCat( atItem, SUB_STRING, TEXT("　　[＞") );
@@ -1285,10 +1285,10 @@ VOID AccelKeyListInit( HWND hDlg, list<ACCEL> *pltAccel )
 		stItem.iItem = j;
 
 		//	関係無いやつは飛ばす
-		if( 0 == gstContextItem[i].dCommandoID || 
-		IDM_MN_UNISPACE     == gstContextItem[i].dCommandoID || 
-		IDM_MN_COLOUR_SEL   == gstContextItem[i].dCommandoID || 
-		IDM_MN_INSFRAME_SEL == gstContextItem[i].dCommandoID || 
+		if( 0 == gstContextItem[i].dCommandoID ||
+		IDM_MN_UNISPACE     == gstContextItem[i].dCommandoID ||
+		IDM_MN_COLOUR_SEL   == gstContextItem[i].dCommandoID ||
+		IDM_MN_INSFRAME_SEL == gstContextItem[i].dCommandoID ||
 		IDM_MN_USER_REFS    == gstContextItem[i].dCommandoID )
 		{	continue;	}
 
@@ -1400,7 +1400,7 @@ HRESULT AccelKeyTableSave( list<ACCEL> *pltAccel )
 HRESULT AccelKeySettingReset( HWND hDlg, list<ACCEL> *pltAccel )
 {
 	HWND	hLvWnd;
-	HACCEL	hAccel;	//	
+	HACCEL	hAccel;	//
 	LPACCEL	pstAccel = NULL;
 	INT		iItems, i;
 
@@ -1481,7 +1481,7 @@ HRESULT AccelKeyListOutput( HWND hDlg )
 	stSaveFile.lpstrFileTitle  = atFileName;
 	stSaveFile.nMaxFileTitle   = MAX_STRING;
 	stSaveFile.lpstrDefExt     = TEXT("txt");
-//	stSaveFile.lpstrInitialDir = 
+//	stSaveFile.lpstrInitialDir =
 	stSaveFile.lpstrTitle      = TEXT("保存するファイル名を指定してね");
 	stSaveFile.Flags           = OFN_EXPLORER | OFN_OVERWRITEPROMPT | OFN_HIDEREADONLY;
 
@@ -1519,7 +1519,7 @@ HRESULT AccelKeyListOutput( HWND hDlg )
 		StringCchLength( atBuffer, MAX_PATH, &cchSz );
 
 		cbSize = WideCharToMultiByte( CP_ACP, WC_NO_BEST_FIT_CHARS, atBuffer, -1, acString, BIG_STRING, NULL, NULL );
-									//	CP_UTF8, 0	
+									//	CP_UTF8, 0
 		//	変換文字数にはヌルターミネータが含まれているので注意
 		WriteFile( hFile, acString, cbSize-1, &wrote, NULL );
 	}
@@ -1575,7 +1575,7 @@ HRESULT AccelKeyBindExistCheck( HWND hDlg, LPACCEL pstAccel, list<ACCEL> *pltAcc
 			return E_ACCESSDENIED;
 		}
 	}
-	
+
 	return S_OK;
 }
 //-------------------------------------------------------------------------------------------------
@@ -1622,7 +1622,7 @@ HRESULT AccelKeyBindListMod( HWND hDlg, INT iItem, LPACCEL pstAccel, list<ACCEL>
 			itAccel->key   = pstAccel->key;
 			itAccel->fVirt = pstAccel->fVirt;
 		}
-		
+
 		//	表示用文字列作って
 		AccelKeyBindString( pstAccel, atBuffer, SUB_STRING );
 		ZeroMemory( &stLvi, sizeof(stLvi) );

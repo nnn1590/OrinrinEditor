@@ -171,7 +171,7 @@ HRESULT InversePartsLoad( UINT dMode )
 	{
 		if( MIN_STRING <= nXct ){	nXct = MIN_STRING - 1;	}
 		if( INV_ITEMS  <= nYct ){	nYct = INV_ITEMS - 1;	}
- 
+
 		atBuff[nYct][nXct] = ptString[caret];
 
 		//	改行までを１セットとし、全角空白で区切って読む
@@ -700,7 +700,7 @@ HRESULT DocUpsetTranceBox( INT iTop, INT iBtm )
 		//	ひっくり返した文字列を挿入
 		iGyou = iLns;
 		DocInsertString( &iSelDot, &iGyou, NULL, ptInvStr, 0 , bFirst );	bFirst = FALSE;
-	
+
 		FREE( ptInvStr );
 	}
 

@@ -71,28 +71,28 @@ EXTERNED HMENU	ghProfHisMenu;			//!<	履歴表示する部分・動的に内容�
 static CONST INT	giStbRoom[] = { 150 , 350 , -1 };
 //-------------------------------------------------------------------------------------------------
 
-LRESULT	CALLBACK MaaTmpltWndProc( HWND, UINT, WPARAM, LPARAM );	//!<	
+LRESULT	CALLBACK MaaTmpltWndProc( HWND, UINT, WPARAM, LPARAM );	//!<
 BOOLEAN	Maa_OnCreate( HWND, LPCREATESTRUCT );			//!<	WM_CREATE の処理・固定Editとかつくる
 VOID	Maa_OnPaint( HWND );							//!<	WM_PAINT の処理・枠線描画とか
 VOID	Maa_OnDestroy( HWND );							//!<	WM_DESTROY の処理・BRUSHとかのオブジェクトの破壊を忘れないように
-LRESULT	Maa_OnNotify( HWND , INT, LPNMHDR );			//!<	
-VOID	Maa_OnDrawItem( HWND, CONST DRAWITEMSTRUCT * );	//!<	
-VOID	Maa_OnMeasureItem( HWND, MEASUREITEMSTRUCT * );	//!<	
+LRESULT	Maa_OnNotify( HWND , INT, LPNMHDR );			//!<
+VOID	Maa_OnDrawItem( HWND, CONST DRAWITEMSTRUCT * );	//!<
+VOID	Maa_OnMeasureItem( HWND, MEASUREITEMSTRUCT * );	//!<
 
 #ifndef _ORRVW	//	エディタのみ
-VOID	Maa_OnActivate( HWND, UINT, HWND, BOOL );		//!<	
-VOID	Maa_OnShowWindow( HWND, BOOL, UINT );	//!<	
+VOID	Maa_OnActivate( HWND, UINT, HWND, BOOL );		//!<
+VOID	Maa_OnShowWindow( HWND, BOOL, UINT );	//!<
 #endif
 
 
 #define TREEPROF_AUTOCHECK
 
-INT_PTR	CALLBACK TreeProfileDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<	
-HRESULT	TreeProfListUp( HWND, HWND, LPTSTR, HTREEITEM, UINT, INT );	//!<	
-UINT	TreeLoadNodeProc( HWND, HWND, HTREEITEM, UINT );			//!<	
-VOID	TreeProfCheckState( HWND, HTREEITEM, UINT );				//!<	
+INT_PTR	CALLBACK TreeProfileDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<
+HRESULT	TreeProfListUp( HWND, HWND, LPTSTR, HTREEITEM, UINT, INT );	//!<
+UINT	TreeLoadNodeProc( HWND, HWND, HTREEITEM, UINT );			//!<
+VOID	TreeProfCheckState( HWND, HTREEITEM, UINT );				//!<
 #ifdef TREEPROF_AUTOCHECK
-UINT	TreeProfCheckExistent( HWND, LPTSTR, HWND, HTREEITEM, UINT );	//!<	
+UINT	TreeProfCheckExistent( HWND, LPTSTR, HWND, HTREEITEM, UINT );	//!<
 #endif
 
 //-------------------------------------------------------------------------------------------------
@@ -101,7 +101,7 @@ UINT	TreeProfCheckExistent( HWND, LPTSTR, HWND, HTREEITEM, UINT );	//!<
 	複数行ＡＡテンプレウインドウの作成
 	@param[in]	hInstance	アプリのインスタンス
 	@param[in]	hParentWnd	編集ビューのくっついてるウインドウのハンドル・これが本体
-	@param[in]	pstFrame	
+	@param[in]	pstFrame
 	@return		作ったビューのウインドウハンドル
 */
 HWND MaaTmpltInitialise( HINSTANCE hInstance, HWND hParentWnd, LPRECT pstFrame )
@@ -313,19 +313,19 @@ LRESULT CALLBACK MaaTmpltWndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM
 		HANDLE_MSG( hWnd, WM_COMMAND,     Maa_OnCommand );		//	ボタン押されたとかのコマンド処理
 		HANDLE_MSG( hWnd, WM_DESTROY,     Maa_OnDestroy );		//	ソフト終了時の処理
 		HANDLE_MSG( hWnd, WM_NOTIFY,      Maa_OnNotify );		//	コモンコントロールの個別イベント
-		HANDLE_MSG( hWnd, WM_SIZE,        Maa_OnSize  );		//	
-		HANDLE_MSG( hWnd, WM_CHAR,        Maa_OnChar  );		//	
-		HANDLE_MSG( hWnd, WM_DRAWITEM,    Maa_OnDrawItem  );	//	
-		HANDLE_MSG( hWnd, WM_MEASUREITEM, Maa_OnMeasureItem );	//	
-		HANDLE_MSG( hWnd, WM_CONTEXTMENU, Maa_OnContextMenu );	//	
+		HANDLE_MSG( hWnd, WM_SIZE,        Maa_OnSize  );		//
+		HANDLE_MSG( hWnd, WM_CHAR,        Maa_OnChar  );		//
+		HANDLE_MSG( hWnd, WM_DRAWITEM,    Maa_OnDrawItem  );	//
+		HANDLE_MSG( hWnd, WM_MEASUREITEM, Maa_OnMeasureItem );	//
+		HANDLE_MSG( hWnd, WM_CONTEXTMENU, Maa_OnContextMenu );	//
 #ifndef _ORRVW	//	エディタのみ
 		HANDLE_MSG( hWnd, WM_ACTIVATE,    Maa_OnActivate  );	//	アクティブになったりはずれたり
-		HANDLE_MSG( hWnd, WM_SHOWWINDOW,  Maa_OnShowWindow );	//	
+		HANDLE_MSG( hWnd, WM_SHOWWINDOW,  Maa_OnShowWindow );	//
 #endif
 		HANDLE_MSG( hWnd, WM_KEYDOWN,     Aai_OnKey );			//	20120221
-		HANDLE_MSG( hWnd, WM_KEYUP,       Aai_OnKey );			//	
+		HANDLE_MSG( hWnd, WM_KEYUP,       Aai_OnKey );			//
 
-		HANDLE_MSG( hWnd, WM_VSCROLL,     Aai_OnVScroll );		//	
+		HANDLE_MSG( hWnd, WM_VSCROLL,     Aai_OnVScroll );		//
 
 #ifdef MAA_TEXT_FIND
 		case  WM_CTLCOLORSTATIC:	//	文字列部分の色変更
@@ -334,8 +334,8 @@ LRESULT CALLBACK MaaTmpltWndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM
 
 			itemID = GetDlgCtrlID( hWndChild );
 
-			//	
-			if( IDS_MAA_TXTFIND_FIND   == itemID || IDS_MAA_TXTFIND_MSGBOX == itemID || 
+			//
+			if( IDS_MAA_TXTFIND_FIND   == itemID || IDS_MAA_TXTFIND_MSGBOX == itemID ||
 				IDB_MAA_TXTFIND_TOP_GO == itemID || IDB_MAA_TXTFIND_NOW_GO == itemID )
 			{
 				SetBkColor( hdc, GetSysColor( COLOR_WINDOW ) );
@@ -831,7 +831,7 @@ INT TreeProfileMake( HWND hWnd, LPTSTR ptProf )
 		stOpenFile.nMaxFile        = MAX_PATH;
 		stOpenFile.lpstrFileTitle  = atFileName;
 		stOpenFile.nMaxFileTitle   = MAX_STRING;
-	//	stOpenFile.lpstrInitialDir = 
+	//	stOpenFile.lpstrInitialDir =
 		stOpenFile.lpstrTitle      = TEXT("ファイル名を指定するか、作成したいファイル名を入力してね");
 		stOpenFile.Flags           = OFN_EXPLORER | OFN_HIDEREADONLY;
 		stOpenFile.lpstrDefExt     = TEXT("qor");
@@ -1806,7 +1806,7 @@ HRESULT OpenProfileInitialise( HWND hWnd )
 				itHist->dMenuNumber = (IDM_OPEN_HIS_FIRST + d);
 			}
 		}
-		
+
 		//	コンテキストメニューは必要に応じてロードするので、ここではイジらない
 #ifdef _ORRVW
 		OpenProfMenuModify( hWnd );

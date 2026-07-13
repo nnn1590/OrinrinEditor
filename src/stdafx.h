@@ -162,12 +162,12 @@ static CONST GUID gcstGUID = { 0x66D3E881, 0x972B, 0x458B, { 0x93, 0x5E, 0x9E, 0
 //面倒なので無しで
 
 #define MAA_TEXT_FIND	//	ＭＡＡで、開いてるファイルから単語Search
-//#define HUKUTAB_DRAGMOVE	
+//#define HUKUTAB_DRAGMOVE
 //#define PAGE_MULTISELECT//	頁一覧の複数選択
 //#define PLUGIN_ENABLE	//	プラグイン機能
-//#define MINI_TEMPLATE	
+//#define MINI_TEMPLATE
 
-//#define WORK_LOG_OUT	
+//#define WORK_LOG_OUT
 
 #define DO_TRY_CATCH	//	例外対策してみる
 #define USE_NOTIFYICON	//	タスクトレイアイコンを有効
@@ -184,9 +184,9 @@ static CONST GUID gcstGUID = { 0x66D3E881, 0x972B, 0x458B, { 0x93, 0x5E, 0x9E, 0
 #else
 	#define TRACE(str,...)	OutputDebugStringPlus( GetLastError(), _CRT_WIDE(__FILE__), __LINE__, __FUNCTION__, str, __VA_ARGS__ )
 #endif
-	VOID	OutputDebugStringPlus( DWORD, LPTSTR, INT, LPCSTR, LPTSTR, ... );	//!<	
+	VOID	OutputDebugStringPlus( DWORD, LPTSTR, INT, LPCSTR, LPTSTR, ... );	//!<
 	//#define TRACE(str,...)	OutputDebugStringPlus( GetLastError(), __FILE__, __LINE__, __FUNCTION__, str, __VA_ARGS__ )
-	//VOID	OutputDebugStringPlus( DWORD, LPSTR, INT, LPSTR, LPTSTR, ... );	//!<	
+	//VOID	OutputDebugStringPlus( DWORD, LPSTR, INT, LPSTR, LPTSTR, ... );	//!<
 #else
 	#define TRACE(x,...)
 #endif
@@ -322,7 +322,7 @@ LRESULT	ExceptionMessage( LPCSTR, LPCSTR, UINT, LPARAM );
 #define VL_CLIPFILECNT	29	//!<	[COL]保存ファイルの個数
 #define VL_PLS_LN_DOCK	30	//!<	頁一覧窓はくっつくか
 //#define VL_BRUSH_DOCK	31	//!<	壱行・Brushテンプレ窓はくっつくか
-#define VS_PROFILE_NAME	32	//!<	
+#define VS_PROFILE_NAME	32	//!<
 #define VS_PAGE_FORMAT	33	//!<	頁番号挿入の文字列テンプレ
 #define VL_SWAP_COPY	34	//!<	コピー標準をSJISにするか
 #define VL_MAIN_SPLIT	35	//!<	メインのスプリットバーの右からの位置

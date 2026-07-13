@@ -80,16 +80,16 @@ static RECT		gstContSize;//!<	表示大きさ
 //-------------------------------------------------------------------------------------------------
 
 
-VOID	HoverTipClose( HWND );	//!<	
+VOID	HoverTipClose( HWND );	//!<
 
-LRESULT	CALLBACK HoverTipProc( HWND, UINT, WPARAM, LPARAM );	//!<	
-VOID	Htp_OnPaint( HWND );						//!<	
-VOID	htp_OnTimer( HWND, UINT );					//!<	
-VOID	Htp_OnKillFocus( HWND, HWND );				//!<	
-VOID	Htp_OnLButtonUp( HWND, INT, INT, UINT );	//!<	
-VOID	Htp_OnMButtonUp( HWND, INT, INT, UINT );	//!<	
-VOID	Htp_OnRButtonUp( HWND, INT, INT, UINT );	//!<	
-VOID	Htp_OnMouseMove( HWND, INT, INT, UINT );	//!<	
+LRESULT	CALLBACK HoverTipProc( HWND, UINT, WPARAM, LPARAM );	//!<
+VOID	Htp_OnPaint( HWND );						//!<
+VOID	htp_OnTimer( HWND, UINT );					//!<
+VOID	Htp_OnKillFocus( HWND, HWND );				//!<
+VOID	Htp_OnLButtonUp( HWND, INT, INT, UINT );	//!<
+VOID	Htp_OnMButtonUp( HWND, INT, INT, UINT );	//!<
+VOID	Htp_OnRButtonUp( HWND, INT, INT, UINT );	//!<
+VOID	Htp_OnMouseMove( HWND, INT, INT, UINT );	//!<
 //-------------------------------------------------------------------------------------------------
 
 /*!
@@ -125,7 +125,7 @@ HRESULT HoverTipInitialise( HINSTANCE hInstance, HWND hPtWnd )
 		wcex.hIconSm		= NULL;
 
 		gTipAtom = RegisterClassEx( &wcex );
-	
+
 		//	表示チップウインドウ作成 | WS_EX_TOPMOST
 		ghTipWnd = CreateWindowEx( WS_EX_TOOLWINDOW, HOVER_TIPS_CLASS, TEXT("InfoTip"), WS_POPUP | WS_BORDER, 0, 0, 15, 15, NULL, NULL, hInstance, NULL );
 		//	最初は非表示

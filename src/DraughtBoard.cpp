@@ -77,7 +77,7 @@ EXTERNED UINT	gdSubClickDrt;	//!<	アイテムを中クルックしたときの�
 //クルッペボードへコピるモードはコピーモードスワップに従う
 
 static HDC		ghNonItemDC;	//!<	アイテム無しの絵
-static HBITMAP	ghNonItemBMP, ghOldBmp;	
+static HBITMAP	ghNonItemBMP, ghOldBmp;
 static HPEN		ghLinePen;
 
 static HFONT	ghAreaFont;		//!<	サイズ表示用
@@ -96,31 +96,31 @@ static INT		giItemHeight;	//!<	アイテムの高さ
 static POINT	gstViewLsPt;	//!<	ＭＡＡから開いた場合の最終位置
 
 
-static vector<AAMATRIX>	gvcDrtItems;	//!<	
+static vector<AAMATRIX>	gvcDrtItems;	//!<
 //-------------------------------------------------------------------------------------------------
 
-INT		DraughtTargetItemSet( LPPOINT );				//!<	
-DOUBLE	DraughtAspectKeeping( LPSIZE, UINT );			//!<	
-INT		DraughtItemDelete( CONST INT  );				//!<	
-HRESULT	DraughtItemUse( HWND, INT );					//!<	
-HRESULT	DraughtItemExport( HWND, LPTSTR );				//!<	
-VOID	DraughtButtonUp( HWND, INT, INT, UINT, UINT );	//!<	
+INT		DraughtTargetItemSet( LPPOINT );				//!<
+DOUBLE	DraughtAspectKeeping( LPSIZE, UINT );			//!<
+INT		DraughtItemDelete( CONST INT  );				//!<
+HRESULT	DraughtItemUse( HWND, INT );					//!<
+HRESULT	DraughtItemExport( HWND, LPTSTR );				//!<
+VOID	DraughtButtonUp( HWND, INT, INT, UINT, UINT );	//!<
 HRESULT	DraughtFrameResize( HWND, INT, INT );
 
 LRESULT CALLBACK DraughtProc( HWND, UINT, WPARAM, LPARAM );
-VOID	Drt_OnCommand( HWND , INT, HWND, UINT );		//!<	
-VOID	Drt_OnPaint( HWND );							//!<	
-//VOID	Drt_OnSize( HWND , UINT, INT, INT );			//!<	
-VOID	Drt_OnMouseMove( HWND, INT, INT, UINT );		//!<	
-VOID	Drt_OnLButtonUp( HWND, INT, INT, UINT );		//!<	
-VOID	Drt_OnMButtonUp( HWND, INT, INT, UINT );		//!<	
-VOID	Drt_OnContextMenu( HWND, HWND, UINT, UINT );	//!<	
-VOID	Drt_OnDestroy( HWND );							//!<	
-VOID	Drt_OnKillFocus( HWND, HWND );					//!<	
-VOID	Drt_OnVScroll( HWND , HWND, UINT, INT );		//!<	
-VOID	Drt_OnMouseWheel( HWND, INT, INT, INT, UINT );	//!<	
+VOID	Drt_OnCommand( HWND , INT, HWND, UINT );		//!<
+VOID	Drt_OnPaint( HWND );							//!<
+//VOID	Drt_OnSize( HWND , UINT, INT, INT );			//!<
+VOID	Drt_OnMouseMove( HWND, INT, INT, UINT );		//!<
+VOID	Drt_OnLButtonUp( HWND, INT, INT, UINT );		//!<
+VOID	Drt_OnMButtonUp( HWND, INT, INT, UINT );		//!<
+VOID	Drt_OnContextMenu( HWND, HWND, UINT, UINT );	//!<
+VOID	Drt_OnDestroy( HWND );							//!<
+VOID	Drt_OnKillFocus( HWND, HWND );					//!<
+VOID	Drt_OnVScroll( HWND , HWND, UINT, INT );		//!<
+VOID	Drt_OnMouseWheel( HWND, INT, INT, INT, UINT );	//!<
 #ifdef MAA_TOOLTIP
-LRESULT	Drt_OnNotify( HWND , INT, LPNMHDR );			//!<	
+LRESULT	Drt_OnNotify( HWND , INT, LPNMHDR );			//!<
 #endif
 
 #ifdef USE_HOVERTIP
@@ -253,7 +253,7 @@ HWND DraughtWindowCreate( HINSTANCE hInstance, HWND hPtWnd, UINT bThumb )
 		GetWindowRect( hPtWnd, &wdRect );
 		rect.left   = wdRect.left + 32;	//	オフセット値に特に意味はない
 		rect.top    = wdRect.top  + 32;
-	
+
 		gstViewLsPt.x = rect.left;
 		gstViewLsPt.y = rect.top;
 	}
@@ -315,7 +315,7 @@ HWND DraughtWindowCreate( HINSTANCE hInstance, HWND hPtWnd, UINT bThumb )
 	GetClientRect( ghDraughtWnd, &stToolInfo.rect );
 	stToolInfo.cbSize   = sizeof(TTTOOLINFO);
 	stToolInfo.uFlags   = TTF_SUBCLASS;
-	stToolInfo.hinst    = NULL;	//	
+	stToolInfo.hinst    = NULL;	//
 	stToolInfo.hwnd     = ghDraughtWnd;
 	stToolInfo.uId      = IDTT_DRT_TOOLTIP;
 	stToolInfo.lpszText = LPSTR_TEXTCALLBACK;	//	コレを指定するとコールバックになる
@@ -439,8 +439,8 @@ LRESULT CALLBACK DraughtProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lPa
 {
 	switch( message )
 	{
-	//	HANDLE_MSG( hWnd, WM_SIZE,        Drt_OnSize );	
-		HANDLE_MSG( hWnd, WM_COMMAND,     Drt_OnCommand );	
+	//	HANDLE_MSG( hWnd, WM_SIZE,        Drt_OnSize );
+		HANDLE_MSG( hWnd, WM_COMMAND,     Drt_OnCommand );
 		HANDLE_MSG( hWnd, WM_MOUSEMOVE,   Drt_OnMouseMove );	//	マウスいごいた
 		HANDLE_MSG( hWnd, WM_LBUTTONUP,   Drt_OnLButtonUp );
 		HANDLE_MSG( hWnd, WM_MBUTTONUP,   Drt_OnMButtonUp );
@@ -485,7 +485,7 @@ LRESULT CALLBACK DraughtProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lPa
 */
 VOID Drt_OnCommand( HWND hWnd, INT id, HWND hWndCtl, UINT codeNotify )
 {
-	
+
 	switch( id )
 	{
 #ifndef _ORRVW
@@ -1549,7 +1549,7 @@ HRESULT DraughtItemExport( HWND hWnd, LPTSTR ptPath )
 	for( itItem = gvcDrtItems.begin(); gvcDrtItems.end() != itItem; itItem++ )
 	{
 		StringCchLengthA( itItem->pcItem, STRSAFE_MAX_LENGTH, &cbSize );
-		
+
 		WriteFile( hFile, itItem->pcItem, cbSize, &wrote, NULL );
 		WriteFile( hFile, cacSplit, 9, &wrote, NULL );	//	固定値注意
 	}

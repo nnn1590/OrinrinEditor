@@ -35,42 +35,42 @@ BOOLEAN	Cls_OnCreate( HWND, LPCREATESTRUCT );		//!<	本体の WM_CREATE の処�
 VOID	Cls_OnCommand( HWND , INT, HWND, UINT );	//!<	本体の WM_COMMAND の処理
 VOID	Cls_OnPaint( HWND );						//!<	本体の WM_PAINT の処理・枠線描画とか
 VOID	Cls_OnDestroy( HWND );						//!<	本体の WM_DESTROY の処理・BRUSHとかのオブジェクトの破壊を忘れないように
-HBRUSH	Cls_OnCtlColor( HWND , HDC, HWND, INT );	//!<	
-VOID	Cls_OnHotKey( HWND, INT, UINT, UINT );		//!<	
-VOID	Cls_OnDrawClipboard( HWND );				//!<	
-VOID	Cls_OnChangeCBChain( HWND, HWND, HWND );	//!<	
+HBRUSH	Cls_OnCtlColor( HWND , HDC, HWND, INT );	//!<
+VOID	Cls_OnHotKey( HWND, INT, UINT, UINT );		//!<
+VOID	Cls_OnDrawClipboard( HWND );				//!<
+VOID	Cls_OnChangeCBChain( HWND, HWND, HWND );	//!<
 
-VOID		WndTagSet( HWND, LONG_PTR );			//!<	
-LONG_PTR	WndTagGet( HWND );						//!<	
+VOID		WndTagSet( HWND, LONG_PTR );			//!<
+LONG_PTR	WndTagGet( HWND );						//!<
 
-BOOLEAN	SelectFileDlg( HWND, LPTSTR, UINT_PTR );	//!<	
+BOOLEAN	SelectFileDlg( HWND, LPTSTR, UINT_PTR );	//!<
 
-HRESULT	ToolTipSetting( HWND, UINT, LPTSTR );		//!<	
+HRESULT	ToolTipSetting( HWND, UINT, LPTSTR );		//!<
 
-HRESULT	TasktrayIconAdd( HWND );					//!<	
-VOID	TaskTrayIconEvent( HWND, UINT, UINT );		//!<	
-HRESULT	TaskTrayIconCaptionChange( HWND );			//!<	
-HRESULT	TaskTrayIconBalloon( HWND, LPTSTR, LPTSTR, DWORD );	//!<	
+HRESULT	TasktrayIconAdd( HWND );					//!<
+VOID	TaskTrayIconEvent( HWND, UINT, UINT );		//!<
+HRESULT	TaskTrayIconCaptionChange( HWND );			//!<
+HRESULT	TaskTrayIconBalloon( HWND, LPTSTR, LPTSTR, DWORD );	//!<
 
-INT		InitParamValue( UINT, UINT, INT );			//!<	
-HRESULT	InitClipStealOpen( UINT, UINT, LPTSTR );	//!<	
-HRESULT	InitSettingSave( HWND, UINT );				//!<	
+INT		InitParamValue( UINT, UINT, INT );			//!<
+HRESULT	InitClipStealOpen( UINT, UINT, LPTSTR );	//!<
+HRESULT	InitSettingSave( HWND, UINT );				//!<
 
-HRESULT	FileListViewInit( HWND );				//!<	
-INT		FileListViewAdd( HWND, LPTSTR );		//!<	
-HRESULT	FileListViewGet( HWND, INT, LPTSTR );	//!<	
-INT		FileListViewDelete( HWND  );			//!<	
+HRESULT	FileListViewInit( HWND );				//!<
+INT		FileListViewAdd( HWND, LPTSTR );		//!<
+HRESULT	FileListViewGet( HWND, INT, LPTSTR );	//!<
+INT		FileListViewDelete( HWND  );			//!<
 
-BOOLEAN	FileTypeCheck( LPTSTR );			//!<	
+BOOLEAN	FileTypeCheck( LPTSTR );			//!<
 
-HMENU	CreateFileSelMenu( HWND, UINT );	//!<	
+HMENU	CreateFileSelMenu( HWND, UINT );	//!<
 
-HRESULT	ClipStealDoing( HWND  );		//!<	
-LPTSTR	ClipboardDataGet( LPVOID  );	//!<	
+HRESULT	ClipStealDoing( HWND  );		//!<
+LPTSTR	ClipboardDataGet( LPVOID  );	//!<
 
-UINT	RegHotModExchange( UINT , BOOLEAN );	//!<	
+UINT	RegHotModExchange( UINT , BOOLEAN );	//!<
 
-LPTSTR	SjisDecodeAlloc( LPSTR );		//!<	
-LPSTR	SjisEncodeAlloc( LPCTSTR );		//!<	
-LPSTR	SjisEntityExchange( LPCSTR );	//!<	
-TCHAR	UniRefCheck( LPSTR );			//!<	
+LPTSTR	SjisDecodeAlloc( LPSTR );		//!<
+LPSTR	SjisEncodeAlloc( LPCTSTR );		//!<
+LPSTR	SjisEntityExchange( LPCSTR );	//!<
+TCHAR	UniRefCheck( LPSTR );			//!<

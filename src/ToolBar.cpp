@@ -31,13 +31,13 @@ static  HWND	ghInsertTBWnd;		//!<	挿入ツールバーのウインドウハン�
 static  HWND	ghLayoutTBWnd;		//!<	整形ツールバーのウインドウハンドル
 static  HWND	ghViewTBWnd;		//!<	表示ツールバーのウインドウハンドル
 
-static HIMAGELIST	ghMainImgLst;	//!<	
-static HIMAGELIST	ghEditImgLst;	//!<	
-static HIMAGELIST	ghInsertImgLst;	//!<	
-static HIMAGELIST	ghLayoutImgLst;	//!<	
-static HIMAGELIST	ghViewImgLst;	//!<	
+static HIMAGELIST	ghMainImgLst;	//!<
+static HIMAGELIST	ghEditImgLst;	//!<
+static HIMAGELIST	ghInsertImgLst;	//!<
+static HIMAGELIST	ghLayoutImgLst;	//!<
+static HIMAGELIST	ghViewImgLst;	//!<
 
-static WNDPROC	gpfOrigTBProc;		//!<	
+static WNDPROC	gpfOrigTBProc;		//!<
 
 extern HMENU	ghHistyMenu;		//	履歴表示する部分・動的に内容作成せないかん
 //-------------------------------------------------------------------------------------------------
@@ -50,14 +50,14 @@ static LRESULT	CALLBACK gpfToolbarProc( HWND, UINT, WPARAM, LPARAM );
 //	ファイル
 #define TB_MAIN_ITEMS	5
 static  TBBUTTON	gstMainTBInfo[] = {
-	{  0,	IDM_NEWFILE,		TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,						{0, 0}, 0, 0  },	//	
-	{  1,	IDM_OPEN,			TBSTATE_ENABLED,	TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  2,	IDM_OVERWRITESAVE,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,						{0, 0}, 0, 0  },	//	
+	{  0,	IDM_NEWFILE,		TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,						{0, 0}, 0, 0  },	//
+	{  1,	IDM_OPEN,			TBSTATE_ENABLED,	TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  2,	IDM_OVERWRITESAVE,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,						{0, 0}, 0, 0  },	//
 	{  0,	0,					TBSTATE_ENABLED,	TBSTYLE_SEP,							{0, 0}, 0, 0  },
-	{  3,	IDM_GENERAL_OPTION,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,						{0, 0}, 0, 0  } 	//	
+	{  3,	IDM_GENERAL_OPTION,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,						{0, 0}, 0, 0  } 	//
 };	//	内容変更したら、ツールバー文字列の設定とかも変更セヨ
 
-static CONST TCHAR	gatMainTBtext[TB_MAIN_ITEMS][TBT_STRING] = { 
+static CONST TCHAR	gatMainTBtext[TB_MAIN_ITEMS][TBT_STRING] = {
 	{ TEXT("新規作成") },	{ TEXT("ファイル開く") },	{ TEXT("上書き保存") },	{ TEXT("") },
 	{ TEXT("一般設定") }
 };
@@ -89,7 +89,7 @@ static  TBBUTTON	gstEditTBInfo[] = {
 	{ 13,	IDM_UNICODE_TOGGLE,	TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	ユニコード使用ON/OFF
 };
 
-static CONST TCHAR	gatEditTBtext[TB_EDIT_ITEMS][TBT_STRING] = { 
+static CONST TCHAR	gatEditTBtext[TB_EDIT_ITEMS][TBT_STRING] = {
 	{ TEXT("元に戻す") },	{ TEXT("やり直し") },	{ TEXT("") },
 	{ TEXT("切り取り") },	{ TEXT("コピー") },	{ TEXT("貼付") },	{ TEXT("削除") },	{ TEXT("") },
 	{ TEXT("SJISコピー") },	{ TEXT("全体をSJISコピー") },	{ TEXT("") },
@@ -104,15 +104,15 @@ static CONST TCHAR	gatEditTBtext[TB_EDIT_ITEMS][TBT_STRING] = {
 //	挿入
 #define  TB_INSERT_ITEMS	6
 static  TBBUTTON	gstInsertTBInfo[] = {
-	{  0, IDM_IN_UNI_SPACE,		TBSTATE_ENABLED,	TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  1, IDM_INSTAG_COLOUR,	TBSTATE_ENABLED,	TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  2, IDM_FRMINSBOX_OPEN,	TBSTATE_ENABLED,	TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  3, IDM_USERINS_NA,		TBSTATE_ENABLED,	TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
+	{  0, IDM_IN_UNI_SPACE,		TBSTATE_ENABLED,	TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  1, IDM_INSTAG_COLOUR,	TBSTATE_ENABLED,	TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  2, IDM_FRMINSBOX_OPEN,	TBSTATE_ENABLED,	TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  3, IDM_USERINS_NA,		TBSTATE_ENABLED,	TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
 	{  0, 0,					TBSTATE_ENABLED,	TBSTYLE_SEP,							{0, 0}, 0, 0  },
-	{  4, IDM_MOZI_SCR_OPEN,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,						{0, 0}, 0, 0  } 	//	
+	{  4, IDM_MOZI_SCR_OPEN,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,						{0, 0}, 0, 0  } 	//
 };
 
-static CONST TCHAR	gatInsertTBtext[TB_INSERT_ITEMS][TBT_STRING] = { 
+static CONST TCHAR	gatInsertTBtext[TB_INSERT_ITEMS][TBT_STRING] = {
 	{ TEXT("ユニコード空白") },	{ TEXT("色変更タグ") },	{ TEXT("枠") },	{ TEXT("ユーザ定義") },	{ TEXT("") },
 	{ TEXT("文字ＡＡ変換ボックス") }
 };
@@ -128,8 +128,8 @@ static  TBBUTTON	gstLayoutTBInfo[] = {
 	{  3, IDM_DEL_LASTSPACE,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	行末空白削除
 	{  4, IDM_DEL_LASTLETTER,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	行末文字削除
 	{  0, 0,					TBSTATE_ENABLED,	TBSTYLE_SEP,		{0, 0}, 0, 0  },
-	{ 10, IDM_MIRROR_INVERSE,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{ 11, IDM_UPSET_INVERSE,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
+	{ 10, IDM_MIRROR_INVERSE,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{ 11, IDM_UPSET_INVERSE,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
 	{  0, 0,					TBSTATE_ENABLED,	TBSTYLE_SEP,		{0, 0}, 0, 0  },
 	{  5, IDM_RIGHT_SLIDE,		TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	右に寄せる
 	{  6, IDM_INCREMENT_DOT,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	１ドット増やす
@@ -142,7 +142,7 @@ static  TBBUTTON	gstLayoutTBInfo[] = {
 	{ 13, IDM_DOT_SPLIT_RIGHT,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  } 	//	真ん中から１ドット左へ
 };
 
-static CONST TCHAR	gatLayoutTBtext[TB_LAYOUT_ITEMS][TBT_STRING] = { 
+static CONST TCHAR	gatLayoutTBtext[TB_LAYOUT_ITEMS][TBT_STRING] = {
 	{ TEXT("右揃え線") },	{ TEXT("行頭に全角空白追加") },	{ TEXT("") },
 	{ TEXT("行頭空白削除") },	{ TEXT("行末空白削除") },	{ TEXT("行末文字削除") },	{ TEXT("") },
 	{ TEXT("左右反転") },	{ TEXT("上下反転") },	{ TEXT("") },
@@ -154,14 +154,14 @@ static CONST TCHAR	gatLayoutTBtext[TB_LAYOUT_ITEMS][TBT_STRING] = {
 //	表示
 #define TB_VIEW_ITEMS	5
 static  TBBUTTON	gstViewTBInfo[] = {
-	{  0, IDM_UNI_PALETTE,			TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  1, IDM_TRACE_MODE_ON,		TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//	
-	{  2, IDM_ON_PREVIEW,			TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,					{0, 0}, 0, 0  },	//	
-	{  3, IDM_DRAUGHT_OPEN,			TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,					{0, 0}, 0, 0  },	//	
-	{  4, IDM_MAA_THUMBNAIL_OPEN,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,					{0, 0}, 0, 0  } 	//	
+	{  0, IDM_UNI_PALETTE,			TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  1, IDM_TRACE_MODE_ON,		TBSTATE_ENABLED,	TBSTYLE_CHECK | TBSTYLE_AUTOSIZE,	{0, 0}, 0, 0  },	//
+	{  2, IDM_ON_PREVIEW,			TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,					{0, 0}, 0, 0  },	//
+	{  3, IDM_DRAUGHT_OPEN,			TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,					{0, 0}, 0, 0  },	//
+	{  4, IDM_MAA_THUMBNAIL_OPEN,	TBSTATE_ENABLED,	TBSTYLE_AUTOSIZE,					{0, 0}, 0, 0  } 	//
 };
 
-static CONST TCHAR	gatViewTBtext[TB_VIEW_ITEMS][TBT_STRING] = { 
+static CONST TCHAR	gatViewTBtext[TB_VIEW_ITEMS][TBT_STRING] = {
 	{ TEXT("ユニコード表") },	{ TEXT("トレスモード") },	{ TEXT("プレビュー") },	{ TEXT("ドラフトボード") },	{ TEXT("複数行サムネイル") }
 };
 
@@ -750,7 +750,7 @@ LRESULT ToolBarOnNotify( HWND hWnd, INT idFrom, LPNMHDR pstNmhdr )
 		}
 	}
 
-	//	ツールバーのドロップダウンメニュー	IDTB_INSERT_TOOLBAR == idFrom && 
+	//	ツールバーのドロップダウンメニュー	IDTB_INSERT_TOOLBAR == idFrom &&
 	if( TBN_DROPDOWN == pstNmhdr->code )
 	{
 		TRACE( TEXT("ドロップダウン発生") );
@@ -891,10 +891,10 @@ for (UINT i = 0; i < count; ++i)
 	SendMessage(hRebar, RB_GETBANDINFO, i, (LPARAM)&rbi);
 
 	WriteFile(hfile, &rbi.wID, sizeof(rbi.wID), &written, NULL);
-	
+
 	bool br = rbi.fStyle & RBBS_BREAK;
 	WriteFile(hfile, &br, sizeof(br), &written, NULL);
-	
+
 	WriteFile(hfile, &rbi.cx, sizeof(rbi.cx), &written, NULL);
 }
 
@@ -906,7 +906,7 @@ RB_GETBANDINFOを送った時点での改行状況を教えてくれる。
 [終了時]
 char iniSection[50];
 REBARBANDINFO bandInfo;
-ZeroMemory(&bandInfo, sizeof(bandInfo)); 
+ZeroMemory(&bandInfo, sizeof(bandInfo));
 bandInfo.cbSize = sizeof(bandInfo);
 bandInfo.fMask = RBBIM_ID | RBBIM_SIZE | RBBIM_STYLE;
 int barcnt = SendMessage(wprop->hRebar, RB_GETBANDCOUNT, 0, 0);
@@ -931,7 +931,7 @@ HWND (*hwndproc[])(HWND) = {CreateToolbar1, CreateToolbar2};
 REBARBANDINFO rbBand;
 ZeroMemory(&rbBand, sizeof(REBARBANDINFO));
 rbBand.cbSize = sizeof(REBARBANDINFO);
-rbBand.fMask  = RBBIM_ID | RBBIM_STYLE | RBBIM_CHILD | RBBIM_CHILDSIZE | 
+rbBand.fMask  = RBBIM_ID | RBBIM_STYLE | RBBIM_CHILD | RBBIM_CHILDSIZE |
 RBBIM_SIZE;
 rbBand.cxMinChild = 0;
 rbBand.cyMinChild = 25;

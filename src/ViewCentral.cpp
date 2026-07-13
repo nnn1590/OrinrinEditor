@@ -21,7 +21,7 @@ If not, see <http://www.gnu.org/licenses/>.
 #include "OrinrinEditor.h"
 //-------------------------------------------------------------------------------------------------
 
-//	
+//
 //	編集ウインドウの制御する・タブとかも？
 
 //	初回起動時は、説明ＡＳＴを表示する
@@ -150,7 +150,7 @@ ViewBackColourGet
 */
 
 //	色
-static COLORREF	gaColourTable[] = { 
+static COLORREF	gaColourTable[] = {
 	0x000000,	//	0
 	0xFFFFFF, 0xABABAB, 0x0000FF, 0xAAAAAA, 0x000000,	//	5
 	0xFFFFFF, 0x8080FF, 0xC0C000, 0xC0C000, 0x101010,	//	10
@@ -226,8 +226,8 @@ VOID	Evw_OnContextMenu( HWND, HWND, UINT, UINT );
 
 
 //	親ウインドウから回す必要が有る
-//VOID	Evw_OnKey( HWND, UINT, BOOL, INT, UINT );	//!<	
-//VOID	Evw_OnChar( HWND, TCHAR, INT );				//!<	
+//VOID	Evw_OnKey( HWND, UINT, BOOL, INT, UINT );	//!<
+//VOID	Evw_OnChar( HWND, TCHAR, INT );				//!<
 
 HRESULT	ViewScrollBarAdjust( LPVOID );
 
@@ -658,7 +658,7 @@ HWND ViewInitialise( HINSTANCE hInstance, HWND hParentWnd, LPRECT pstFrame, LPTS
 	ShowWindow( ghViewWnd, SW_SHOW );
 	UpdateWindow( ghViewWnd );
 
-	//	キャレットつくっちゃうおｚ		
+	//	キャレットつくっちゃうおｚ
 	ViewCaretCreate( ghViewWnd, gaColourTable[CLRT_CARETFD], gaColourTable[CLRT_CARETBK] );
 
 	//	ルーラーとかに注意
@@ -919,18 +919,18 @@ LRESULT CALLBACK ViewWndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lPa
 		HANDLE_MSG( hWnd, WM_PAINT,         Evw_OnPaint );			//	画面の更新とか
 		HANDLE_MSG( hWnd, WM_COMMAND,       Evw_OnCommand );		//	ボタン押されたとかのコマンド処理
 		HANDLE_MSG( hWnd, WM_DESTROY,       Evw_OnDestroy );		//	ソフト終了時の処理
-		HANDLE_MSG( hWnd, WM_VSCROLL,       Evw_OnVScroll );		//	
-		HANDLE_MSG( hWnd, WM_HSCROLL,       Evw_OnHScroll );		//	
-		HANDLE_MSG( hWnd, WM_KEYDOWN,       Evw_OnKey );			//	
-		HANDLE_MSG( hWnd, WM_KEYUP,         Evw_OnKey );			//	
-		HANDLE_MSG( hWnd, WM_CHAR,          Evw_OnChar );			//	
-		HANDLE_MSG( hWnd, WM_MOUSEMOVE,     Evw_OnMouseMove );		//	
-		HANDLE_MSG( hWnd, WM_MOUSEWHEEL,    Evw_OnMouseWheel );		//	
-		HANDLE_MSG( hWnd, WM_LBUTTONDOWN,   Evw_OnLButtonDown );	//	
-		HANDLE_MSG( hWnd, WM_LBUTTONDBLCLK, Evw_OnLButtonDown );	//	
-		HANDLE_MSG( hWnd, WM_LBUTTONUP,     Evw_OnLButtonUp );		//	
-		HANDLE_MSG( hWnd, WM_RBUTTONDOWN,   Evw_OnRButtonDown );	//	
-		HANDLE_MSG( hWnd, WM_CONTEXTMENU,   Evw_OnContextMenu );	//	
+		HANDLE_MSG( hWnd, WM_VSCROLL,       Evw_OnVScroll );		//
+		HANDLE_MSG( hWnd, WM_HSCROLL,       Evw_OnHScroll );		//
+		HANDLE_MSG( hWnd, WM_KEYDOWN,       Evw_OnKey );			//
+		HANDLE_MSG( hWnd, WM_KEYUP,         Evw_OnKey );			//
+		HANDLE_MSG( hWnd, WM_CHAR,          Evw_OnChar );			//
+		HANDLE_MSG( hWnd, WM_MOUSEMOVE,     Evw_OnMouseMove );		//
+		HANDLE_MSG( hWnd, WM_MOUSEWHEEL,    Evw_OnMouseWheel );		//
+		HANDLE_MSG( hWnd, WM_LBUTTONDOWN,   Evw_OnLButtonDown );	//
+		HANDLE_MSG( hWnd, WM_LBUTTONDBLCLK, Evw_OnLButtonDown );	//
+		HANDLE_MSG( hWnd, WM_LBUTTONUP,     Evw_OnLButtonUp );		//
+		HANDLE_MSG( hWnd, WM_RBUTTONDOWN,   Evw_OnRButtonDown );	//
+		HANDLE_MSG( hWnd, WM_CONTEXTMENU,   Evw_OnContextMenu );	//
 
 /* void Cls_OnSetFocus(HWND hwnd, HWND hwndOldFocus) */
 		case WM_SETFOCUS:
@@ -1253,7 +1253,7 @@ VOID Evw_OnContextMenu( HWND hWnd, HWND hWndContext, UINT xPos, UINT yPos )
 
 //	FrameNameModifyPopUp( hSubMenu, 1 );	//	枠の名前を挿入
 
-	dRslt = TrackPopupMenu( hSubMenu, TPM_RETURNCMD, posX, posY, 0, hWnd, NULL );	//	TPM_CENTERALIGN | TPM_VCENTERALIGN | 
+	dRslt = TrackPopupMenu( hSubMenu, TPM_RETURNCMD, posX, posY, 0, hWnd, NULL );	//	TPM_CENTERALIGN | TPM_VCENTERALIGN |
 	//	選択せずで０か−１？、選択したらそのメニューのＩＤが戻るようにセット
 
 	//	それぞれの処理に飛ばす
@@ -2509,7 +2509,7 @@ VOID OperationOnCommand( HWND hWnd, INT id, HWND hWndCtl, UINT codeNotify )
 
 		//	800Dｘ40Lくらいまでを全角スペースで埋めちゃう
 		case IDM_FILL_ZENSP:	DocScreenFill( TEXT("　") );	break;
-	
+
 		//	抽出モードTOGGLE
 		case IDM_EXTRACTION_MODE:
 			if( gbExtract )
@@ -2759,7 +2759,7 @@ HRESULT ViewColourEditDlg( HWND hWnd )
 
 		InvalidateRect( ghViewWnd, NULL, TRUE );
 	}
-	
+
 	return S_OK;
 }
 //-------------------------------------------------------------------------------------------------
@@ -2776,7 +2776,7 @@ HRESULT ViewColourEditDlg( HWND hWnd )
 INT_PTR CALLBACK ColourEditDlgProc( HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam )
 {
 	static LPCOLORREF	pcadColour;	//	0:Pen　1:Back　2:Grid　3:CrLf　4:CantSjis
-	static COLOUROBJECT	cstColours;	
+	static COLOUROBJECT	cstColours;
 //	COLORREF	dColourTmp;
 //	UINT	dRslt;
 	INT	id;

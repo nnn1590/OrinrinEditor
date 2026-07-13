@@ -88,18 +88,18 @@ static   INT	giSearchPage;			//!<	検索してるページ。ページ渡り検�
 //-------------------------------------------------------------------------------------------------
 
 
-INT_PTR		CALLBACK FindStrDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<	
-HRESULT		FindExecute( HWND );									//!<	
-INT_PTR		FindPageSearch( LPTSTR, INT, FILES_ITR );				//!<	
+INT_PTR		CALLBACK FindStrDlgProc( HWND, UINT, WPARAM, LPARAM );	//!<
+HRESULT		FindExecute( HWND );									//!<
+INT_PTR		FindPageSearch( LPTSTR, INT, FILES_ITR );				//!<
 
 UINT_PTR	SearchPatternStruct( LPTSTR, UINT_PTR, LPTSTR, BOOLEAN );
 
 #ifdef SEARCH_HIGHLIGHT
-INT		FindPageHighlightOff( INT , FILES_ITR );				//!<	
-HRESULT	FindPageHighlightSet( INT, INT, INT, FILES_ITR );		//!<	
-HRESULT	FindLineHighlightOff( UINT , LINE_ITR );				//!<	
+INT		FindPageHighlightOff( INT , FILES_ITR );				//!<
+HRESULT	FindPageHighlightSet( INT, INT, INT, FILES_ITR );		//!<
+HRESULT	FindLineHighlightOff( UINT , LINE_ITR );				//!<
 #endif
-HRESULT		FindPageSelectSet( INT, INT, INT, FILES_ITR );			//!<	
+HRESULT		FindPageSelectSet( INT, INT, INT, FILES_ITR );			//!<
 
 //-------------------------------------------------------------------------------------------------
 
@@ -329,7 +329,7 @@ HRESULT FindExecute( HWND hDlg )
 	{
 		if( 0 == gatLastPtn[0] )	return  E_ABORT;	//	何もしない
 
-		//	直前の設定を流用	
+		//	直前の設定を流用
 		StringCchCopy( atBuf, MAX_PATH, gatLastPtn );
 		bModCrlf = gbSetModCrlf;
 		dRange = giSetRange;
@@ -937,7 +937,7 @@ INT FindStringJump( UINT dMode, PINT pXdot, PINT pYline, PINT pMozi )
 				}
 			}
 			else{	bBegin =  FALSE;	}
-			//	
+			//
 
 			iXdot += itMozi->rdWidth;
 			iMozi++;
