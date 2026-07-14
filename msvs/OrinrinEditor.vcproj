@@ -9,12 +9,9 @@
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
-		<Platform
-			Name="Win32"
-		/>
+		<Platform Name="Win32" />
 	</Platforms>
-	<ToolFiles>
-	</ToolFiles>
+	<ToolFiles></ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
@@ -23,21 +20,11 @@
 			ConfigurationType="1"
 			CharacterSet="1"
 			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
+			<Tool Name="VCPreBuildEventTool" />
+			<Tool Name="VCCustomBuildTool" />
+			<Tool Name="VCXMLDataGeneratorTool" />
+			<Tool Name="VCWebServiceProxyGeneratorTool" />
+			<Tool Name="VCMIDLTool" />
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
@@ -50,15 +37,9 @@
 				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="4"
 			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
+			<Tool Name="VCManagedResourceCompilerTool" />
+			<Tool Name="VCResourceCompilerTool" />
+			<Tool Name="VCPreLinkEventTool" />
 			<Tool
 				Name="VCLinkerTool"
 				LinkIncremental="2"
@@ -66,27 +47,13 @@
 				SubSystem="2"
 				TargetMachine="1"
 			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
+			<Tool Name="VCALinkTool" />
+			<Tool Name="VCManifestTool" />
+			<Tool Name="VCXDCMakeTool" />
+			<Tool Name="VCBscMakeTool" />
+			<Tool Name="VCFxCopTool" />
+			<Tool Name="VCAppVerifierTool" />
+			<Tool Name="VCPostBuildEventTool" />
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
@@ -96,21 +63,11 @@
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
+			<Tool Name="VCPreBuildEventTool" />
+			<Tool Name="VCCustomBuildTool" />
+			<Tool Name="VCXMLDataGeneratorTool" />
+			<Tool Name="VCWebServiceProxyGeneratorTool" />
+			<Tool Name="VCMIDLTool" />
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
@@ -122,15 +79,9 @@
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
+			<Tool Name="VCManagedResourceCompilerTool" />
+			<Tool Name="VCResourceCompilerTool" />
+			<Tool Name="VCPreLinkEventTool" />
 			<Tool
 				Name="VCLinkerTool"
 				LinkIncremental="1"
@@ -140,875 +91,251 @@
 				EnableCOMDATFolding="2"
 				TargetMachine="1"
 			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
+			<Tool Name="VCALinkTool" />
+			<Tool Name="VCManifestTool" />
+			<Tool Name="VCXDCMakeTool" />
+			<Tool Name="VCBscMakeTool" />
+			<Tool Name="VCFxCopTool" />
+			<Tool Name="VCAppVerifierTool" />
+			<Tool Name="VCPostBuildEventTool" />
 		</Configuration>
 	</Configurations>
-	<References>
-	</References>
+	<References></References>
 	<Files>
 		<Filter
 			Name="ソース ファイル"
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
-			<File
-				RelativePath="..\src_bomb\BrushTemplate.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\ContextCtrl.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DocAdjustant.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DocCore.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DocFileCtrl.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DocInsDelCtrl.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DocInverseCtrl.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DocMiscellaneous.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DocOperateLog.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DocPreview.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DocSearchCtrl.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DocSelect.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\DraughtBoard.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\FrameCtrl.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\HoverTip.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\LayerBox.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\LineTemplate.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\MaaCatalogue.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\MaaItems.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\MaaSqlManipulate.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\MaaTemplate.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\MaaTreeView.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\MiniTemplate.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\MoziScript.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\OrinrinEditor.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\PageCtrl.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\SplitBar.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\stdafx.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
+			<File RelativePath="..\src_bomb\BrushTemplate.cpp"></File>
+			<File RelativePath="..\src_bomb\ContextCtrl.cpp"></File>
+			<File RelativePath="..\src_bomb\DocAdjustant.cpp"></File>
+			<File RelativePath="..\src_bomb\DocCore.cpp"></File>
+			<File RelativePath="..\src_bomb\DocFileCtrl.cpp"></File>
+			<File RelativePath="..\src_bomb\DocInsDelCtrl.cpp"></File>
+			<File RelativePath="..\src_bomb\DocInverseCtrl.cpp"></File>
+			<File RelativePath="..\src_bomb\DocMiscellaneous.cpp"></File>
+			<File RelativePath="..\src_bomb\DocOperateLog.cpp"></File>
+			<File RelativePath="..\src_bomb\DocPreview.cpp"></File>
+			<File RelativePath="..\src_bomb\DocSearchCtrl.cpp"></File>
+			<File RelativePath="..\src_bomb\DocSelect.cpp"></File>
+			<File RelativePath="..\src_bomb\DraughtBoard.cpp"></File>
+			<File RelativePath="..\src_bomb\FrameCtrl.cpp"></File>
+			<File RelativePath="..\src_bomb\HoverTip.cpp"></File>
+			<File RelativePath="..\src_bomb\LayerBox.cpp"></File>
+			<File RelativePath="..\src_bomb\LineTemplate.cpp"></File>
+			<File RelativePath="..\src_bomb\MaaCatalogue.cpp"></File>
+			<File RelativePath="..\src_bomb\MaaItems.cpp"></File>
+			<File RelativePath="..\src_bomb\MaaSqlManipulate.cpp"></File>
+			<File RelativePath="..\src_bomb\MaaTemplate.cpp"></File>
+			<File RelativePath="..\src_bomb\MaaTreeView.cpp"></File>
+			<File RelativePath="..\src_bomb\MiniTemplate.cpp"></File>
+			<File RelativePath="..\src_bomb\MoziScript.cpp"></File>
+			<File RelativePath="..\src_bomb\OrinrinEditor.cpp"></File>
+			<File RelativePath="..\src_bomb\PageCtrl.cpp"></File>
+			<File RelativePath="..\src_bomb\SplitBar.cpp"></File>
+			<File RelativePath="..\src_bomb\stdafx.cpp">
+				<FileConfiguration Name="Debug|Win32">
 					<Tool
 						Name="VCCLCompilerTool"
 						UsePrecompiledHeader="1"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
+				<FileConfiguration Name="Release|Win32">
 					<Tool
 						Name="VCCLCompilerTool"
 						UsePrecompiledHeader="1"
 					/>
 				</FileConfiguration>
 			</File>
-			<File
-				RelativePath="..\src_bomb\ToolBar.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\TraceCtrl.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\UnicodePalette.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\UserDefinition.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\VerticalScript.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\ViewCaret.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\ViewCentral.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\ViewKeyButton.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\ViewSelect.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\ViewTrace.cpp"
-				>
-			</File>
+			<File RelativePath="..\src_bomb\ToolBar.cpp"></File>
+			<File RelativePath="..\src_bomb\TraceCtrl.cpp"></File>
+			<File RelativePath="..\src_bomb\UnicodePalette.cpp"></File>
+			<File RelativePath="..\src_bomb\UserDefinition.cpp"></File>
+			<File RelativePath="..\src_bomb\VerticalScript.cpp"></File>
+			<File RelativePath="..\src_bomb\ViewCaret.cpp"></File>
+			<File RelativePath="..\src_bomb\ViewCentral.cpp"></File>
+			<File RelativePath="..\src_bomb\ViewKeyButton.cpp"></File>
+			<File RelativePath="..\src_bomb\ViewSelect.cpp"></File>
+			<File RelativePath="..\src_bomb\ViewTrace.cpp"></File>
 		</Filter>
 		<Filter
 			Name="ヘッダー ファイル"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-			<File
-				RelativePath="..\src_bomb\Entity.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\MaaTemplate.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\OrinrinEditor.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\Resource.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\SplitBar.h"
-				>
-			</File>
-			<File
-				RelativePath="..\external\sqlite3\src\sqlite3.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\stdafx.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\targetver.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\UnicodePalette.h"
-				>
-			</File>
+			<File RelativePath="..\src_bomb\Entity.h"></File>
+			<File RelativePath="..\src_bomb\MaaTemplate.h"></File>
+			<File RelativePath="..\src_bomb\OrinrinEditor.h"></File>
+			<File RelativePath="..\src_bomb\Resource.h"></File>
+			<File RelativePath="..\src_bomb\SplitBar.h"></File>
+			<File RelativePath="..\external\sqlite3\src\sqlite3.h"></File>
+			<File RelativePath="..\src_bomb\stdafx.h"></File>
+			<File RelativePath="..\src_bomb\targetver.h"></File>
+			<File RelativePath="..\src_bomb\UnicodePalette.h"></File>
 		</Filter>
 		<Filter
 			Name="リソース ファイル"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
-			<File
-				RelativePath="..\res\dir_extra.ico"
-				>
-			</File>
-			<File
-				RelativePath="..\res\dir_open.ico"
-				>
-			</File>
-			<File
-				RelativePath="..\res\directory.ico"
-				>
-			</File>
-			<File
-				RelativePath="..\res\file_ast.ico"
-				>
-			</File>
-			<File
-				RelativePath="..\res\file_etc.ico"
-				>
-			</File>
-			<File
-				RelativePath="..\res\file_mlt.ico"
-				>
-			</File>
-			<File
-				RelativePath="..\res\OrinrinEditor.ico"
-				>
-			</File>
-			<File
-				RelativePath="..\src_bomb\OrinrinEditor.rc"
-				>
-			</File>
-			<Filter
-				Name="ビットマップ"
-				>
-				<File
-					RelativePath="..\res\AllSelect.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\AllSelect_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\arrow_leftright.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\arrow_leftright_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\arrow_updown.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\arrow_updown_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box1.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box10.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box11.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box12.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box13.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box14.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box15.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box16.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box17.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box18.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box19.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box2.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box20.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box3.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box4.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box5.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box6.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box7.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box8.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box9.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Box_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\BoxInsert.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\BoxInsert_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\BoxSelect.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\BoxSelect_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\BrushMode.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\BrushMode_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\ColourTag.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\ColourTag_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Copy.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Copy_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Cut.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Cut_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\DecrementDot.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\DecrementDot_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Delete.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Delete_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\DotSplitLeft.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\DotSplitLeft_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\DotSplitRight.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\DotSplitRight_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\DraughtBoard.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\DraughtBoard_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Extract.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Extract_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\ExtractLayer.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\ExtractLayer_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\FileCreate.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\FileCreate_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\FileOpen.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\FileOpen_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\FileSave.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\FileSave_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Frame.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Frame_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\FramePadding.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\FramePadding_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\HeadSpaceAdd.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\HeadSpaceAdd_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\HeadSpaceDel.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\HeadSpaceDel_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\IncrementDot.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\IncrementDot_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LaayerOverWrite.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LaayerOverWrite_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LayerBox.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LayerBox_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LayerInsert.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LayerInsert_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LayerTextEdit.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LayerTextEdit_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LinesShiftLeft.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LinesShiftLeft_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LinesShiftRight.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\LinesShiftRight_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\MoziAdv.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\MoziAdv_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\MoziScript.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\MoziScript_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\MoziWrite.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageCombine.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageCombine_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageCreate.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageCreate_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageDelete.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageDelete_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageDivide.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageDivide_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageDuplicate.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageDuplicate_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageInsert.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageInsert_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageNameChange.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageNameChange_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageSjisCopy.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageSjisCopy_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageUnderShift.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageUnderShift_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageUpperShift.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PageUpperShift_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Paste.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Paste_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Preview.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Preview_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PreviewAll.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\PreviewAll_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Redo.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Redo_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Refresh.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Refresh_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\RightGuide.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\RightGuide_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\RightShift.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\RightShift_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Setting.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Setting_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\SJIScopy.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\SJIScopy_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\TailLetterDel.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\TailLetterDel_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\TailSpaceDel.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\TailSpaceDel_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\thumbnail.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\thumbnail_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\TraceMode.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\TraceMode_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Undo.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\Undo_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\unicode_use.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\unicode_use_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\UniPalette.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\UniPalette_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\UniSpace.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\UniSpace_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\UserDef.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\UserDef_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\VertLeft.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\VertLeft_q.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\VertTrans.bmp"
-					>
-				</File>
-				<File
-					RelativePath="..\res\VertTrans_q.bmp"
-					>
-				</File>
+			<File RelativePath="..\res\dir_extra.ico"></File>
+			<File RelativePath="..\res\dir_open.ico"></File>
+			<File RelativePath="..\res\directory.ico"></File>
+			<File RelativePath="..\res\file_ast.ico"></File>
+			<File RelativePath="..\res\file_etc.ico"></File>
+			<File RelativePath="..\res\file_mlt.ico"></File>
+			<File RelativePath="..\res\OrinrinEditor.ico"></File>
+			<File RelativePath="..\src_bomb\OrinrinEditor.rc"></File>
+			<Filter Name="ビットマップ">
+				<File RelativePath="..\res\AllSelect.bmp"></File>
+				<File RelativePath="..\res\AllSelect_q.bmp"></File>
+				<File RelativePath="..\res\arrow_leftright.bmp"></File>
+				<File RelativePath="..\res\arrow_leftright_q.bmp"></File>
+				<File RelativePath="..\res\arrow_updown.bmp"></File>
+				<File RelativePath="..\res\arrow_updown_q.bmp"></File>
+				<File RelativePath="..\res\Box1.bmp"></File>
+				<File RelativePath="..\res\Box10.bmp"></File>
+				<File RelativePath="..\res\Box11.bmp"></File>
+				<File RelativePath="..\res\Box12.bmp"></File>
+				<File RelativePath="..\res\Box13.bmp"></File>
+				<File RelativePath="..\res\Box14.bmp"></File>
+				<File RelativePath="..\res\Box15.bmp"></File>
+				<File RelativePath="..\res\Box16.bmp"></File>
+				<File RelativePath="..\res\Box17.bmp"></File>
+				<File RelativePath="..\res\Box18.bmp"></File>
+				<File RelativePath="..\res\Box19.bmp"></File>
+				<File RelativePath="..\res\Box2.bmp"></File>
+				<File RelativePath="..\res\Box20.bmp"></File>
+				<File RelativePath="..\res\Box3.bmp"></File>
+				<File RelativePath="..\res\Box4.bmp"></File>
+				<File RelativePath="..\res\Box5.bmp"></File>
+				<File RelativePath="..\res\Box6.bmp"></File>
+				<File RelativePath="..\res\Box7.bmp"></File>
+				<File RelativePath="..\res\Box8.bmp"></File>
+				<File RelativePath="..\res\Box9.bmp"></File>
+				<File RelativePath="..\res\Box_q.bmp"></File>
+				<File RelativePath="..\res\BoxInsert.bmp"></File>
+				<File RelativePath="..\res\BoxInsert_q.bmp"></File>
+				<File RelativePath="..\res\BoxSelect.bmp"></File>
+				<File RelativePath="..\res\BoxSelect_q.bmp"></File>
+				<File RelativePath="..\res\BrushMode.bmp"></File>
+				<File RelativePath="..\res\BrushMode_q.bmp"></File>
+				<File RelativePath="..\res\ColourTag.bmp"></File>
+				<File RelativePath="..\res\ColourTag_q.bmp"></File>
+				<File RelativePath="..\res\Copy.bmp"></File>
+				<File RelativePath="..\res\Copy_q.bmp"></File>
+				<File RelativePath="..\res\Cut.bmp"></File>
+				<File RelativePath="..\res\Cut_q.bmp"></File>
+				<File RelativePath="..\res\DecrementDot.bmp"></File>
+				<File RelativePath="..\res\DecrementDot_q.bmp"></File>
+				<File RelativePath="..\res\Delete.bmp"></File>
+				<File RelativePath="..\res\Delete_q.bmp"></File>
+				<File RelativePath="..\res\DotSplitLeft.bmp"></File>
+				<File RelativePath="..\res\DotSplitLeft_q.bmp"></File>
+				<File RelativePath="..\res\DotSplitRight.bmp"></File>
+				<File RelativePath="..\res\DotSplitRight_q.bmp"></File>
+				<File RelativePath="..\res\DraughtBoard.bmp"></File>
+				<File RelativePath="..\res\DraughtBoard_q.bmp"></File>
+				<File RelativePath="..\res\Extract.bmp"></File>
+				<File RelativePath="..\res\Extract_q.bmp"></File>
+				<File RelativePath="..\res\ExtractLayer.bmp"></File>
+				<File RelativePath="..\res\ExtractLayer_q.bmp"></File>
+				<File RelativePath="..\res\FileCreate.bmp"></File>
+				<File RelativePath="..\res\FileCreate_q.bmp"></File>
+				<File RelativePath="..\res\FileOpen.bmp"></File>
+				<File RelativePath="..\res\FileOpen_q.bmp"></File>
+				<File RelativePath="..\res\FileSave.bmp"></File>
+				<File RelativePath="..\res\FileSave_q.bmp"></File>
+				<File RelativePath="..\res\Frame.bmp"></File>
+				<File RelativePath="..\res\Frame_q.bmp"></File>
+				<File RelativePath="..\res\FramePadding.bmp"></File>
+				<File RelativePath="..\res\FramePadding_q.bmp"></File>
+				<File RelativePath="..\res\HeadSpaceAdd.bmp"></File>
+				<File RelativePath="..\res\HeadSpaceAdd_q.bmp"></File>
+				<File RelativePath="..\res\HeadSpaceDel.bmp"></File>
+				<File RelativePath="..\res\HeadSpaceDel_q.bmp"></File>
+				<File RelativePath="..\res\IncrementDot.bmp"></File>
+				<File RelativePath="..\res\IncrementDot_q.bmp"></File>
+				<File RelativePath="..\res\LaayerOverWrite.bmp"></File>
+				<File RelativePath="..\res\LaayerOverWrite_q.bmp"></File>
+				<File RelativePath="..\res\LayerBox.bmp"></File>
+				<File RelativePath="..\res\LayerBox_q.bmp"></File>
+				<File RelativePath="..\res\LayerInsert.bmp"></File>
+				<File RelativePath="..\res\LayerInsert_q.bmp"></File>
+				<File RelativePath="..\res\LayerTextEdit.bmp"></File>
+				<File RelativePath="..\res\LayerTextEdit_q.bmp"></File>
+				<File RelativePath="..\res\LinesShiftLeft.bmp"></File>
+				<File RelativePath="..\res\LinesShiftLeft_q.bmp"></File>
+				<File RelativePath="..\res\LinesShiftRight.bmp"></File>
+				<File RelativePath="..\res\LinesShiftRight_q.bmp"></File>
+				<File RelativePath="..\res\MoziAdv.bmp"></File>
+				<File RelativePath="..\res\MoziAdv_q.bmp"></File>
+				<File RelativePath="..\res\MoziScript.bmp"></File>
+				<File RelativePath="..\res\MoziScript_q.bmp"></File>
+				<File RelativePath="..\res\MoziWrite.bmp"></File>
+				<File RelativePath="..\res\PageCombine.bmp"></File>
+				<File RelativePath="..\res\PageCombine_q.bmp"></File>
+				<File RelativePath="..\res\PageCreate.bmp"></File>
+				<File RelativePath="..\res\PageCreate_q.bmp"></File>
+				<File RelativePath="..\res\PageDelete.bmp"></File>
+				<File RelativePath="..\res\PageDelete_q.bmp"></File>
+				<File RelativePath="..\res\PageDivide.bmp"></File>
+				<File RelativePath="..\res\PageDivide_q.bmp"></File>
+				<File RelativePath="..\res\PageDuplicate.bmp"></File>
+				<File RelativePath="..\res\PageDuplicate_q.bmp"></File>
+				<File RelativePath="..\res\PageInsert.bmp"></File>
+				<File RelativePath="..\res\PageInsert_q.bmp"></File>
+				<File RelativePath="..\res\PageNameChange.bmp"></File>
+				<File RelativePath="..\res\PageNameChange_q.bmp"></File>
+				<File RelativePath="..\res\PageSjisCopy.bmp"></File>
+				<File RelativePath="..\res\PageSjisCopy_q.bmp"></File>
+				<File RelativePath="..\res\PageUnderShift.bmp"></File>
+				<File RelativePath="..\res\PageUnderShift_q.bmp"></File>
+				<File RelativePath="..\res\PageUpperShift.bmp"></File>
+				<File RelativePath="..\res\PageUpperShift_q.bmp"></File>
+				<File RelativePath="..\res\Paste.bmp"></File>
+				<File RelativePath="..\res\Paste_q.bmp"></File>
+				<File RelativePath="..\res\Preview.bmp"></File>
+				<File RelativePath="..\res\Preview_q.bmp"></File>
+				<File RelativePath="..\res\PreviewAll.bmp"></File>
+				<File RelativePath="..\res\PreviewAll_q.bmp"></File>
+				<File RelativePath="..\res\Redo.bmp"></File>
+				<File RelativePath="..\res\Redo_q.bmp"></File>
+				<File RelativePath="..\res\Refresh.bmp"></File>
+				<File RelativePath="..\res\Refresh_q.bmp"></File>
+				<File RelativePath="..\res\RightGuide.bmp"></File>
+				<File RelativePath="..\res\RightGuide_q.bmp"></File>
+				<File RelativePath="..\res\RightShift.bmp"></File>
+				<File RelativePath="..\res\RightShift_q.bmp"></File>
+				<File RelativePath="..\res\Setting.bmp"></File>
+				<File RelativePath="..\res\Setting_q.bmp"></File>
+				<File RelativePath="..\res\SJIScopy.bmp"></File>
+				<File RelativePath="..\res\SJIScopy_q.bmp"></File>
+				<File RelativePath="..\res\TailLetterDel.bmp"></File>
+				<File RelativePath="..\res\TailLetterDel_q.bmp"></File>
+				<File RelativePath="..\res\TailSpaceDel.bmp"></File>
+				<File RelativePath="..\res\TailSpaceDel_q.bmp"></File>
+				<File RelativePath="..\res\thumbnail.bmp"></File>
+				<File RelativePath="..\res\thumbnail_q.bmp"></File>
+				<File RelativePath="..\res\TraceMode.bmp"></File>
+				<File RelativePath="..\res\TraceMode_q.bmp"></File>
+				<File RelativePath="..\res\Undo.bmp"></File>
+				<File RelativePath="..\res\Undo_q.bmp"></File>
+				<File RelativePath="..\res\unicode_use.bmp"></File>
+				<File RelativePath="..\res\unicode_use_q.bmp"></File>
+				<File RelativePath="..\res\UniPalette.bmp"></File>
+				<File RelativePath="..\res\UniPalette_q.bmp"></File>
+				<File RelativePath="..\res\UniSpace.bmp"></File>
+				<File RelativePath="..\res\UniSpace_q.bmp"></File>
+				<File RelativePath="..\res\UserDef.bmp"></File>
+				<File RelativePath="..\res\UserDef_q.bmp"></File>
+				<File RelativePath="..\res\VertLeft.bmp"></File>
+				<File RelativePath="..\res\VertLeft_q.bmp"></File>
+				<File RelativePath="..\res\VertTrans.bmp"></File>
+				<File RelativePath="..\res\VertTrans_q.bmp"></File>
 			</Filter>
 		</Filter>
 	</Files>
-	<Globals>
-	</Globals>
+	<Globals></Globals>
 </VisualStudioProject>
