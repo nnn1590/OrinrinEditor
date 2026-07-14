@@ -173,43 +173,43 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\DraughtBoard.cpp"
+				RelativePath="..\src_bomb\DraughtBoard.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\HoverTip.cpp"
+				RelativePath="..\src_bomb\HoverTip.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\MaaCatalogue.cpp"
+				RelativePath="..\src_bomb\MaaCatalogue.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\MaaItems.cpp"
+				RelativePath="..\src_bomb\MaaItems.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\MaaSqlManipulate.cpp"
+				RelativePath="..\src_bomb\MaaSqlManipulate.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\MaaTemplate.cpp"
+				RelativePath="..\src_bomb\MaaTemplate.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\MaaTreeView.cpp"
+				RelativePath="..\src_bomb\MaaTreeView.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\OrinrinViewer.cpp"
+				RelativePath="..\src_bomb\OrinrinViewer.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\SplitBar.cpp"
+				RelativePath="..\src_bomb\SplitBar.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\stdafx.cpp"
+				RelativePath="..\src_bomb\stdafx.cpp"
 				>
 			</File>
 		</Filter>
@@ -219,35 +219,35 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\Entity.h"
+				RelativePath="..\src_bomb\Entity.h"
 				>
 			</File>
 			<File
-				RelativePath=".\MaaTemplate.h"
+				RelativePath="..\src_bomb\MaaTemplate.h"
 				>
 			</File>
 			<File
-				RelativePath=".\OrinrinEditor.h"
+				RelativePath="..\src_bomb\OrinrinEditor.h"
 				>
 			</File>
 			<File
-				RelativePath=".\resource.h"
+				RelativePath="..\src_bomb\resource.h"
 				>
 			</File>
 			<File
-				RelativePath=".\SplitBar.h"
+				RelativePath="..\src_bomb\SplitBar.h"
 				>
 			</File>
 			<File
-				RelativePath=".\sqlite3.h"
+				RelativePath="..\external\sqlite3\src\sqlite3.h"
 				>
 			</File>
 			<File
-				RelativePath=".\stdafx.h"
+				RelativePath="..\src_bomb\stdafx.h"
 				>
 			</File>
 			<File
-				RelativePath=".\targetver.h"
+				RelativePath="..\src_bomb\targetver.h"
 				>
 			</File>
 		</Filter>
@@ -257,39 +257,39 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 			<File
-				RelativePath=".\resource\dir_extra.ico"
+				RelativePath="..\res\dir_extra.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\resource\dir_open.ico"
+				RelativePath="..\res\dir_open.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\resource\directory.ico"
+				RelativePath="..\res\directory.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\resource\file_ast.ico"
+				RelativePath="..\res\file_ast.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\resource\file_etc.ico"
+				RelativePath="..\res\file_etc.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\resource\file_mlt.ico"
+				RelativePath="..\res\file_mlt.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\OrinrinEditor.ico"
+				RelativePath="..\res\OrinrinEditor.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\OrinrinViewer.ico"
+				RelativePath="..\res\OrinrinViewer.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\OrinrinViewer.rc"
+				RelativePath="..\src_bomb\OrinrinViewer.rc"
 				>
 			</File>
 		</Filter>

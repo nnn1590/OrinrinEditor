@@ -172,11 +172,11 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\OrinrinCollector.cpp"
+				RelativePath="..\src_bomb\OrinrinCollector.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\stdafx.cpp"
+				RelativePath="..\src_bomb\stdafx.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -202,19 +202,19 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\OrinrinCollector.h"
+				RelativePath="..\src_bomb\OrinrinCollector.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Resource.h"
+				RelativePath="..\src_bomb\Resource.h"
 				>
 			</File>
 			<File
-				RelativePath=".\stdafx.h"
+				RelativePath="..\src_bomb\stdafx.h"
 				>
 			</File>
 			<File
-				RelativePath=".\targetver.h"
+				RelativePath="..\src_bomb\targetver.h"
 				>
 			</File>
 		</Filter>
@@ -224,11 +224,11 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 			<File
-				RelativePath=".\OrinrinCollector.ico"
+				RelativePath="..\res\OrinrinCollector.ico"
 				>
 			</File>
 			<File
-				RelativePath=".\OrinrinCollector.rc"
+				RelativePath="..\src_bomb\OrinrinCollector.rc"
 				>
 			</File>
 		</Filter>
