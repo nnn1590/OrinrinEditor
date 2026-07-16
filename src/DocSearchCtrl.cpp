@@ -345,7 +345,7 @@ HRESULT FindExecute( HWND hDlg )
 		for( d = 0, h = 0; MAX_PATH > d; d++, h++ )
 		{
 			atPattern[h] = atBuf[d];
-			if( 0x005C == atBuf[d] )	//	0x005Cは¥
+			if( 0x005C == atBuf[d] )	//	0x005Cは'¥'
 			{
 				d++;
 				if( TEXT('n') ==  atBuf[d] )	//	改行指示である場合
@@ -440,7 +440,7 @@ UINT_PTR SearchPatternStruct( LPTSTR ptDest, UINT_PTR cchSize, LPTSTR ptSource, 
 		for( d = 0, h = 0; cchSize > d; d++, h++ )
 		{
 			ptDest[h] = ptSource[d];
-			if( 0x005C == ptSource[d] )	//	0x005Cは¥
+			if( 0x005C == ptSource[d] )	//	0x005Cは'¥'
 			{
 				d++;
 				if( TEXT('n') ==  ptSource[d] )	//	改行指示である場合

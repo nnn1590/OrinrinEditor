@@ -1178,7 +1178,7 @@ HRESULT AccelKeyBindString( LPACCEL pstAccel, LPTSTR ptBuffer, UINT_PTR cchSize 
 			case VK_OEM_2:		StringCchCopy( atKey, MIN_STRING, TEXT("/") );	break;
 			case VK_OEM_3:		StringCchCopy( atKey, MIN_STRING, TEXT("@") );	break;
 			case VK_OEM_4:		StringCchCopy( atKey, MIN_STRING, TEXT("[") );	break;
-			case VK_OEM_5:		StringCchCopy( atKey, MIN_STRING, TEXT("\\") );	break;	//	¥
+			case VK_OEM_5:		StringCchCopy( atKey, MIN_STRING, TEXT("\\") );	break;	//	'¥'
 			case VK_OEM_6:		StringCchCopy( atKey, MIN_STRING, TEXT("]") );	break;
 			case VK_OEM_7:		StringCchCopy( atKey, MIN_STRING, TEXT("^") );	break;
 			case VK_OEM_8:		StringCchCopy( atKey, MIN_STRING, TEXT("_") );	break;
