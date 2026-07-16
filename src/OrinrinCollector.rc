@@ -21,7 +21,7 @@
 //
 //	マニフェスト
 //
-CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "WindowsManifest.xml"
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "../WindowsManifest.xml"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -41,8 +41,8 @@ LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
 //	アプリケーションのアイコンをすべてのシステム上で維持するために、最も小さい
 //	ID 値のアイコンが最初に配置されます。
 
-IDI_ORINRINCOLLECTOR		ICON	"OrinrinCollector.ico"
-IDI_SMALL	ICON	"OrinrinCollector.ico"
+IDI_ORINRINCOLLECTOR		ICON	"../res/OrinrinCollector.ico"
+IDI_SMALL	ICON	"../res/OrinrinCollector.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //

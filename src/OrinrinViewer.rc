@@ -21,7 +21,7 @@
 //
 //	Manifest
 //
-CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "WindowsManifest.xml"
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "../WindowsManifest.xml"
 
 /////////////////////////////////////////////////////////////////////////////
 // 日本語 resources
@@ -39,15 +39,15 @@ LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ORINRINEDITOR	ICON	"OrinrinViewer.ico"
-IDI_SMALL			ICON	"OrinrinViewer.ico"
+IDI_ORINRINEDITOR	ICON	"../res/OrinrinViewer.ico"
+IDI_SMALL			ICON	"../res/OrinrinViewer.ico"
 
-IDI_TREE_DIR_CLOSE		ICON	"directory.ico"
-IDI_TREE_DIR_OPEN		ICON	"dir_open.ico"
-IDI_TREE_DIR_EXTRA		ICON	"dir_extra.ico"
-IDI_TREE_FILE_AST		ICON	"file_ast.ico"
-IDI_TREE_FILE_MLT		ICON	"file_mlt.ico"
-IDI_TREE_FILE_ETC		ICON	"file_etc.ico"
+IDI_TREE_DIR_CLOSE		ICON	"../res/directory.ico"
+IDI_TREE_DIR_OPEN		ICON	"../res/dir_open.ico"
+IDI_TREE_DIR_EXTRA		ICON	"../res/dir_extra.ico"
+IDI_TREE_FILE_AST		ICON	"../res/file_ast.ico"
+IDI_TREE_FILE_MLT		ICON	"../res/file_mlt.ico"
+IDI_TREE_FILE_ETC		ICON	"../res/file_etc.ico"
 
 
 /////////////////////////////////////////////////////////////////////////////
