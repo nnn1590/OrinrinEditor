@@ -79,9 +79,6 @@ target_link_options(
 target_include_directories(
 	"OrinrinEditor"
 	PRIVATE
-	"${CMAKE_SOURCE_DIR}"
-	"${CMAKE_SOURCE_DIR}/res"
-	"${CMAKE_SOURCE_DIR}/src"
 	"${CMAKE_SOURCE_DIR}/external/sqlite3/src"
 )
 
@@ -126,9 +123,6 @@ target_link_options(
 target_include_directories(
 	"OrinrinViewer"
 	PRIVATE
-	"${CMAKE_SOURCE_DIR}"
-	"${CMAKE_SOURCE_DIR}/res"
-	"${CMAKE_SOURCE_DIR}/src"
 	"${CMAKE_SOURCE_DIR}/external/sqlite3/src"
 )
 
@@ -159,12 +153,4 @@ target_link_options(
 	PUBLIC
 	"-municode" "-mwindows" "-mwin32"
 	"-static-libgcc" "-static-libstdc++"
-)
-
-target_include_directories(
-	"OrinrinCollector"
-	PRIVATE
-	"${CMAKE_SOURCE_DIR}"
-	"${CMAKE_SOURCE_DIR}/res"
-	"${CMAKE_SOURCE_DIR}/src"
 )
