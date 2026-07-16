@@ -114,30 +114,30 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
-			<File RelativePath="..\src_bomb\DraughtBoard.cpp"></File>
-			<File RelativePath="..\src_bomb\HoverTip.cpp"></File>
-			<File RelativePath="..\src_bomb\MaaCatalogue.cpp"></File>
-			<File RelativePath="..\src_bomb\MaaItems.cpp"></File>
-			<File RelativePath="..\src_bomb\MaaSqlManipulate.cpp"></File>
-			<File RelativePath="..\src_bomb\MaaTemplate.cpp"></File>
-			<File RelativePath="..\src_bomb\MaaTreeView.cpp"></File>
-			<File RelativePath="..\src_bomb\OrinrinViewer.cpp"></File>
-			<File RelativePath="..\src_bomb\SplitBar.cpp"></File>
-			<File RelativePath="..\src_bomb\stdafx.cpp"></File>
+			<File RelativePath="..\src_cp932\DraughtBoard.cpp"></File>
+			<File RelativePath="..\src_cp932\HoverTip.cpp"></File>
+			<File RelativePath="..\src_cp932\MaaCatalogue.cpp"></File>
+			<File RelativePath="..\src_cp932\MaaItems.cpp"></File>
+			<File RelativePath="..\src_cp932\MaaSqlManipulate.cpp"></File>
+			<File RelativePath="..\src_cp932\MaaTemplate.cpp"></File>
+			<File RelativePath="..\src_cp932\MaaTreeView.cpp"></File>
+			<File RelativePath="..\src_cp932\OrinrinViewer.cpp"></File>
+			<File RelativePath="..\src_cp932\SplitBar.cpp"></File>
+			<File RelativePath="..\src_cp932\stdafx.cpp"></File>
 		</Filter>
 		<Filter
 			Name="ヘッダー ファイル"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-			<File RelativePath="..\src_bomb\Entity.h"></File>
-			<File RelativePath="..\src_bomb\MaaTemplate.h"></File>
-			<File RelativePath="..\src_bomb\OrinrinEditor.h"></File>
-			<File RelativePath="..\src_bomb\resource.h"></File>
-			<File RelativePath="..\src_bomb\SplitBar.h"></File>
+			<File RelativePath="..\src_cp932\Entity.h"></File>
+			<File RelativePath="..\src_cp932\MaaTemplate.h"></File>
+			<File RelativePath="..\src_cp932\OrinrinEditor.h"></File>
+			<File RelativePath="..\src_cp932\resource.h"></File>
+			<File RelativePath="..\src_cp932\SplitBar.h"></File>
 			<File RelativePath="..\external\sqlite3\src\sqlite3.h"></File>
-			<File RelativePath="..\src_bomb\stdafx.h"></File>
-			<File RelativePath="..\src_bomb\targetver.h"></File>
+			<File RelativePath="..\src_cp932\stdafx.h"></File>
+			<File RelativePath="..\src_cp932\targetver.h"></File>
 		</Filter>
 		<Filter
 			Name="リソース ファイル"
@@ -152,7 +152,7 @@
 			<File RelativePath="..\res\file_mlt.ico"></File>
 			<File RelativePath="..\res\OrinrinEditor.ico"></File>
 			<File RelativePath="..\res\OrinrinViewer.ico"></File>
-			<File RelativePath="..\src_bomb\OrinrinViewer.rc"></File>
+			<File RelativePath="..\src_cp932\OrinrinViewer.rc"></File>
 		</Filter>
 	</Files>
 	<Globals></Globals>

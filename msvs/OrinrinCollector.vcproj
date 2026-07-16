@@ -109,8 +109,8 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
-			<File RelativePath="..\src_bomb\OrinrinCollector.cpp"></File>
-			<File RelativePath="..\src_bomb\stdafx.cpp">
+			<File RelativePath="..\src_cp932\OrinrinCollector.cpp"></File>
+			<File RelativePath="..\src_cp932\stdafx.cpp">
 				<FileConfiguration Name="Debug|Win32">
 					<Tool
 						Name="VCCLCompilerTool"
@@ -130,10 +130,10 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-			<File RelativePath="..\src_bomb\OrinrinCollector.h"></File>
-			<File RelativePath="..\src_bomb\Resource.h"></File>
-			<File RelativePath="..\src_bomb\stdafx.h"></File>
-			<File RelativePath="..\src_bomb\targetver.h"></File>
+			<File RelativePath="..\src_cp932\OrinrinCollector.h"></File>
+			<File RelativePath="..\src_cp932\Resource.h"></File>
+			<File RelativePath="..\src_cp932\stdafx.h"></File>
+			<File RelativePath="..\src_cp932\targetver.h"></File>
 		</Filter>
 		<Filter
 			Name="リソース ファイル"
@@ -141,7 +141,7 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 			<File RelativePath="..\res\OrinrinCollector.ico"></File>
-			<File RelativePath="..\src_bomb\OrinrinCollector.rc"></File>
+			<File RelativePath="..\src_cp932\OrinrinCollector.rc"></File>
 		</Filter>
 	</Files>
 	<Globals></Globals>

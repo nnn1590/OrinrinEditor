@@ -113,34 +113,34 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
-			<File RelativePath="..\src_bomb\BrushTemplate.cpp"></File>
-			<File RelativePath="..\src_bomb\ContextCtrl.cpp"></File>
-			<File RelativePath="..\src_bomb\DocAdjustant.cpp"></File>
-			<File RelativePath="..\src_bomb\DocCore.cpp"></File>
-			<File RelativePath="..\src_bomb\DocFileCtrl.cpp"></File>
-			<File RelativePath="..\src_bomb\DocInsDelCtrl.cpp"></File>
-			<File RelativePath="..\src_bomb\DocInverseCtrl.cpp"></File>
-			<File RelativePath="..\src_bomb\DocMiscellaneous.cpp"></File>
-			<File RelativePath="..\src_bomb\DocOperateLog.cpp"></File>
-			<File RelativePath="..\src_bomb\DocPreview.cpp"></File>
-			<File RelativePath="..\src_bomb\DocSearchCtrl.cpp"></File>
-			<File RelativePath="..\src_bomb\DocSelect.cpp"></File>
-			<File RelativePath="..\src_bomb\DraughtBoard.cpp"></File>
-			<File RelativePath="..\src_bomb\FrameCtrl.cpp"></File>
-			<File RelativePath="..\src_bomb\HoverTip.cpp"></File>
-			<File RelativePath="..\src_bomb\LayerBox.cpp"></File>
-			<File RelativePath="..\src_bomb\LineTemplate.cpp"></File>
-			<File RelativePath="..\src_bomb\MaaCatalogue.cpp"></File>
-			<File RelativePath="..\src_bomb\MaaItems.cpp"></File>
-			<File RelativePath="..\src_bomb\MaaSqlManipulate.cpp"></File>
-			<File RelativePath="..\src_bomb\MaaTemplate.cpp"></File>
-			<File RelativePath="..\src_bomb\MaaTreeView.cpp"></File>
-			<File RelativePath="..\src_bomb\MiniTemplate.cpp"></File>
-			<File RelativePath="..\src_bomb\MoziScript.cpp"></File>
-			<File RelativePath="..\src_bomb\OrinrinEditor.cpp"></File>
-			<File RelativePath="..\src_bomb\PageCtrl.cpp"></File>
-			<File RelativePath="..\src_bomb\SplitBar.cpp"></File>
-			<File RelativePath="..\src_bomb\stdafx.cpp">
+			<File RelativePath="..\src_cp932\BrushTemplate.cpp"></File>
+			<File RelativePath="..\src_cp932\ContextCtrl.cpp"></File>
+			<File RelativePath="..\src_cp932\DocAdjustant.cpp"></File>
+			<File RelativePath="..\src_cp932\DocCore.cpp"></File>
+			<File RelativePath="..\src_cp932\DocFileCtrl.cpp"></File>
+			<File RelativePath="..\src_cp932\DocInsDelCtrl.cpp"></File>
+			<File RelativePath="..\src_cp932\DocInverseCtrl.cpp"></File>
+			<File RelativePath="..\src_cp932\DocMiscellaneous.cpp"></File>
+			<File RelativePath="..\src_cp932\DocOperateLog.cpp"></File>
+			<File RelativePath="..\src_cp932\DocPreview.cpp"></File>
+			<File RelativePath="..\src_cp932\DocSearchCtrl.cpp"></File>
+			<File RelativePath="..\src_cp932\DocSelect.cpp"></File>
+			<File RelativePath="..\src_cp932\DraughtBoard.cpp"></File>
+			<File RelativePath="..\src_cp932\FrameCtrl.cpp"></File>
+			<File RelativePath="..\src_cp932\HoverTip.cpp"></File>
+			<File RelativePath="..\src_cp932\LayerBox.cpp"></File>
+			<File RelativePath="..\src_cp932\LineTemplate.cpp"></File>
+			<File RelativePath="..\src_cp932\MaaCatalogue.cpp"></File>
+			<File RelativePath="..\src_cp932\MaaItems.cpp"></File>
+			<File RelativePath="..\src_cp932\MaaSqlManipulate.cpp"></File>
+			<File RelativePath="..\src_cp932\MaaTemplate.cpp"></File>
+			<File RelativePath="..\src_cp932\MaaTreeView.cpp"></File>
+			<File RelativePath="..\src_cp932\MiniTemplate.cpp"></File>
+			<File RelativePath="..\src_cp932\MoziScript.cpp"></File>
+			<File RelativePath="..\src_cp932\OrinrinEditor.cpp"></File>
+			<File RelativePath="..\src_cp932\PageCtrl.cpp"></File>
+			<File RelativePath="..\src_cp932\SplitBar.cpp"></File>
+			<File RelativePath="..\src_cp932\stdafx.cpp">
 				<FileConfiguration Name="Debug|Win32">
 					<Tool
 						Name="VCCLCompilerTool"
@@ -154,31 +154,31 @@
 					/>
 				</FileConfiguration>
 			</File>
-			<File RelativePath="..\src_bomb\ToolBar.cpp"></File>
-			<File RelativePath="..\src_bomb\TraceCtrl.cpp"></File>
-			<File RelativePath="..\src_bomb\UnicodePalette.cpp"></File>
-			<File RelativePath="..\src_bomb\UserDefinition.cpp"></File>
-			<File RelativePath="..\src_bomb\VerticalScript.cpp"></File>
-			<File RelativePath="..\src_bomb\ViewCaret.cpp"></File>
-			<File RelativePath="..\src_bomb\ViewCentral.cpp"></File>
-			<File RelativePath="..\src_bomb\ViewKeyButton.cpp"></File>
-			<File RelativePath="..\src_bomb\ViewSelect.cpp"></File>
-			<File RelativePath="..\src_bomb\ViewTrace.cpp"></File>
+			<File RelativePath="..\src_cp932\ToolBar.cpp"></File>
+			<File RelativePath="..\src_cp932\TraceCtrl.cpp"></File>
+			<File RelativePath="..\src_cp932\UnicodePalette.cpp"></File>
+			<File RelativePath="..\src_cp932\UserDefinition.cpp"></File>
+			<File RelativePath="..\src_cp932\VerticalScript.cpp"></File>
+			<File RelativePath="..\src_cp932\ViewCaret.cpp"></File>
+			<File RelativePath="..\src_cp932\ViewCentral.cpp"></File>
+			<File RelativePath="..\src_cp932\ViewKeyButton.cpp"></File>
+			<File RelativePath="..\src_cp932\ViewSelect.cpp"></File>
+			<File RelativePath="..\src_cp932\ViewTrace.cpp"></File>
 		</Filter>
 		<Filter
 			Name="ヘッダー ファイル"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-			<File RelativePath="..\src_bomb\Entity.h"></File>
-			<File RelativePath="..\src_bomb\MaaTemplate.h"></File>
-			<File RelativePath="..\src_bomb\OrinrinEditor.h"></File>
-			<File RelativePath="..\src_bomb\Resource.h"></File>
-			<File RelativePath="..\src_bomb\SplitBar.h"></File>
+			<File RelativePath="..\src_cp932\Entity.h"></File>
+			<File RelativePath="..\src_cp932\MaaTemplate.h"></File>
+			<File RelativePath="..\src_cp932\OrinrinEditor.h"></File>
+			<File RelativePath="..\src_cp932\Resource.h"></File>
+			<File RelativePath="..\src_cp932\SplitBar.h"></File>
 			<File RelativePath="..\external\sqlite3\src\sqlite3.h"></File>
-			<File RelativePath="..\src_bomb\stdafx.h"></File>
-			<File RelativePath="..\src_bomb\targetver.h"></File>
-			<File RelativePath="..\src_bomb\UnicodePalette.h"></File>
+			<File RelativePath="..\src_cp932\stdafx.h"></File>
+			<File RelativePath="..\src_cp932\targetver.h"></File>
+			<File RelativePath="..\src_cp932\UnicodePalette.h"></File>
 		</Filter>
 		<Filter
 			Name="リソース ファイル"
@@ -192,7 +192,7 @@
 			<File RelativePath="..\res\file_etc.ico"></File>
 			<File RelativePath="..\res\file_mlt.ico"></File>
 			<File RelativePath="..\res\OrinrinEditor.ico"></File>
-			<File RelativePath="..\src_bomb\OrinrinEditor.rc"></File>
+			<File RelativePath="..\src_cp932\OrinrinEditor.rc"></File>
 			<Filter Name="ビットマップ">
 				<File RelativePath="..\res\AllSelect.bmp"></File>
 				<File RelativePath="..\res\AllSelect_q.bmp"></File>
