@@ -62,6 +62,12 @@ add_executable(
 	src/ViewTrace.cpp
 )
 
+set_target_properties(
+	"OrinrinEditor"
+	PROPERTIES
+	WIN32_EXECUTABLE ON
+)
+
 target_link_libraries(
 	"OrinrinEditor"
 	PUBLIC
@@ -100,6 +106,12 @@ add_executable(
 	src/stdafx.cpp
 )
 
+set_target_properties(
+	"OrinrinViewer"
+	PROPERTIES
+	WIN32_EXECUTABLE ON
+)
+
 target_compile_definitions(
 	"OrinrinViewer"
 	PRIVATE
@@ -134,6 +146,12 @@ add_executable(
 	src/OrinrinCollector.rc
 	src/OrinrinCollector.cpp
 	src/stdafx.cpp
+)
+
+set_target_properties(
+	"OrinrinCollector"
+	PROPERTIES
+	WIN32_EXECUTABLE ON
 )
 
 target_compile_definitions(
