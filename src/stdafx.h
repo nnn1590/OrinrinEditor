@@ -119,6 +119,7 @@ If not, see <http://www.gnu.org/licenses/>.
 #include <list>
 #include <string>
 #include <algorithm>
+#include <iterator>
 #ifdef _MSC_VER
 #	pragma warning( default : 4995 )
 #endif
